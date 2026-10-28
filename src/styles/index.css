@@ -1,0 +1,117 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --color-primary: #0c5adb;
+  --color-primary-hover: #0947b0;
+  --color-primary-dark: #081c4e;
+  --color-navy-card: #0b225e;
+
+  /* Red to Orange Gradient */
+  --gradient-badge: linear-gradient(90deg, #ff3b30 0%, #ff8c00 100%);
+  --gradient-badge-hover: linear-gradient(90deg, #e63946 0%, #ff7b00 100%);
+
+  /* Accent Buttons */
+  --color-amber-btn: #ff9e00;
+  --color-amber-btn-hover: #e08b00;
+  --color-whatsapp: #25d366;
+}
+
+/* Custom Component Classes */
+.gradient-badge {
+  background: var(--gradient-badge);
+  color: #ffffff;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-size: 0.75rem;
+  padding: 0.35rem 1rem;
+  border-radius: 9999px;
+  display: inline-block;
+  box-shadow: 0 2px 6px rgba(255, 59, 48, 0.25);
+}
+
+.btn-call-now {
+  background-color: var(--color-amber-btn);
+  color: #0b1a42;
+  font-weight: 700;
+  font-size: 0.9375rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 0.5rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.2s ease-in-out;
+  box-shadow: 0 4px 12px rgba(255, 158, 0, 0.3);
+}
+
+.btn-call-now:hover {
+  background-color: var(--color-amber-btn-hover);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 158, 0, 0.4);
+}
+
+/* Key Features Pastels */
+.pastel-purple { background-color: #f3e8ff; color: #7e22ce; }
+.pastel-cyan { background-color: #e0f2fe; color: #0284c7; }
+.pastel-amber { background-color: #fef3c7; color: #d97706; }
+.pastel-emerald { background-color: #d1fae5; color: #059669; }
+.pastel-rose { background-color: #ffe4e6; color: #e11d48; }
+.pastel-indigo { background-color: #e0e7ff; color: #4338ca; }
+
+/* Pricing Cards */
+.pricing-card-white {
+  background: #ffffff;
+  border: 1.5px solid #2563eb;
+  color: #1f2937;
+  border-radius: 1rem;
+  box-shadow: 0 10px 25px -5px rgba(12, 90, 219, 0.08);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pricing-card-white:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 20px 35px -5px rgba(12, 90, 219, 0.16);
+}
+
+.pricing-card-navy {
+  background: #081c4e;
+  border: 2px solid #3b82f6;
+  color: #ffffff;
+  border-radius: 1rem;
+  box-shadow: 0 20px 40px -10px rgba(8, 28, 78, 0.5);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.pricing-card-navy:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 25px 50px -10px rgba(8, 28, 78, 0.65);
+}
+
+/* Feature row separator */
+.feature-item-border {
+  border-bottom: 1px solid rgba(226, 232, 240, 0.7);
+}
+.pricing-card-navy .feature-item-border {
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Smooth Scrolling */
+html {
+  scroll-behavior: smooth;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}
