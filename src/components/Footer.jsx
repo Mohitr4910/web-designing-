@@ -5,7 +5,6 @@ import {
   Mail, 
   MapPin, 
   Globe, 
-  ArrowUpRight, 
   Clock, 
   ShieldCheck, 
   Lock
@@ -43,11 +42,11 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-amber-400 flex-shrink-0" />
-                <a href="tel:+919302770758" className="hover:text-white transition">+91 9302770758</a>
+                <a href="tel:+918240740018" className="hover:text-white transition">+91 82407 40018</a>
               </div>
               <div className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-blue-400 flex-shrink-0" />
-                <a href="mailto:mohitrahangdale67890@gmail.com" className="hover:text-white transition">mohitrahangdale67890@gmail.com</a>
+                <a href="mailto:contact@flowndeveloper.com" className="hover:text-white transition">contact@flowndeveloper.com</a>
               </div>
               <div className="flex items-center gap-2.5">
                 <Clock className="w-4 h-4 text-emerald-400 flex-shrink-0" />
@@ -63,32 +62,32 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-[13.5px]">
               <li>
-                <Link to="/website-design/" className="hover:text-blue-400 transition flex items-center gap-1">
+                <Link to="/services#website-design" className="hover:text-blue-400 transition flex items-center gap-1">
                   Custom Website Design
                 </Link>
               </li>
               <li>
-                <Link to="/responsive-website-design/" className="hover:text-blue-400 transition flex items-center gap-1">
+                <Link to="/services#website-design" className="hover:text-blue-400 transition flex items-center gap-1">
                   Responsive Web Design
                 </Link>
               </li>
               <li>
-                <Link to="/business-website-design/" className="hover:text-blue-400 transition flex items-center gap-1">
+                <Link to="/services#website-design" className="hover:text-blue-400 transition flex items-center gap-1">
                   Business Website Design
                 </Link>
               </li>
               <li>
-                <Link to="/corporate-website-design/" className="hover:text-blue-400 transition flex items-center gap-1">
+                <Link to="/services#website-design" className="hover:text-blue-400 transition flex items-center gap-1">
                   Corporate Website Design
                 </Link>
               </li>
               <li>
-                <Link to="/landing-page-design/" className="hover:text-blue-400 transition flex items-center gap-1">
+                <Link to="/services#website-design" className="hover:text-blue-400 transition flex items-center gap-1">
                   Landing Page Design
                 </Link>
               </li>
               <li>
-                <Link to="/custom-website-design/" className="hover:text-blue-400 transition flex items-center gap-1">
+                <Link to="/services#website-design" className="hover:text-blue-400 transition flex items-center gap-1">
                   Bespoke UI/UX Design
                 </Link>
               </li>
@@ -102,43 +101,38 @@ export default function Footer() {
             </h4>
             <ul className="space-y-2 text-[13.5px]">
               <li>
-                <Link to="/web-development/" className="hover:text-blue-400 transition flex items-center gap-1">
+                <Link to="/services#web-development" className="hover:text-blue-400 transition flex items-center gap-1">
                   Full-Stack Development
                 </Link>
               </li>
               <li>
-                <Link to="/custom-website-development/" className="hover:text-blue-400 transition flex items-center gap-1">
+                <Link to="/services#web-development" className="hover:text-blue-400 transition flex items-center gap-1">
                   Custom Web Development
                 </Link>
               </li>
               <li>
-                <Link to="/business-website-development/" className="hover:text-blue-400 transition flex items-center gap-1">
+                <Link to="/services#web-development" className="hover:text-blue-400 transition flex items-center gap-1">
                   Business Web Development
                 </Link>
               </li>
               <li>
-                <Link to="/ecommerce-website-development/" className="hover:text-blue-400 transition flex items-center gap-1">
+                <Link to="/services#web-development" className="hover:text-blue-400 transition flex items-center gap-1">
                   E-commerce Development
                 </Link>
               </li>
               <li>
-                <Link to="/wordpress-website-development/" className="hover:text-blue-400 transition flex items-center gap-1">
+                <Link to="/services#web-development" className="hover:text-blue-400 transition flex items-center gap-1">
                   WordPress Development
                 </Link>
               </li>
               <li>
-                <Link to="/shopify-website-development/" className="hover:text-blue-400 transition flex items-center gap-1">
+                <Link to="/services#web-development" className="hover:text-blue-400 transition flex items-center gap-1">
                   Shopify Development
                 </Link>
               </li>
               <li>
-                <Link to="/website-redesign/" className="hover:text-blue-400 transition flex items-center gap-1">
-                  Website Redesign
-                </Link>
-              </li>
-              <li>
-                <Link to="/website-maintenance/" className="hover:text-blue-400 transition flex items-center gap-1">
-                  Website Maintenance
+                <Link to="/services#web-development" className="hover:text-blue-400 transition flex items-center gap-1">
+                  Website Maintenance & Redesign
                 </Link>
               </li>
             </ul>
@@ -150,6 +144,7 @@ export default function Footer() {
               Quick Links
             </h4>
             <ul className="space-y-2 text-[13.5px]">
+              <li><Link to="/services/" className="hover:text-blue-400 transition">All 15 Services</Link></li>
               <li><Link to="/pricing/" className="hover:text-blue-400 transition">Pricing Packages</Link></li>
               <li><Link to="/portfolio/" className="hover:text-blue-400 transition">Client Portfolio</Link></li>
               <li><Link to="/about-us/" className="hover:text-blue-400 transition">About Our Agency</Link></li>

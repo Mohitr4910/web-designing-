@@ -11,15 +11,13 @@ import {
   Globe,
   Layout,
   Code,
-  ShieldCheck,
-  Smartphone
+  Layers
 } from 'lucide-react';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
-  const [designDropdown, setDesignDropdown] = useState(false);
-  const [devDropdown, setDevDropdown] = useState(false);
+  const [servicesDropdown, setServicesDropdown] = useState(false);
   const location = useLocation();
 
   useEffect(() => {
@@ -33,9 +31,8 @@ export default function Header() {
   // Close menus on route change
   useEffect(() => {
     setMobileMenuOpen(false);
-    setDesignDropdown(false);
-    setDevDropdown(false);
-  }, [location.pathname]);
+    setServicesDropdown(false);
+  }, [location.pathname, location.hash]);
 
   return (
     <header className="w-full z-50 sticky top-0 transition-all duration-200">
@@ -45,11 +42,11 @@ export default function Header() {
           <div className="flex items-center gap-6">
             <a href="tel:+918240740018" className="flex items-center gap-1.5 hover:text-white transition">
               <Phone className="w-3.5 h-3.5 text-amber-400" />
-              <span>+91 9302770758</span>
+              <span>+91 82407 40018</span>
             </a>
-            <a href="mailto:mohitrahangdale67890@gmail.com" className="hidden md:flex items-center gap-1.5 hover:text-white transition">
+            <a href="mailto:contact@flowndeveloper.com" className="hidden md:flex items-center gap-1.5 hover:text-white transition">
               <Mail className="w-3.5 h-3.5 text-blue-400" />
-              <span>mohitrahanghdale67890@gmail.com</span>
+              <span>contact@flowndeveloper.com</span>
             </a>
             <span className="hidden lg:inline text-slate-400">
               Mon – Sat: 9:30 AM – 7:30 PM (IST)
@@ -58,7 +55,7 @@ export default function Header() {
 
           <div className="flex items-center gap-4">
             <a 
-              href="https://wa.me/919302770758" 
+              href="https://wa.me/918240740018" 
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center gap-1 text-emerald-400 hover:text-emerald-300 font-medium transition"
@@ -102,98 +99,50 @@ export default function Header() {
               About Us
             </Link>
 
-            {/* Website Design Dropdown */}
+            {/* Services Dropdown */}
             <div 
               className="relative group py-2"
-              onMouseEnter={() => setDesignDropdown(true)}
-              onMouseLeave={() => setDesignDropdown(false)}
+              onMouseEnter={() => setServicesDropdown(true)}
+              onMouseLeave={() => setServicesDropdown(false)}
             >
-              <button className="flex items-center gap-1 hover:text-blue-600 transition focus:outline-none">
-                <span>Website Design</span>
+              <Link 
+                to="/services/" 
+                className={`flex items-center gap-1 hover:text-blue-600 transition ${
+                  location.pathname.startsWith('/services') ? 'text-blue-600 font-semibold' : ''
+                }`}
+              >
+                <span>Services</span>
                 <ChevronDown className="w-4 h-4 text-slate-400 group-hover:rotate-180 transition-transform duration-200" />
-              </button>
+              </Link>
 
-              {designDropdown && (
-                <div className="absolute top-full left-0 w-72 bg-white rounded-xl shadow-xl border border-slate-100 py-3 px-2 transition-all animate-fadeIn">
+              {servicesDropdown && (
+                <div className="absolute top-full left-0 w-64 bg-white rounded-xl shadow-xl border border-slate-100 py-3 px-2 transition-all animate-fadeIn">
                   <div className="text-[11px] font-bold text-slate-400 px-3 pb-2 uppercase tracking-wider">
-                    Design Solutions
+                    Core Solutions
                   </div>
-                  <Link to="/website-design/" className="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition text-[13.5px]">
-                    <Layout className="w-4 h-4 text-blue-600" />
-                    <span>Custom Website Design</span>
+                  <Link 
+                    to="/services#website-design" 
+                    className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition text-[13.5px]"
+                  >
+                    <Layout className="w-4 h-4 text-purple-600" />
+                    <span>Website Design Services</span>
                   </Link>
-                  <Link to="/responsive-website-design/" className="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition text-[13.5px]">
-                    <Smartphone className="w-4 h-4 text-blue-600" />
-                    <span>Responsive Website Design</span>
-                  </Link>
-                  <Link to="/business-website-design/" className="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition text-[13.5px]">
-                    <Globe className="w-4 h-4 text-blue-600" />
-                    <span>Business Website Design</span>
-                  </Link>
-                  <Link to="/corporate-website-design/" className="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition text-[13.5px]">
-                    <ShieldCheck className="w-4 h-4 text-blue-600" />
-                    <span>Corporate Website Design</span>
-                  </Link>
-                  <Link to="/landing-page-design/" className="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition text-[13.5px]">
+                  <Link 
+                    to="/services#web-development" 
+                    className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition text-[13.5px]"
+                  >
                     <Code className="w-4 h-4 text-blue-600" />
-                    <span>Landing Page Design</span>
+                    <span>Web Development Services</span>
                   </Link>
-                  <Link to="/custom-website-design/" className="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition text-[13.5px]">
-                    <Layout className="w-4 h-4 text-blue-600" />
-                    <span>Bespoke UI/UX Design</span>
-                  </Link>
-                </div>
-              )}
-            </div>
-
-            {/* Web Development Dropdown */}
-            <div 
-              className="relative group py-2"
-              onMouseEnter={() => setDevDropdown(true)}
-              onMouseLeave={() => setDevDropdown(false)}
-            >
-              <button className="flex items-center gap-1 hover:text-blue-600 transition focus:outline-none">
-                <span>Web Development</span>
-                <ChevronDown className="w-4 h-4 text-slate-400 group-hover:rotate-180 transition-transform duration-200" />
-              </button>
-
-              {devDropdown && (
-                <div className="absolute top-full left-0 w-80 bg-white rounded-xl shadow-xl border border-slate-100 py-3 px-2 transition-all animate-fadeIn">
-                  <div className="text-[11px] font-bold text-slate-400 px-3 pb-2 uppercase tracking-wider">
-                    Engineering Services
+                  <div className="pt-2 mt-1 border-t border-slate-100">
+                    <Link 
+                      to="/services/" 
+                      className="flex items-center justify-between px-3 py-2 rounded-lg bg-slate-50 hover:bg-blue-50 text-blue-600 font-semibold transition text-xs"
+                    >
+                      <span>Browse All 15 Services</span>
+                      <ArrowRight className="w-3.5 h-3.5" />
+                    </Link>
                   </div>
-                  <Link to="/web-development/" className="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition text-[13.5px]">
-                    <Code className="w-4 h-4 text-blue-600" />
-                    <span>Full-Stack Web Development</span>
-                  </Link>
-                  <Link to="/custom-website-development/" className="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition text-[13.5px]">
-                    <Globe className="w-4 h-4 text-blue-600" />
-                    <span>Custom Web Development</span>
-                  </Link>
-                  <Link to="/business-website-development/" className="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition text-[13.5px]">
-                    <ShieldCheck className="w-4 h-4 text-blue-600" />
-                    <span>Business Web Development</span>
-                  </Link>
-                  <Link to="/ecommerce-website-development/" className="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition text-[13.5px]">
-                    <Layout className="w-4 h-4 text-blue-600" />
-                    <span>E-commerce Web Development</span>
-                  </Link>
-                  <Link to="/wordpress-website-development/" className="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition text-[13.5px]">
-                    <Code className="w-4 h-4 text-blue-600" />
-                    <span>WordPress Website Development</span>
-                  </Link>
-                  <Link to="/shopify-website-development/" className="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition text-[13.5px]">
-                    <Globe className="w-4 h-4 text-blue-600" />
-                    <span>Shopify Store Development</span>
-                  </Link>
-                  <Link to="/website-redesign/" className="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition text-[13.5px]">
-                    <Layout className="w-4 h-4 text-blue-600" />
-                    <span>Website Redesign Services</span>
-                  </Link>
-                  <Link to="/website-maintenance/" className="flex items-center gap-2.5 px-3 py-2 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition text-[13.5px]">
-                    <ShieldCheck className="w-4 h-4 text-blue-600" />
-                    <span>Website Maintenance & Support</span>
-                  </Link>
                 </div>
               )}
             </div>
@@ -240,34 +189,15 @@ export default function Header() {
           <div className="lg:hidden bg-white border-t border-slate-100 px-6 py-6 space-y-4 max-h-[85vh] overflow-y-auto shadow-2xl">
             <Link to="/" className="block py-2 text-slate-800 font-medium">Home</Link>
             <Link to="/about-us/" className="block py-2 text-slate-800 font-medium">About Us</Link>
-            <Link to="/services/" className="block py-2 text-slate-800 font-medium">All Services</Link>
-
+            
             <div className="border-t border-slate-100 pt-3">
               <span className="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">
-                Website Design
+                Services
               </span>
               <div className="pl-3 space-y-2 text-sm text-slate-600">
-                <Link to="/website-design/" className="block py-1">Custom Website Design</Link>
-                <Link to="/responsive-website-design/" className="block py-1">Responsive Website Design</Link>
-                <Link to="/business-website-design/" className="block py-1">Business Website Design</Link>
-                <Link to="/corporate-website-design/" className="block py-1">Corporate Website Design</Link>
-                <Link to="/landing-page-design/" className="block py-1">Landing Page Design</Link>
-              </div>
-            </div>
-
-            <div className="border-t border-slate-100 pt-3">
-              <span className="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">
-                Web Development
-              </span>
-              <div className="pl-3 space-y-2 text-sm text-slate-600">
-                <Link to="/web-development/" className="block py-1">Full-Stack Development</Link>
-                <Link to="/custom-website-development/" className="block py-1">Custom Web Development</Link>
-                <Link to="/business-website-development/" className="block py-1">Business Web Development</Link>
-                <Link to="/ecommerce-website-development/" className="block py-1">E-commerce Development</Link>
-                <Link to="/wordpress-website-development/" className="block py-1">WordPress Development</Link>
-                <Link to="/shopify-website-development/" className="block py-1">Shopify Development</Link>
-                <Link to="/website-redesign/" className="block py-1">Website Redesign</Link>
-                <Link to="/website-maintenance/" className="block py-1">Website Maintenance</Link>
+                <Link to="/services#website-design" className="block py-1">Website Design Services</Link>
+                <Link to="/services#web-development" className="block py-1">Web Development Services</Link>
+                <Link to="/services/" className="block py-1 text-blue-600 font-semibold">View All 15 Services →</Link>
               </div>
             </div>
 

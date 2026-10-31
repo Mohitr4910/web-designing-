@@ -12,11 +12,12 @@ import {
   FileText, 
   RefreshCw, 
   Wrench,
-  CheckCircle2
+  CheckCircle2,
+  Send
 } from 'lucide-react';
 
 export default function ServiceCard({ service }) {
-  const { slug, title, short_description, icon_svg, category, deliverables = [] } = service;
+  const { slug, title, short_description, icon_svg, category, deliverables = [], technologies = [] } = service;
 
   const renderIcon = () => {
     switch (icon_svg) {
@@ -46,9 +47,7 @@ export default function ServiceCard({ service }) {
 
         {/* Title */}
         <h3 className="text-xl font-bold text-[#081c4e] mb-2.5 group-hover:text-blue-600 transition-colors">
-          <Link to={`/${slug}/`}>
-            {title}
-          </Link>
+          {title}
         </h3>
 
         {/* Short Description */}
@@ -69,14 +68,20 @@ export default function ServiceCard({ service }) {
         )}
       </div>
 
-      {/* Working Link */}
-      <div className="pt-4 border-t border-slate-100">
+      {/* Action CTA Link */}
+      <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
         <Link 
-          to={`/${slug}/`}
-          className="inline-flex items-center gap-1.5 text-sm font-semibold text-blue-600 group-hover:text-blue-700 transition"
+          to={`/contact-us?service=${encodeURIComponent(title)}`}
+          className="inline-flex items-center gap-1.5 text-xs sm:text-sm font-bold text-blue-600 hover:text-blue-700 transition group-hover:translate-x-0.5"
         >
-          <span>Explore Service Details</span>
+          <span>Inquire for this Service</span>
           <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+        </Link>
+        <Link 
+          to="/pricing/"
+          className="text-[11px] font-semibold text-slate-400 hover:text-slate-600 transition"
+        >
+          View Plans
         </Link>
       </div>
     </div>
