@@ -71,7 +71,7 @@ export default function BlogCard({ post }) {
         <div className="pt-4 border-t border-slate-100 flex items-center justify-between">
           <div className="flex items-center gap-2">
             <img 
-              src={author_avatar || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=80&auto=format&fit=crop&q=80'} 
+              src={author_avatar || '/author-mohit.jpg'} 
               alt={author_name || 'Author'}
               className="w-7 h-7 rounded-full object-cover"
             />

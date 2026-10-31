@@ -31,10 +31,10 @@ const FALLBACK_POSTS = [
     featured_image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1000&auto=format&fit=crop&q=80',
     reading_time_minutes: 6,
     published_at: '2026-10-16 10:00:00',
-    author_name: 'Jahangir Alam',
-    author_role: 'Principal Web Architect & Founder',
-    author_bio: 'Senior web engineering specialist with over a decade of experience designing scalable business websites and high-throughput e-commerce platforms.',
-    author_avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&auto=format&fit=crop&q=80',
+    author_name: 'Mohit Rahangdale',
+    author_role: 'Lead Web Designer & Developer',
+    author_bio: 'Web engineering specialist with extensive experience designing modern, responsive websites and high-performance digital platforms.',
+    author_avatar: '/author-mohit.jpg',
     category_name: 'Website Design',
     category_slug: 'website-design',
     tags: [
@@ -64,10 +64,10 @@ const FALLBACK_POSTS = [
     featured_image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=1000&auto=format&fit=crop&q=80',
     reading_time_minutes: 5,
     published_at: '2026-10-21 14:30:00',
-    author_name: 'Rohan Verma',
-    author_role: 'Lead Frontend Engineer',
-    author_bio: 'UI/UX specialist focused on responsive component architecture, Web Vitals performance, and accessibility standards.',
-    author_avatar: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=200&auto=format&fit=crop&q=80',
+    author_name: 'Mohit Rahangdale',
+    author_role: 'Lead Web Designer & Developer',
+    author_bio: 'UI/UX and web development specialist focused on responsive component architecture, fast performance, and clean design.',
+    author_avatar: '/author-mohit.jpg',
     category_name: 'Web Development',
     category_slug: 'web-development',
     tags: [
@@ -97,10 +97,10 @@ const FALLBACK_POSTS = [
     featured_image: 'https://images.unsplash.com/photo-1556742049-0a67c5574f73?w=1000&auto=format&fit=crop&q=80',
     reading_time_minutes: 7,
     published_at: '2026-10-24 16:15:00',
-    author_name: 'Jahangir Alam',
-    author_role: 'Principal Web Architect & Founder',
-    author_bio: 'Senior web engineering specialist with over a decade of experience designing scalable business websites and high-throughput e-commerce platforms.',
-    author_avatar: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=200&auto=format&fit=crop&q=80',
+    author_name: 'Mohit Rahangdale',
+    author_role: 'Lead Web Designer & Developer',
+    author_bio: 'Web engineering specialist with extensive experience designing modern, responsive websites and high-performance digital platforms.',
+    author_avatar: '/author-mohit.jpg',
     category_name: 'E-commerce Architecture',
     category_slug: 'ecommerce-architecture',
     tags: [
@@ -157,7 +157,7 @@ export const api = {
     } catch {
       return {
         settings: {
-          site_name: 'Flown Web Solutions',
+          site_name: 'mohit-webdesigning',
           site_tagline: 'Creative Website Design and Professional Web Development',
           contact_phone: '+91 93027 70758',
           contact_whatsapp: '+91 93027 70758',

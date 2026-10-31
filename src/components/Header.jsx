@@ -77,7 +77,7 @@ export default function Header() {
             </div>
             <div>
               <span className="text-xl font-extrabold tracking-tight text-[#081c4e] block leading-none">
-                FLOWN<span className="text-blue-600">DEVELOPER</span>
+                mohit-<span className="text-blue-600">webdesigning</span>
               </span>
               <span className="text-[10px] uppercase tracking-wider text-slate-500 font-semibold block mt-0.5">
                 Web Design & Development

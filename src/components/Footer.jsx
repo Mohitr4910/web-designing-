@@ -25,7 +25,7 @@ export default function Footer() {
                 <Globe className="w-6 h-6" />
               </div>
               <span className="text-xl font-extrabold tracking-tight text-white block">
-                FLOWN<span className="text-blue-400">DEVELOPER</span>
+                mohit-<span className="text-blue-400">webdesigning</span>
               </span>
             </Link>
             

@@ -128,7 +128,7 @@ export default function BlogPostPage() {
           <div className="flex flex-wrap items-center justify-between gap-4 py-4 border-t border-b border-slate-200/80 text-xs text-slate-500">
             <div className="flex items-center gap-3">
               <img 
-                src={author_avatar || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&auto=format&fit=crop&q=80'} 
+                src={author_avatar || '/author-mohit.jpg'} 
                 alt={author_name}
                 className="w-10 h-10 rounded-full object-cover border border-slate-200"
               />
@@ -193,7 +193,7 @@ export default function BlogPostPage() {
           {/* Author Profile Bio Box */}
           <div className="mt-12 p-8 rounded-2xl bg-slate-50 border border-slate-200 flex flex-col sm:flex-row items-center sm:items-start gap-6">
             <img 
-              src={author_avatar || 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=120&auto=format&fit=crop&q=80'} 
+              src={author_avatar || '/author-mohit.jpg'} 
               alt={author_name}
               className="w-16 h-16 rounded-full object-cover border-2 border-white shadow"
             />
