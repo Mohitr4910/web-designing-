@@ -259,7 +259,7 @@ export default function ContactForm() {
 
         <div className="text-center pt-2">
           <p className="text-xs text-slate-500">
-            Prefer immediate discussion? Call our direct hotline: <a href="tel:+918240740018" className="text-blue-600 font-bold hover:underline">+91 82407 40018</a>
+            Prefer immediate discussion? Call our direct hotline: <a href="tel:+919302770758" className="text-blue-600 font-bold hover:underline">+91 9302770758</a>
           </p>
         </div>
       </form>
