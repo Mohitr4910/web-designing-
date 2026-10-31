@@ -23,6 +23,7 @@ import ServiceCard from '../components/ServiceCard';
 import PortfolioGrid from '../components/PortfolioGrid';
 import TestimonialsSlider from '../components/TestimonialsSlider';
 import FaqAccordion from '../components/FaqAccordion';
+import Developer3DMotionBackground from '../components/Developer3DMotionBackground';
 import BlogCard from '../components/BlogCard';
 import ContactForm from '../components/ContactForm';
 import SeoMeta from '../components/SeoMeta';
@@ -102,35 +103,35 @@ export default function HomePage() {
         }}
       />
 
-      {/* B. Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-b from-[#f8faff] via-white to-white pt-12 pb-20 md:pt-20 md:pb-32 border-b border-slate-100">
+      {/* B. Hero Section with 3D Developer Motion Background */}
+      <section className="relative overflow-hidden bg-[#060f24] text-white pt-14 pb-20 md:pt-24 md:pb-32 border-b border-blue-900/40">
         
-        {/* Abstract Background Shapes */}
-        <div className="absolute top-10 left-1/2 -translate-x-1/2 w-[1000px] h-[500px] bg-gradient-to-tr from-blue-100/50 via-purple-100/30 to-cyan-100/40 rounded-full blur-3xl -z-10 pointer-events-none"></div>
+        {/* 3D Motion Video/Canvas Engine */}
+        <Developer3DMotionBackground />
 
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
             
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
-              <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-blue-50 border border-blue-200/60 text-blue-700 text-xs font-semibold shadow-sm">
-                <Sparkles className="w-3.5 h-3.5 text-blue-600" />
-                <span>Premier Web Design & Development Solutions</span>
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-950/80 border border-cyan-400/30 text-cyan-300 text-xs font-semibold backdrop-blur-md shadow-lg shadow-cyan-500/10">
+                <Sparkles className="w-3.5 h-3.5 text-cyan-400 animate-pulse" />
+                <span>Premier Web Design & Full-Stack Development</span>
               </div>
 
-              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-[#081c4e] tracking-tight leading-[1.12]">
-                Creative Website Design & <span className="text-blue-600">Professional Web Development</span>
+              <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.12]">
+                Creative Website Design & <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-300">Professional Web Development</span>
               </h1>
 
-              <p className="text-base sm:text-lg text-slate-600 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                We design engaging, responsive websites and develop reliable digital experiences that help businesses build a strong online presence. Clean code, transparent pricing, and robust CMS control.
+              <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+                We design engaging, responsive websites and develop reliable digital experiences that help businesses build a commanding online presence. Clean code, sub-second speed, and robust CMS control.
               </p>
 
               {/* CTAs */}
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
                 <Link 
                   to="/contact-us/"
-                  className="w-full sm:w-auto px-8 py-4 rounded-xl bg-blue-600 hover:bg-blue-700 text-white font-bold text-base shadow-lg shadow-blue-500/25 flex items-center justify-center gap-2 transition hover:-translate-y-0.5"
+                  className="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-extrabold text-base shadow-lg shadow-blue-500/30 flex items-center justify-center gap-2 transition hover:-translate-y-0.5 hover:shadow-cyan-500/30"
                 >
                   <span>Start Your Project</span>
                   <ArrowRight className="w-4 h-4" />
@@ -138,85 +139,87 @@ export default function HomePage() {
 
                 <Link 
                   to="/portfolio/"
-                  className="w-full sm:w-auto px-8 py-4 rounded-xl bg-white hover:bg-slate-50 text-[#081c4e] font-bold text-base border border-slate-200 shadow-sm flex items-center justify-center gap-2 transition"
+                  className="w-full sm:w-auto px-8 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-base border border-white/20 backdrop-blur-md shadow-sm flex items-center justify-center gap-2 transition hover:-translate-y-0.5"
                 >
                   <span>View Our Work</span>
                 </Link>
               </div>
 
               {/* Trust Micro-Badges */}
-              <div className="pt-6 border-t border-slate-200/80 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-slate-600 font-medium">
+              <div className="pt-6 border-t border-blue-900/60 flex flex-wrap items-center justify-center lg:justify-start gap-6 text-xs text-slate-300 font-medium">
                 <div className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-4 h-4 text-blue-600" />
+                  <CheckCircle2 className="w-4 h-4 text-cyan-400" />
                   <span>100% Mobile Responsive</span>
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                  <CheckCircle2 className="w-4 h-4 text-emerald-400" />
                   <span>Free SSL & Cloud Hosting</span>
                 </div>
                 <div className="flex items-center gap-1.5">
-                  <CheckCircle2 className="w-4 h-4 text-amber-500" />
+                  <CheckCircle2 className="w-4 h-4 text-amber-400" />
                   <span>Transparent Fixed Pricing</span>
                 </div>
               </div>
             </div>
 
-            {/* Right Graphic Mockup */}
+            {/* Right Graphic Mockup with Glassmorphism */}
             <div className="lg:col-span-5 relative">
               <div className="relative mx-auto max-w-md lg:max-w-none">
                 
-                {/* Floating Decorative Cards */}
-                <div className="relative bg-white rounded-2xl p-6 shadow-2xl border border-slate-100 z-10">
-                  <div className="flex items-center justify-between pb-4 border-b border-slate-100 mb-4">
+                {/* Floating Decorative Glass Window */}
+                <div className="relative bg-slate-900/85 backdrop-blur-xl rounded-2xl p-6 shadow-2xl border border-cyan-500/30 z-10 shadow-cyan-950/50">
+                  <div className="flex items-center justify-between pb-4 border-b border-slate-800 mb-4">
                     <div className="flex items-center gap-2">
-                      <div className="w-3 h-3 rounded-full bg-red-400"></div>
-                      <div className="w-3 h-3 rounded-full bg-amber-400"></div>
-                      <div className="w-3 h-3 rounded-full bg-emerald-400"></div>
+                      <div className="w-3 h-3 rounded-full bg-red-400/90 shadow-sm shadow-red-500/50"></div>
+                      <div className="w-3 h-3 rounded-full bg-amber-400/90 shadow-sm shadow-amber-500/50"></div>
+                      <div className="w-3 h-3 rounded-full bg-emerald-400/90 shadow-sm shadow-emerald-500/50"></div>
                     </div>
-                    <span className="text-[11px] font-mono text-slate-400">flowndeveloper.com</span>
+                    <span className="text-[11px] font-mono text-cyan-300/80 bg-blue-950/60 px-2.5 py-0.5 rounded border border-blue-800/60">
+                      mohit-webdesigning.com
+                    </span>
                   </div>
 
                   {/* Mockup Preview Area */}
                   <div className="space-y-4">
-                    <div className="h-32 rounded-xl bg-gradient-to-tr from-blue-600 to-cyan-500 p-4 text-white flex flex-col justify-between">
-                      <span className="text-xs uppercase tracking-wider font-semibold opacity-90">Custom Corporate Portal</span>
+                    <div className="h-32 rounded-xl bg-gradient-to-tr from-blue-700 via-blue-600 to-cyan-500 p-4 text-white flex flex-col justify-between shadow-lg">
+                      <span className="text-xs uppercase tracking-wider font-semibold opacity-90">Custom Web Solutions</span>
                       <div>
                         <div className="text-lg font-bold">Sub-Second Load Time</div>
-                        <div className="text-xs text-blue-100">Optimized for Core Web Vitals & Mobile Breakpoints</div>
+                        <div className="text-xs text-blue-100">Optimized Core Web Vitals & Fluid Mobile Breakpoints</div>
                       </div>
                     </div>
 
                     <div className="grid grid-cols-2 gap-3">
-                      <div className="p-3 rounded-xl bg-slate-50 border border-slate-100">
-                        <div className="text-xs text-slate-500">Security Score</div>
-                        <div className="text-base font-bold text-emerald-600">A+ Grade</div>
+                      <div className="p-3.5 rounded-xl bg-slate-800/80 border border-slate-700/80">
+                        <div className="text-xs text-slate-400">Security Score</div>
+                        <div className="text-base font-bold text-emerald-400">A+ Grade (SSL)</div>
                       </div>
-                      <div className="p-3 rounded-xl bg-slate-50 border border-slate-100">
-                        <div className="text-xs text-slate-500">Responsive Ready</div>
-                        <div className="text-base font-bold text-blue-600">100% Fluid</div>
+                      <div className="p-3.5 rounded-xl bg-slate-800/80 border border-slate-700/80">
+                        <div className="text-xs text-slate-400">Responsive Ready</div>
+                        <div className="text-base font-bold text-cyan-400">100% Fluid</div>
                       </div>
                     </div>
                   </div>
                 </div>
 
-                {/* Overlaid Floating Badge */}
-                <div className="absolute -bottom-6 -left-6 bg-white rounded-xl p-4 shadow-xl border border-slate-100 flex items-center gap-3 z-20">
-                  <div className="w-10 h-10 rounded-lg bg-emerald-100 text-emerald-600 flex items-center justify-center font-bold">
+                {/* Overlaid Floating Badges */}
+                <div className="absolute -bottom-6 -left-6 bg-slate-900/95 backdrop-blur-xl rounded-xl p-4 shadow-xl border border-emerald-500/30 flex items-center gap-3 z-20">
+                  <div className="w-10 h-10 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold border border-emerald-500/30">
                     <Zap className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-xs font-bold text-slate-800">Fast Deployment</div>
-                    <div className="text-[11px] text-slate-500">7-10 Days Turnaround</div>
+                    <div className="text-xs font-bold text-white">Fast Deployment</div>
+                    <div className="text-[11px] text-slate-400">7-10 Days Turnaround</div>
                   </div>
                 </div>
 
-                <div className="absolute -top-6 -right-6 bg-white rounded-xl p-4 shadow-xl border border-slate-100 flex items-center gap-3 z-20">
-                  <div className="w-10 h-10 rounded-lg bg-blue-100 text-blue-600 flex items-center justify-center font-bold">
+                <div className="absolute -top-6 -right-6 bg-slate-900/95 backdrop-blur-xl rounded-xl p-4 shadow-xl border border-blue-500/30 flex items-center gap-3 z-20">
+                  <div className="w-10 h-10 rounded-lg bg-blue-500/20 text-cyan-300 flex items-center justify-center font-bold border border-blue-500/30">
                     <ShieldCheck className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-xs font-bold text-slate-800">1 Year Support</div>
-                    <div className="text-[11px] text-slate-500">Direct Phone & Chat</div>
+                    <div className="text-xs font-bold text-white">1 Year Support</div>
+                    <div className="text-[11px] text-slate-400">Direct Phone & Chat</div>
                   </div>
                 </div>
 
