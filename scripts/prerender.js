@@ -40,7 +40,7 @@ const routes = [
     title: 'About Us - Web Design & Development Specialists | Flown Developer',
     description: 'Learn about our engineering philosophy, design methodology, and commitment to delivering responsive, high-performance websites for growing businesses.',
     h1: 'Dedicated to Crafting Impactful Web Experiences',
-    contentSummary: 'Our agency specializes exclusively in responsive website design and full-stack web development. Founded in 2017 with operations in Kolkata and Mumbai.',
+    contentSummary: 'Our agency specializes exclusively in responsive website design and full-stack web development, delivering reliable digital solutions.',
     schema: {
       "@context": "https://schema.org",
       "@type": "AboutPage",
@@ -81,116 +81,9 @@ const routes = [
   {
     path: '/contact-us/',
     title: 'Contact Our Web Design & Development Team | Flown Developer',
-    description: 'Get in touch with our web development team in Kolkata and Mumbai for custom website consultations, quotations, or maintenance support.',
+    description: 'Get in touch with our web development team for custom website consultations, quotations, or maintenance support.',
     h1: "Let's Build Your High-Performance Website",
-    contentSummary: 'Contact Flown Developer at +91 82407 40018 or visit our Kolkata headquarters at 39, 2nd Floor, Topsia Road, Kolkata 700039.',
-    priority: '0.8'
-  },
-  // Website Design Pages
-  {
-    path: '/website-design/',
-    title: 'Custom Website Design Services | Flown Developer',
-    description: 'Bespoke, visual-first website designs tailored to showcase your brand identity and maximize user engagement.',
-    h1: 'Custom Website Design That Converts Visitors',
-    priority: '0.8'
-  },
-  {
-    path: '/responsive-website-design/',
-    title: 'Responsive Website Design Services | Flown Developer',
-    description: 'Fluid, mobile-first layouts designed to deliver an impeccable browsing experience on every screen size.',
-    h1: '100% Fluid Responsive Web Design Solutions',
-    priority: '0.8'
-  },
-  {
-    path: '/business-website-design/',
-    title: 'Business Website Design Services | Flown Developer',
-    description: 'Credibility-building website designs structured to convert corporate visitors into qualified sales leads.',
-    h1: 'Credibility-Driven Business Website Design',
-    priority: '0.8'
-  },
-  {
-    path: '/corporate-website-design/',
-    title: 'Corporate Website Design | Enterprise Solutions',
-    description: 'Polished, enterprise-grade web design for established organizations with complex stakeholder needs.',
-    h1: 'Enterprise-Grade Corporate Website Design',
-    priority: '0.8'
-  },
-  {
-    path: '/landing-page-design/',
-    title: 'High-Converting Landing Page Design | Flown Developer',
-    description: 'High-velocity, single-goal landing pages optimized for maximum conversion rates and paid campaign ROI.',
-    h1: 'Landing Page Design Built for Maximum ROI',
-    priority: '0.8'
-  },
-  {
-    path: '/custom-website-design/',
-    title: 'Bespoke UI/UX Design | Flown Developer',
-    description: 'Tailored user experience and interface design crafted from scratch with user testing and custom design tokens.',
-    h1: 'Bespoke UI/UX Design & Interactive Prototypes',
-    priority: '0.8'
-  },
-  // Web Development Pages
-  {
-    path: '/web-development/',
-    title: 'Full-Stack Web Development Services | Flown Developer',
-    description: 'Reliable, secure web application and website development using modern frontend frameworks and robust backend architectures.',
-    h1: 'Robust, Scalable Full-Stack Web Development',
-    priority: '0.8'
-  },
-  {
-    path: '/custom-website-development/',
-    title: 'Custom Web Development Solutions | Flown Developer',
-    description: 'Bespoke web development engineered to solve unique business logic, workflows, and integrations.',
-    h1: 'Bespoke Web Application & Website Development',
-    priority: '0.8'
-  },
-  {
-    path: '/business-website-development/',
-    title: 'Business Web Development Services | Flown Developer',
-    description: 'Fast, dependable website development engineered to help businesses capture leads and scale operations.',
-    h1: 'Fast Business Website Development',
-    priority: '0.8'
-  },
-  {
-    path: '/corporate-website-development/',
-    title: 'Corporate Web Development | Enterprise Systems',
-    description: 'Enterprise-ready web development built with high security standards, audit logging, and scalable infrastructure.',
-    h1: 'Secure Corporate Web Portals & Infrastructure',
-    priority: '0.8'
-  },
-  {
-    path: '/ecommerce-website-development/',
-    title: 'E-commerce Website Development | Flown Developer',
-    description: 'End-to-end e-commerce platforms engineered for seamless product discovery, checkout conversion, and order tracking.',
-    h1: 'End-to-End E-commerce Website Development',
-    priority: '0.8'
-  },
-  {
-    path: '/wordpress-website-development/',
-    title: 'Custom WordPress Development | Flown Developer',
-    description: 'Custom WordPress themes and headless configurations optimized for lightning speed, clean code, and intuitive editing.',
-    h1: 'High-Performance WordPress Website Development',
-    priority: '0.8'
-  },
-  {
-    path: '/shopify-website-development/',
-    title: 'Shopify Store Development | Flown Developer',
-    description: 'Tailored Shopify and Liquid storefront engineering designed to boost average order value and checkout speed.',
-    h1: 'Tailored Shopify Storefront Engineering',
-    priority: '0.8'
-  },
-  {
-    path: '/website-redesign/',
-    title: 'Website Redesign Services | Flown Developer',
-    description: 'Revitalize outdated websites with modern design, cleaner code, responsive layouts, and preserved SEO equity.',
-    h1: 'Modernize & Revitalize Your Digital Presence',
-    priority: '0.8'
-  },
-  {
-    path: '/website-maintenance/',
-    title: 'Website Maintenance & Support | Flown Developer',
-    description: 'Proactive maintenance, security patching, uptime monitoring, and technical support to keep your site running smoothly.',
-    h1: 'Proactive Website Maintenance & Security Support',
+    contentSummary: 'Contact Flown Developer at +91 93027 70758 or via email at mohitrahangdale67890@gmail.com for high-performance web design and development.',
     priority: '0.8'
   },
   // Blog

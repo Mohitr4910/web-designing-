@@ -36,35 +36,30 @@ export default function Header() {
 
   return (
     <header className="w-full z-50 sticky top-0 transition-all duration-200">
-      {/* Top Bar with hotline and working hours */}
+      {/* Top Bar with hotline */}
       <div className="bg-[#081c4e] text-slate-300 text-xs py-2 px-4 sm:px-8 border-b border-blue-900/40">
         <div className="max-w-7xl mx-auto flex flex-col sm:flex-row justify-between items-center gap-2">
           <div className="flex items-center gap-6">
-            <a href="tel:+918240740018" className="flex items-center gap-1.5 hover:text-white transition">
+            <a href="tel:+919302770758" className="flex items-center gap-1.5 hover:text-white transition">
               <Phone className="w-3.5 h-3.5 text-amber-400" />
-              <span>+91 82407 40018</span>
+              <span>+91 93027 70758</span>
             </a>
-            <a href="mailto:contact@flowndeveloper.com" className="hidden md:flex items-center gap-1.5 hover:text-white transition">
+            <a href="mailto:mohitrahangdale67890@gmail.com" className="hidden md:flex items-center gap-1.5 hover:text-white transition">
               <Mail className="w-3.5 h-3.5 text-blue-400" />
-              <span>contact@flowndeveloper.com</span>
+              <span>mohitrahangdale67890@gmail.com</span>
             </a>
-            <span className="hidden lg:inline text-slate-400">
-              Mon – Sat: 9:30 AM – 7:30 PM (IST)
-            </span>
           </div>
 
           <div className="flex items-center gap-4">
             <a 
-              href="https://wa.me/918240740018" 
+              href="https://wa.me/919302770758" 
               target="_blank" 
               rel="noopener noreferrer"
               className="flex items-center gap-1 text-emerald-400 hover:text-emerald-300 font-medium transition"
             >
               <MessageSquare className="w-3.5 h-3.5" />
-              <span>WhatsApp Chat</span>
+              <span>WhatsApp: +91 93027 70758</span>
             </a>
-            <span className="text-slate-600 hidden sm:inline">|</span>
-            <span className="text-slate-400 hidden sm:inline">Kolkata • Mumbai</span>
           </div>
         </div>
       </div>

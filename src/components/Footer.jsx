@@ -3,9 +3,7 @@ import { Link } from 'react-router-dom';
 import { 
   Phone, 
   Mail, 
-  MapPin, 
   Globe, 
-  Clock, 
   ShieldCheck, 
   Lock
 } from 'lucide-react';
@@ -35,22 +33,14 @@ export default function Footer() {
               We design engaging, responsive websites and develop reliable digital experiences that help businesses build a strong online presence. Dedicated exclusively to Website Design and Web Development.
             </p>
 
-            <div className="space-y-2 text-xs text-slate-400 pt-2">
-              <div className="flex items-start gap-2.5">
-                <MapPin className="w-4 h-4 text-amber-400 flex-shrink-0 mt-0.5" />
-                <span>39, 2nd Floor, Topsia Road, Kolkata - 700039, West Bengal, India</span>
-              </div>
+            <div className="space-y-2.5 text-xs text-slate-400 pt-2">
               <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-amber-400 flex-shrink-0" />
-                <a href="tel:+918240740018" className="hover:text-white transition">+91 82407 40018</a>
+                <a href="tel:+919302770758" className="hover:text-white transition font-medium">+91 93027 70758</a>
               </div>
               <div className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-blue-400 flex-shrink-0" />
-                <a href="mailto:contact@flowndeveloper.com" className="hover:text-white transition">contact@flowndeveloper.com</a>
-              </div>
-              <div className="flex items-center gap-2.5">
-                <Clock className="w-4 h-4 text-emerald-400 flex-shrink-0" />
-                <span>Mon – Sat: 9:30 AM – 7:30 PM (IST)</span>
+                <a href="mailto:mohitrahangdale67890@gmail.com" className="hover:text-white transition">mohitrahangdale67890@gmail.com</a>
               </div>
             </div>
           </div>

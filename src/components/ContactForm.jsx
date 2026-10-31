@@ -94,7 +94,7 @@ export default function ContactForm() {
         consent: true
       });
     } catch (err) {
-      setErrorMsg(err.message || 'An error occurred while submitting. Please call us directly at +91 82407 40018.');
+      setErrorMsg(err.message || 'An error occurred while submitting. Please call us directly at +91 93027 70758.');
     } finally {
       setLoading(false);
     }

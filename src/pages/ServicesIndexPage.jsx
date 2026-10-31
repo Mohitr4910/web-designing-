@@ -202,11 +202,11 @@ export default function ServicesIndexPage() {
               <ArrowRight className="w-4 h-4" />
             </Link>
             <a 
-              href="tel:+918240740018"
+              href="tel:+919302770758"
               className="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-sm flex items-center gap-2 transition"
             >
               <Phone className="w-4 h-4" />
-              <span>+91 82407 40018</span>
+              <span>+91 93027 70758</span>
             </a>
           </div>
         </div>

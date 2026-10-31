@@ -65,12 +65,9 @@ export default function HomePage() {
     { name: 'PHP 8.2+', cat: 'Backend Engine', icon: '🐘' },
     { name: 'MySQL / MariaDB', cat: 'Relational Database', icon: '🗄️' },
     { name: 'WordPress', cat: 'Custom Themes & CMS', icon: '📝' },
-    { name: 'Shopify / Liquid', cat: 'E-commerce Platforms', icon: '🛍️' },
-    { name: 'WooCommerce', cat: 'Online Storefronts', icon: '🛒' },
     { name: 'Node.js & Vite', cat: 'Modern Tooling', icon: '🚀' },
     { name: 'Tailwind CSS', cat: 'Utility Styling', icon: '🎨' },
-    { name: 'Razorpay / Stripe', cat: 'Payment Gateways', icon: '💳' },
-    { name: 'Apache / Nginx', cat: 'Web Infrastructure', icon: '🖥️' }
+    { name: 'Razorpay / Stripe', cat: 'Payment Gateways', icon: '💳' }
   ];
 
   const whyChooseUsPoints = [
@@ -409,8 +406,8 @@ export default function HomePage() {
       {/* H. EXACT WEBSITE PRICING SECTION (Standard, Premium, Custom tall cards from reference screenshot 3) */}
       <PricingSection />
 
-      {/* I. EXACT E-COMMERCE PRICING SECTION (3 tall cards from reference screenshot 2) */}
-      <EcommercePricingSection />
+      {/* I. EXACT E-COMMERCE PRICING SECTION (Commented out as requested - un-comment to display) */}
+      {/* <EcommercePricingSection /> */}
 
       {/* J. Supported Technologies Matrix */}
       <section className="py-20 bg-white border-t border-slate-100">
@@ -536,11 +533,11 @@ export default function HomePage() {
               Discuss Your Project
             </Link>
             <a 
-              href="tel:+918240740018"
+              href="tel:+919302770758"
               className="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-sm flex items-center gap-2 transition"
             >
               <Phone className="w-4 h-4" />
-              <span>+91 82407 40018</span>
+              <span>+91 93027 70758</span>
             </a>
           </div>
         </div>
@@ -622,8 +619,8 @@ export default function HomePage() {
                   </div>
                   <div>
                     <div className="text-xs text-slate-500 font-semibold uppercase">Direct Call Hotline</div>
-                    <a href="tel:+918240740018" className="text-base font-bold text-[#081c4e] hover:text-blue-600 transition">
-                      +91 82407 40018
+                    <a href="tel:+919302770758" className="text-base font-bold text-[#081c4e] hover:text-blue-600 transition">
+                      +91 93027 70758
                     </a>
                   </div>
                 </div>
@@ -634,8 +631,8 @@ export default function HomePage() {
                   </div>
                   <div>
                     <div className="text-xs text-slate-500 font-semibold uppercase">Instant WhatsApp Chat</div>
-                    <a href="https://wa.me/918240740018" target="_blank" rel="noopener noreferrer" className="text-base font-bold text-[#081c4e] hover:text-emerald-600 transition">
-                      +91 82407 40018
+                    <a href="https://wa.me/919302770758" target="_blank" rel="noopener noreferrer" className="text-base font-bold text-[#081c4e] hover:text-emerald-600 transition">
+                      +91 93027 70758
                     </a>
                   </div>
                 </div>

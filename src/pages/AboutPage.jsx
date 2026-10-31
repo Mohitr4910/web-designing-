@@ -34,13 +34,6 @@ export default function AboutPage() {
     }
   ];
 
-  const milestones = [
-    { year: '2017', title: 'Agency Founded', desc: 'Started operations in Kolkata with a pure focus on responsive web design and PHP database development.' },
-    { year: '2020', title: 'Full-Stack Expansion', desc: 'Introduced headless React architectures, custom e-commerce platforms, and established our Mumbai client office.' },
-    { year: '2023', title: 'CMS Innovation', desc: 'Engineered our lightweight proprietary PHP CMS, empowering business owners to manage website content effortlessly.' },
-    { year: '2026', title: 'Next-Gen Performance', desc: 'Pioneered sub-second Web Vitals benchmarks and complete server-rendered SEO pipelines for high-growth enterprises.' }
-  ];
-
   return (
     <div>
       <SeoMeta 
@@ -139,30 +132,6 @@ export default function AboutPage() {
                 </div>
                 <h3 className="text-lg font-bold text-[#081c4e] mb-2">{v.title}</h3>
                 <p className="text-xs sm:text-sm text-slate-600 leading-relaxed">{v.desc}</p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* Milestones Roadmap */}
-      <section className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-xs font-bold uppercase tracking-widest text-blue-600 bg-blue-50 px-3.5 py-1 rounded-full inline-block mb-3 border border-blue-100">
-              Our Journey
-            </span>
-            <h2 className="text-3xl font-extrabold text-[#081c4e] tracking-tight">
-              A Decade of Continuous Refinement
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-4 gap-8">
-            {milestones.map((m, i) => (
-              <div key={i} className="p-6 rounded-2xl bg-slate-50 border border-slate-200">
-                <span className="text-2xl font-extrabold text-blue-600 font-mono block mb-2">{m.year}</span>
-                <h3 className="text-base font-bold text-[#081c4e] mb-2">{m.title}</h3>
-                <p className="text-xs text-slate-600 leading-relaxed">{m.desc}</p>
               </div>
             ))}
           </div>

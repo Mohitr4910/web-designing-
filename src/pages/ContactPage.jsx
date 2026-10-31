@@ -5,11 +5,10 @@ import SeoMeta from '../components/SeoMeta';
 import { 
   Phone, 
   Mail, 
-  MapPin, 
-  Clock, 
   MessageSquare, 
   ShieldCheck, 
-  Sparkles 
+  Sparkles,
+  CheckCircle2
 } from 'lucide-react';
 
 export default function ContactPage() {
@@ -17,14 +16,14 @@ export default function ContactPage() {
     <div>
       <SeoMeta 
         title="Contact Our Web Design & Development Team | Flown Developer"
-        description="Get in touch with our web development team in Kolkata and Mumbai for custom website consultations, quotations, or maintenance support."
+        description="Get in touch with our web development team for custom website consultations, quotations, or maintenance support."
         canonicalUrl="/contact-us/"
         schemaJson={{
           "@context": "https://schema.org",
           "@type": "ContactPage",
           "name": "Contact Flown Developer",
           "url": "https://flowndeveloper.com/contact-us/",
-          "description": "Contact info, address, phone number, and consultation booking for web design and development."
+          "description": "Contact info, phone number, and consultation booking for web design and development."
         }}
       />
 
@@ -51,78 +50,78 @@ export default function ContactPage() {
             {/* Left Contact Information Cards */}
             <div className="lg:col-span-5 space-y-6">
               
-              <div className="p-7 rounded-2xl bg-slate-50 border border-slate-200 space-y-4">
-                <h3 className="text-xl font-bold text-[#081c4e] mb-2">Office Locations</h3>
-                
-                <div className="space-y-4 text-xs sm:text-sm text-slate-600">
-                  <div className="flex items-start gap-3">
-                    <MapPin className="w-5 h-5 text-blue-600 flex-shrink-0 mt-0.5" />
-                    <div>
-                      <strong className="text-slate-800 block text-sm">Kolkata Headquarters</strong>
-                      <span>39, 2nd Floor, Topsia Road, Kolkata - 700039, West Bengal, India</span>
-                    </div>
-                  </div>
-
-                  <div className="flex items-start gap-3 pt-3 border-t border-slate-200">
-                    <MapPin className="w-5 h-5 text-indigo-600 flex-shrink-0 mt-0.5" />
-                    <div>
-                      <strong className="text-slate-800 block text-sm">Mumbai Branch Office</strong>
-                      <span>Andheri East, Mumbai - 400069, Maharashtra, India</span>
-                    </div>
-                  </div>
+              <div className="p-7 rounded-2xl bg-blue-50/70 border border-blue-100 space-y-5">
+                <div>
+                  <span className="text-[11px] font-bold uppercase tracking-wider text-blue-600 bg-blue-100/60 px-3 py-1 rounded-full inline-block mb-2">
+                    Direct Contact
+                  </span>
+                  <h3 className="text-xl font-bold text-[#081c4e]">Get in Touch Directly</h3>
+                  <p className="text-xs text-slate-600 mt-1">
+                    Connect with our team for consultations, quotations, and active project assistance.
+                  </p>
                 </div>
-              </div>
-
-              <div className="p-7 rounded-2xl bg-blue-50/60 border border-blue-100 space-y-4">
-                <h3 className="text-xl font-bold text-[#081c4e] mb-2">Immediate Support</h3>
                 
-                <div className="space-y-3.5 text-xs sm:text-sm">
-                  <div className="flex items-center gap-3">
-                    <Phone className="w-5 h-5 text-amber-500 flex-shrink-0" />
+                <div className="space-y-4 text-xs sm:text-sm">
+                  <div className="flex items-center gap-3.5 p-3 rounded-xl bg-white border border-blue-100/80 shadow-sm">
+                    <div className="w-10 h-10 rounded-lg bg-amber-50 border border-amber-200 flex items-center justify-center flex-shrink-0">
+                      <Phone className="w-5 h-5 text-amber-500" />
+                    </div>
                     <div>
                       <span className="text-slate-500 block text-[11px] font-semibold uppercase">Direct Phone Hotline</span>
-                      <a href="tel:+918240740018" className="font-bold text-[#081c4e] text-base hover:text-blue-600 transition">
-                        +91 82407 40018
+                      <a href="tel:+919302770758" className="font-bold text-[#081c4e] text-base hover:text-blue-600 transition">
+                        +91 93027 70758
                       </a>
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-3 pt-2">
-                    <MessageSquare className="w-5 h-5 text-emerald-600 flex-shrink-0" />
+                  <div className="flex items-center gap-3.5 p-3 rounded-xl bg-white border border-blue-100/80 shadow-sm">
+                    <div className="w-10 h-10 rounded-lg bg-emerald-50 border border-emerald-200 flex items-center justify-center flex-shrink-0">
+                      <MessageSquare className="w-5 h-5 text-emerald-600" />
+                    </div>
                     <div>
                       <span className="text-slate-500 block text-[11px] font-semibold uppercase">Instant WhatsApp Chat</span>
-                      <a href="https://wa.me/918240740018" target="_blank" rel="noopener noreferrer" className="font-bold text-emerald-600 text-base hover:text-emerald-700 transition">
-                        +91 82407 40018
+                      <a href="https://wa.me/919302770758" target="_blank" rel="noopener noreferrer" className="font-bold text-emerald-600 text-base hover:text-emerald-700 transition">
+                        +91 93027 70758
                       </a>
                     </div>
                   </div>
 
-                  <div className="flex items-center gap-3 pt-2">
-                    <Mail className="w-5 h-5 text-blue-600 flex-shrink-0" />
-                    <div>
+                  <div className="flex items-center gap-3.5 p-3 rounded-xl bg-white border border-blue-100/80 shadow-sm">
+                    <div className="w-10 h-10 rounded-lg bg-blue-50 border border-blue-200 flex items-center justify-center flex-shrink-0">
+                      <Mail className="w-5 h-5 text-blue-600" />
+                    </div>
+                    <div className="min-w-0 flex-1">
                       <span className="text-slate-500 block text-[11px] font-semibold uppercase">Email Inquiries</span>
-                      <a href="mailto:contact@flowndeveloper.com" className="font-bold text-slate-800 hover:text-blue-600 transition">
-                        contact@flowndeveloper.com
+                      <a href="mailto:mohitrahangdale67890@gmail.com" className="font-bold text-slate-800 hover:text-blue-600 transition break-all text-xs sm:text-sm">
+                        mohitrahangdale67890@gmail.com
                       </a>
-                    </div>
-                  </div>
-
-                  <div className="flex items-center gap-3 pt-2">
-                    <Clock className="w-5 h-5 text-slate-400 flex-shrink-0" />
-                    <div>
-                      <span className="text-slate-500 block text-[11px] font-semibold uppercase">Working Hours</span>
-                      <span className="text-slate-700 font-medium">Mon – Sat: 9:30 AM – 7:30 PM (IST)</span>
                     </div>
                   </div>
                 </div>
               </div>
 
               {/* Guarantees Box */}
-              <div className="p-5 rounded-2xl bg-[#081c4e] text-white flex items-center gap-3.5">
-                <ShieldCheck className="w-8 h-8 text-cyan-300 flex-shrink-0" />
-                <div className="text-xs">
-                  <div className="font-bold text-white text-sm">24-Hour Proposal Commitment</div>
-                  <div className="text-slate-300">All inquiries receive an itemized proposal with clear milestones within 1 business day.</div>
+              <div className="p-6 rounded-2xl bg-[#081c4e] text-white space-y-4">
+                <div className="flex items-center gap-3">
+                  <ShieldCheck className="w-7 h-7 text-cyan-300 flex-shrink-0" />
+                  <div>
+                    <div className="font-bold text-white text-sm">24-Hour Proposal Commitment</div>
+                    <div className="text-xs text-slate-300">Fast response with clear scope and pricing.</div>
+                  </div>
+                </div>
+                <div className="border-t border-blue-900/60 pt-3 space-y-2 text-xs text-slate-300">
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                    <span>Itemized pricing with zero hidden costs</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                    <span>Free consultation & architecture guidance</span>
+                  </div>
+                  <div className="flex items-center gap-2">
+                    <CheckCircle2 className="w-4 h-4 text-emerald-400 flex-shrink-0" />
+                    <span>1 Year of complete technical support included</span>
+                  </div>
                 </div>
               </div>
 

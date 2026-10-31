@@ -79,8 +79,8 @@ export default function PricingPage() {
       {/* Standard, Premium & Custom Website Pricing Section */}
       <PricingSection />
 
-      {/* 3 E-commerce Pricing Section */}
-      <EcommercePricingSection />
+      {/* 3 E-commerce Pricing Section (Commented out as requested - un-comment to display) */}
+      {/* <EcommercePricingSection /> */}
 
       {/* Custom Scope Quotation Section */}
       <section className="py-20 bg-slate-50 border-t border-slate-200" id="custom-quote">

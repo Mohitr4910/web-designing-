@@ -159,12 +159,12 @@ export const api = {
         settings: {
           site_name: 'Flown Web Solutions',
           site_tagline: 'Creative Website Design and Professional Web Development',
-          contact_phone: '+91 82407 40018',
-          contact_whatsapp: '+91 82407 40018',
-          contact_email: 'contact@flowndeveloper.com',
-          contact_address: '39, 2nd Floor, Topsia Road, Kolkata - 700039, West Bengal, India',
-          branch_address: 'Andheri East, Mumbai - 400069, Maharashtra, India',
-          business_hours: 'Monday – Saturday: 9:30 AM – 7:30 PM (IST)',
+          contact_phone: '+91 93027 70758',
+          contact_whatsapp: '+91 93027 70758',
+          contact_email: 'mohitrahangdale67890@gmail.com',
+          contact_address: '',
+          branch_address: '',
+          business_hours: '',
           gst_percentage: '18',
           hosting_renewal_default: '5000'
         },
@@ -260,33 +260,31 @@ export const api = {
           gst_percentage: 18,
           renewal_fee: 5000,
           cta_label: 'Call Now',
-          cta_phone: '+918240740018',
+          cta_phone: '+919302770758',
           is_featured: 0,
           tax_calculation: {
             base_price: 7999,
             gst_rate_percent: 18,
             gst_amount: 1439.82,
             total_price: 9438.82,
-            note: '+ 18% GST (₹1,439.82) = ₹9,438.82 Incl. Tax'
+            // note: '+ 18% GST (₹1,439.82) = ₹9,438.82 Incl. Tax'
           },
           features: [
             { feature_text: '5 Website Pages' },
             { feature_text: '1 Year Free Domain Name (.com / .in)' },
             { feature_text: '1 Year Free Cloud Hosting' },
             { feature_text: 'Dynamic Website with Premium Design' },
-            { feature_text: 'Admin Access for Easy Updates' },
             { feature_text: 'Unlimited Image & Video Uploads' },
             { feature_text: 'Free SSL Security Certificate' },
             { feature_text: '5 Free Professional Business Email IDs' },
             { feature_text: 'Technically SEO-Friendly Website Structure' },
             { feature_text: '100% Mobile & Tablet Responsive Layout' },
-            { feature_text: 'Live Chat Widget Integration' },
-            { feature_text: 'Online Payment Gateway Integration' },
+           
             { feature_text: 'Social Media Links & Integration' },
             { feature_text: 'Click-to-Call Phone Integration' },
             { feature_text: 'Direct WhatsApp Chat Button' },
             { feature_text: 'Interactive Inbound Inquiry Form' },
-            { feature_text: '1 Year of Technical Support & Backups' },
+            { feature_text: '1 Year of Technical Support & Backups with charges' },
             { feature_text: 'Annual Hosting Renewal @ ₹5,000/year' }
           ]
         },
@@ -302,14 +300,14 @@ export const api = {
           gst_percentage: 18,
           renewal_fee: 5000,
           cta_label: 'Call Now',
-          cta_phone: '+918240740018',
+          cta_phone: '+919302770758',
           is_featured: 1,
           tax_calculation: {
             base_price: 13999,
             gst_rate_percent: 18,
             gst_amount: 2519.82,
             total_price: 16518.82,
-            note: '+ 18% GST (₹2,519.82) = ₹16,518.82 Incl. Tax'
+            // note: '+ 18% GST (₹2,519.82) = ₹16,518.82 Incl. Tax'
           },
           features: [
             { feature_text: '12 Website Pages' },
@@ -320,16 +318,16 @@ export const api = {
             { feature_text: 'Google Search Console Setup & Verification' },
             { feature_text: 'Unlimited Image & Video Uploads' },
             { feature_text: 'Free SSL Security Certificate (HTTPS)' },
-            { feature_text: '10 Free Professional Business Email IDs' },
+            // { feature_text: '10 Free Professional Business Email IDs' },
             { feature_text: 'Technically SEO-Friendly Website Structure' },
             { feature_text: '100% Fluid Mobile & Tablet Responsive' },
-            { feature_text: 'Live Chat Integration' },
+            // { feature_text: 'Live Chat Integration' },
             { feature_text: 'Payment Gateway Integration' },
             { feature_text: 'Social Media Integration' },
             { feature_text: 'Click-to-Call Phone Integration' },
             { feature_text: 'Direct WhatsApp Chat Button' },
             { feature_text: 'Interactive Lead Generation Inquiry Form' },
-            { feature_text: 'WooCommerce / Product Catalog Features' },
+            // { feature_text: 'WooCommerce / Product Catalog Features' },
             { feature_text: '1 Year Priority Technical Support' },
             { feature_text: 'Annual Hosting Renewal @ ₹5,000/year' }
           ]
@@ -346,7 +344,7 @@ export const api = {
           gst_percentage: 18,
           renewal_fee: 5000,
           cta_label: 'Request a Quote',
-          cta_phone: '+918240740018',
+          cta_phone: '+919302770758',
           is_featured: 0,
           tax_calculation: null,
           features: [
@@ -382,7 +380,7 @@ export const api = {
           gst_percentage: 18,
           renewal_fee: 5000,
           cta_label: 'Call Now',
-          cta_phone: '+918240740018',
+          cta_phone: '+919302770758',
           is_featured: 0,
           tax_calculation: {
             base_price: 21999,
@@ -430,7 +428,7 @@ export const api = {
           gst_percentage: 18,
           renewal_fee: 5000,
           cta_label: 'Call Now',
-          cta_phone: '+918240740018',
+          cta_phone: '+919302770758',
           is_featured: 1,
           tax_calculation: {
             base_price: 50000,
@@ -479,7 +477,7 @@ export const api = {
           gst_percentage: 18,
           renewal_fee: 5000,
           cta_label: 'Request a Quote',
-          cta_phone: '+918240740018',
+          cta_phone: '+919302770758',
           is_featured: 0,
           tax_calculation: null,
           features: [
@@ -665,27 +663,6 @@ export const api = {
           featured_image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&auto=format&fit=crop&q=80',
           technologies: ['Figma', 'React', 'Framer Motion', 'CSS3'],
           demo_url: 'https://example.com/techsphere-demo', is_sample_badge: 1
-        },
-        {
-          id: 4, title: 'VendorHub Multi-Vendor Marketplace', slug: 'vendorhub-marketplace', category: 'ecommerce',
-          short_description: 'A comprehensive multi-vendor e-commerce platform allowing dozens of independent merchants to manage inventories, payouts, and automated fulfillment.',
-          featured_image: 'https://images.unsplash.com/photo-1556742049-0a67c5574f73?w=800&auto=format&fit=crop&q=80',
-          technologies: ['PHP 8.2', 'MySQL', 'React', 'Stripe Connect'],
-          demo_url: 'https://example.com/vendorhub-demo', is_sample_badge: 1
-        },
-        {
-          id: 5, title: 'NovaHealth Clinic Website Redesign', slug: 'novahealth-clinic-redesign', category: 'web_development',
-          short_description: 'A complete digital overhaul of a regional healthcare clinic, improving appointment bookings by 42% and cutting page load times from 4.8s to 0.9s.',
-          featured_image: 'https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&auto=format&fit=crop&q=80',
-          technologies: ['PHP', 'MySQL', 'React', 'REST API', 'SEO Preservation'],
-          demo_url: 'https://example.com/novahealth-demo', is_sample_badge: 1
-        },
-        {
-          id: 6, title: 'Zenith Architecture Portfolio Site', slug: 'zenith-architecture-portfolio', category: 'website_design',
-          short_description: 'An image-centric, minimalist responsive design showcasing architectural projects with smooth transitions and high-resolution galleries.',
-          featured_image: 'https://images.unsplash.com/photo-1503387762-592deb58ef4e?w=800&auto=format&fit=crop&q=80',
-          technologies: ['React', 'Framer Motion', 'Tailwind CSS', 'WebP'],
-          demo_url: 'https://example.com/zenith-demo', is_sample_badge: 1
         }
       ];
     }

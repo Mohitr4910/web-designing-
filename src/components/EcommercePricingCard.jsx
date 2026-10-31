@@ -11,7 +11,7 @@ export default function EcommercePricingCard({ plan, onQuoteClick }) {
     is_custom_quote,
     gst_percentage = 18,
     cta_label = 'Call Now',
-    cta_phone = '+918240740018',
+    cta_phone = '+919302770758',
     is_featured,
     features = [],
     tax_calculation
@@ -119,7 +119,7 @@ export default function EcommercePricingCard({ plan, onQuoteClick }) {
             </button>
           ) : (
             <a 
-              href={`tel:${cta_phone || '+918240740018'}`}
+              href={`tel:${cta_phone || '+919302770758'}`}
               className="w-full btn-call-now"
             >
               <Phone className="w-4 h-4 fill-current" />

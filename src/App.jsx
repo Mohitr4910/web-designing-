@@ -1,14 +1,12 @@
 import React, { useEffect } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, useLocation, Navigate } from 'react-router-dom';
 import MainLayout from './layouts/MainLayout';
 import HomePage from './pages/HomePage';
 import AboutPage from './pages/AboutPage';
 import ServicesIndexPage from './pages/ServicesIndexPage';
-import ServiceDetailPage from './pages/ServiceDetailPage';
 import PricingPage from './pages/PricingPage';
 import PortfolioPage from './pages/PortfolioPage';
 import ContactPage from './pages/ContactPage';
-import ContactSuccessPage from './pages/ContactSuccessPage';
 import BlogListPage from './pages/BlogListPage';
 import BlogPostPage from './pages/BlogPostPage';
 import LegalPage from './pages/LegalPage';
@@ -43,42 +41,41 @@ export default function App() {
           <Route path="portfolio/" element={<PortfolioPage />} />
           <Route path="contact-us" element={<ContactPage />} />
           <Route path="contact-us/" element={<ContactPage />} />
-          <Route path="contact-success" element={<ContactSuccessPage />} />
-          <Route path="contact-success/" element={<ContactSuccessPage />} />
 
-          {/* Website Design Routes */}
-          <Route path="website-design" element={<ServiceDetailPage />} />
-          <Route path="website-design/" element={<ServiceDetailPage />} />
-          <Route path="responsive-website-design" element={<ServiceDetailPage />} />
-          <Route path="responsive-website-design/" element={<ServiceDetailPage />} />
-          <Route path="business-website-design" element={<ServiceDetailPage />} />
-          <Route path="business-website-design/" element={<ServiceDetailPage />} />
-          <Route path="corporate-website-design" element={<ServiceDetailPage />} />
-          <Route path="corporate-website-design/" element={<ServiceDetailPage />} />
-          <Route path="landing-page-design" element={<ServiceDetailPage />} />
-          <Route path="landing-page-design/" element={<ServiceDetailPage />} />
-          <Route path="custom-website-design" element={<ServiceDetailPage />} />
-          <Route path="custom-website-design/" element={<ServiceDetailPage />} />
+          {/* Graceful Redirects for Legacy / Unneeded Subpages */}
+          <Route path="contact-success" element={<Navigate to="/contact-us" replace />} />
+          <Route path="contact-success/" element={<Navigate to="/contact-us" replace />} />
+          <Route path="website-design" element={<Navigate to="/services#website-design" replace />} />
+          <Route path="website-design/" element={<Navigate to="/services#website-design" replace />} />
+          <Route path="responsive-website-design" element={<Navigate to="/services#website-design" replace />} />
+          <Route path="responsive-website-design/" element={<Navigate to="/services#website-design" replace />} />
+          <Route path="business-website-design" element={<Navigate to="/services#website-design" replace />} />
+          <Route path="business-website-design/" element={<Navigate to="/services#website-design" replace />} />
+          <Route path="corporate-website-design" element={<Navigate to="/services#website-design" replace />} />
+          <Route path="corporate-website-design/" element={<Navigate to="/services#website-design" replace />} />
+          <Route path="landing-page-design" element={<Navigate to="/services#website-design" replace />} />
+          <Route path="landing-page-design/" element={<Navigate to="/services#website-design" replace />} />
+          <Route path="custom-website-design" element={<Navigate to="/services#website-design" replace />} />
+          <Route path="custom-website-design/" element={<Navigate to="/services#website-design" replace />} />
 
-          {/* Web Development Routes */}
-          <Route path="web-development" element={<ServiceDetailPage />} />
-          <Route path="web-development/" element={<ServiceDetailPage />} />
-          <Route path="custom-website-development" element={<ServiceDetailPage />} />
-          <Route path="custom-website-development/" element={<ServiceDetailPage />} />
-          <Route path="business-website-development" element={<ServiceDetailPage />} />
-          <Route path="business-website-development/" element={<ServiceDetailPage />} />
-          <Route path="corporate-website-development" element={<ServiceDetailPage />} />
-          <Route path="corporate-website-development/" element={<ServiceDetailPage />} />
-          <Route path="ecommerce-website-development" element={<ServiceDetailPage />} />
-          <Route path="ecommerce-website-development/" element={<ServiceDetailPage />} />
-          <Route path="wordpress-website-development" element={<ServiceDetailPage />} />
-          <Route path="wordpress-website-development/" element={<ServiceDetailPage />} />
-          <Route path="shopify-website-development" element={<ServiceDetailPage />} />
-          <Route path="shopify-website-development/" element={<ServiceDetailPage />} />
-          <Route path="website-redesign" element={<ServiceDetailPage />} />
-          <Route path="website-redesign/" element={<ServiceDetailPage />} />
-          <Route path="website-maintenance" element={<ServiceDetailPage />} />
-          <Route path="website-maintenance/" element={<ServiceDetailPage />} />
+          <Route path="web-development" element={<Navigate to="/services#web-development" replace />} />
+          <Route path="web-development/" element={<Navigate to="/services#web-development" replace />} />
+          <Route path="custom-website-development" element={<Navigate to="/services#web-development" replace />} />
+          <Route path="custom-website-development/" element={<Navigate to="/services#web-development" replace />} />
+          <Route path="business-website-development" element={<Navigate to="/services#web-development" replace />} />
+          <Route path="business-website-development/" element={<Navigate to="/services#web-development" replace />} />
+          <Route path="corporate-website-development" element={<Navigate to="/services#web-development" replace />} />
+          <Route path="corporate-website-development/" element={<Navigate to="/services#web-development" replace />} />
+          <Route path="ecommerce-website-development" element={<Navigate to="/services#web-development" replace />} />
+          <Route path="ecommerce-website-development/" element={<Navigate to="/services#web-development" replace />} />
+          <Route path="wordpress-website-development" element={<Navigate to="/services#web-development" replace />} />
+          <Route path="wordpress-website-development/" element={<Navigate to="/services#web-development" replace />} />
+          <Route path="shopify-website-development" element={<Navigate to="/services#web-development" replace />} />
+          <Route path="shopify-website-development/" element={<Navigate to="/services#web-development" replace />} />
+          <Route path="website-redesign" element={<Navigate to="/services#web-development" replace />} />
+          <Route path="website-redesign/" element={<Navigate to="/services#web-development" replace />} />
+          <Route path="website-maintenance" element={<Navigate to="/services#web-development" replace />} />
+          <Route path="website-maintenance/" element={<Navigate to="/services#web-development" replace />} />
 
           {/* Blog Routes */}
           <Route path="blog" element={<BlogListPage />} />

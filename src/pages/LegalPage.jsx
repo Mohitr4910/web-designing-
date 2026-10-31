@@ -66,7 +66,7 @@ export default function LegalPage() {
         <p>Our website may use standard session cookies to remember preferences, validate CSRF security tokens, and analyze aggregated visitor traffic to enhance user experience.</p>
 
         <h2>5. Contact for Privacy Matters</h2>
-        <p>If you have questions regarding data privacy or wish to request data erasure, contact our data compliance officer at: <code>contact@flowndeveloper.com</code>.</p>
+        <p>If you have questions regarding data privacy or wish to request data erasure, contact our data compliance officer at: <code>mohitrahangdale67890@gmail.com</code>.</p>
       </>
     );
   }

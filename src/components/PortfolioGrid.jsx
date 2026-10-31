@@ -4,13 +4,12 @@ import { ExternalLink, Tag } from 'lucide-react';
 
 export default function PortfolioGrid({ initialProjects = null }) {
   const [projects, setProjects] = useState(initialProjects);
-  const [filter, setFilter] = useState('all');
   const [loading, setLoading] = useState(!initialProjects);
 
   useEffect(() => {
     if (!initialProjects) {
       api.getPortfolio().then(res => {
-        setProjects(res);
+        setProjects(Array.isArray(res) ? res.slice(0, 3) : []);
         setLoading(false);
       }).catch(err => {
         console.error('Failed to load portfolio:', err);
@@ -19,47 +18,19 @@ export default function PortfolioGrid({ initialProjects = null }) {
     }
   }, [initialProjects]);
 
-  const categories = [
-    { key: 'all', label: 'All Projects' },
-    { key: 'website_design', label: 'Website Design' },
-    { key: 'web_development', label: 'Web Development' },
-    { key: 'ecommerce', label: 'E-commerce' },
-    { key: 'business', label: 'Business Websites' }
-  ];
-
-  const filtered = projects ? projects.filter(p => {
-    if (filter === 'all') return true;
-    return p.category === filter;
-  }) : [];
+  const displayProjects = projects ? projects.slice(0, 3) : [];
 
   return (
     <div className="w-full">
-      {/* Category Filter Pills */}
-      <div className="flex flex-wrap items-center justify-center gap-2 mb-12">
-        {categories.map((c) => (
-          <button
-            key={c.key}
-            onClick={() => setFilter(c.key)}
-            className={`px-5 py-2 rounded-full text-xs sm:text-sm font-semibold transition-all cursor-pointer ${
-              filter === c.key
-                ? 'bg-blue-600 text-white shadow-md shadow-blue-500/20'
-                : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50'
-            }`}
-          >
-            {c.label}
-          </button>
-        ))}
-      </div>
-
       {loading ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {[1, 2, 3, 4, 5, 6].map(n => (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {[1, 2, 3].map(n => (
             <div key={n} className="h-80 bg-slate-100 rounded-2xl animate-pulse"></div>
           ))}
         </div>
       ) : (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {filtered.map((proj) => (
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+          {displayProjects.map((proj) => (
             <div 
               key={proj.id}
               className="bg-white rounded-2xl overflow-hidden border border-slate-200 shadow-sm hover:shadow-xl hover:-translate-y-1.5 transition-all duration-300 flex flex-col group"
