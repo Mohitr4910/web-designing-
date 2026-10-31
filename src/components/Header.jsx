@@ -45,11 +45,11 @@ export default function Header() {
           <div className="flex items-center gap-6">
             <a href="tel:+918240740018" className="flex items-center gap-1.5 hover:text-white transition">
               <Phone className="w-3.5 h-3.5 text-amber-400" />
-              <span>+91 82407 40018</span>
+              <span>+91 9302770758</span>
             </a>
-            <a href="mailto:contact@flowndeveloper.com" className="hidden md:flex items-center gap-1.5 hover:text-white transition">
+            <a href="mailto:mohitrahangdale67890@gmail.com" className="hidden md:flex items-center gap-1.5 hover:text-white transition">
               <Mail className="w-3.5 h-3.5 text-blue-400" />
-              <span>contact@flowndeveloper.com</span>
+              <span>mohitrahanghdale67890@gmail.com</span>
             </a>
             <span className="hidden lg:inline text-slate-400">
               Mon – Sat: 9:30 AM – 7:30 PM (IST)

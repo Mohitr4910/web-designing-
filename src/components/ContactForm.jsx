@@ -1,21 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { api } from '../services/api';
 import { Send, CheckCircle2, AlertCircle, Phone, Mail } from 'lucide-react';
 
 export default function ContactForm() {
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    website_type: 'Business Website',
-    budget_range: '₹10,000 - ₹25,000',
-    project_description: '',
-    consent: true
-  });
-
-  const [loading, setLoading] = useState(false);
-  const [successMsg, setSuccessMsg] = useState(null);
-  const [errorMsg, setErrorMsg] = useState(null);
+  const [searchParams] = useSearchParams();
+  const serviceParam = searchParams.get('service');
 
   const websiteTypes = [
     'Business Website',
@@ -28,6 +18,35 @@ export default function ContactForm() {
     'Website Redesign Services',
     'Website Maintenance & Support'
   ];
+
+  // Auto-match service parameter if present in query string
+  const initialService = serviceParam && websiteTypes.includes(serviceParam)
+    ? serviceParam
+    : (serviceParam ? 'Custom Website Design' : 'Business Website');
+
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    website_type: initialService,
+    budget_range: '₹10,000 - ₹25,000',
+    project_description: serviceParam ? `I am interested in ${serviceParam}. Please share details and quotation.` : '',
+    consent: true
+  });
+
+  useEffect(() => {
+    if (serviceParam) {
+      setFormData(prev => ({
+        ...prev,
+        website_type: websiteTypes.includes(serviceParam) ? serviceParam : prev.website_type,
+        project_description: prev.project_description || `I am interested in ${serviceParam}. Please share details and quotation.`
+      }));
+    }
+  }, [serviceParam]);
+
+  const [loading, setLoading] = useState(false);
+  const [successMsg, setSuccessMsg] = useState(null);
+  const [errorMsg, setErrorMsg] = useState(null);
 
   const budgetRanges = [
     'Under ₹10,000',

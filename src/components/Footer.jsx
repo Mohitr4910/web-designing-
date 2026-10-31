@@ -43,11 +43,11 @@ export default function Footer() {
               </div>
               <div className="flex items-center gap-2.5">
                 <Phone className="w-4 h-4 text-amber-400 flex-shrink-0" />
-                <a href="tel:+918240740018" className="hover:text-white transition">+91 82407 40018</a>
+                <a href="tel:+919302770758" className="hover:text-white transition">+91 9302770758</a>
               </div>
               <div className="flex items-center gap-2.5">
                 <Mail className="w-4 h-4 text-blue-400 flex-shrink-0" />
-                <a href="mailto:contact@flowndeveloper.com" className="hover:text-white transition">contact@flowndeveloper.com</a>
+                <a href="mailto:mohitrahangdale67890@gmail.com" className="hover:text-white transition">mohitrahangdale67890@gmail.com</a>
               </div>
               <div className="flex items-center gap-2.5">
                 <Clock className="w-4 h-4 text-emerald-400 flex-shrink-0" />
