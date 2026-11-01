@@ -24,6 +24,8 @@ import PortfolioGrid from '../components/PortfolioGrid';
 import TestimonialsSlider from '../components/TestimonialsSlider';
 import FaqAccordion from '../components/FaqAccordion';
 import Developer3DMotionBackground from '../components/Developer3DMotionBackground';
+import CyberMatrix3DMotion from '../components/CyberMatrix3DMotion';
+import ParticleWarp3DMotion from '../components/ParticleWarp3DMotion';
 import BlogCard from '../components/BlogCard';
 import ContactForm from '../components/ContactForm';
 import SeoMeta from '../components/SeoMeta';
@@ -444,13 +446,17 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* K. Why Choose Us */}
-      <section className="py-20 md:py-24 bg-[#081c4e] text-white relative overflow-hidden">
+      {/* K. Why Choose Us with 3D Cyber Matrix Background */}
+      <section className="py-20 md:py-24 bg-[#07132c] text-white relative overflow-hidden border-t border-b border-blue-900/40">
+        
+        {/* 3D Cyber Matrix Engine */}
+        <CyberMatrix3DMotion />
+
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           
           <div className="text-center max-w-3xl mx-auto mb-16">
-            <span className="text-xs font-bold uppercase tracking-widest text-cyan-300 bg-blue-900/60 px-3.5 py-1 rounded-full inline-block mb-3 border border-blue-700/50">
-              Why Partner With Flown
+            <span className="text-xs font-bold uppercase tracking-widest text-cyan-300 bg-blue-950/80 px-4 py-1.5 rounded-full inline-block mb-3 border border-cyan-500/30 backdrop-blur-md shadow-md">
+              Why Partner With mohit-webdesigning
             </span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-4">
               Engineering Value in Every Line of Code
@@ -464,12 +470,12 @@ export default function HomePage() {
             {whyChooseUsPoints.map((pt, idx) => (
               <div 
                 key={idx}
-                className="bg-blue-950/40 border border-blue-800/50 rounded-2xl p-7 hover:border-blue-600 hover:bg-blue-900/30 transition-all"
+                className="bg-slate-900/70 backdrop-blur-md border border-blue-500/30 rounded-2xl p-7 hover:border-cyan-400 hover:bg-slate-900/90 hover:-translate-y-1 transition-all shadow-xl shadow-blue-950/40 group"
               >
-                <div className="w-10 h-10 rounded-xl bg-blue-600/30 border border-blue-500/40 flex items-center justify-center text-cyan-300 mb-4">
+                <div className="w-10 h-10 rounded-xl bg-blue-600/30 border border-blue-400/40 flex items-center justify-center text-cyan-300 mb-4 group-hover:scale-110 group-hover:bg-cyan-500/20 transition-all">
                   <CheckCircle2 className="w-5 h-5" />
                 </div>
-                <h3 className="text-lg font-bold text-white mb-2">{pt.title}</h3>
+                <h3 className="text-lg font-bold text-white mb-2 group-hover:text-cyan-300 transition-colors">{pt.title}</h3>
                 <p className="text-xs sm:text-sm text-slate-300 leading-relaxed">{pt.desc}</p>
               </div>
             ))}
@@ -516,9 +522,13 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* N. Contact CTA Banner */}
-      <section className="py-16 bg-gradient-to-r from-blue-700 via-blue-600 to-indigo-700 text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+      {/* N. Contact CTA Banner with 3D Warp Motion */}
+      <section className="py-16 bg-gradient-to-r from-blue-900 via-indigo-900 to-[#081c4e] text-white relative overflow-hidden border-t border-b border-blue-800/40">
+        
+        {/* 3D Particle Warp Engine */}
+        <ParticleWarp3DMotion />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
           <div className="space-y-2 max-w-2xl">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
               Have a Website Project in Mind?
@@ -531,15 +541,15 @@ export default function HomePage() {
           <div className="flex flex-col sm:flex-row items-center gap-4 flex-shrink-0">
             <Link 
               to="/contact-us/"
-              className="px-7 py-3.5 rounded-xl bg-amber-400 hover:bg-amber-500 text-[#081c4e] font-extrabold text-sm shadow-md transition hover:scale-105"
+              className="px-7 py-3.5 rounded-xl bg-amber-400 hover:bg-amber-500 text-[#081c4e] font-extrabold text-sm shadow-lg shadow-amber-500/20 transition hover:scale-105"
             >
               Discuss Your Project
             </Link>
             <a 
               href="tel:+919302770758"
-              className="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-sm flex items-center gap-2 transition"
+              className="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-sm flex items-center gap-2 backdrop-blur-md transition hover:scale-105"
             >
-              <Phone className="w-4 h-4" />
+              <Phone className="w-4 h-4 text-cyan-300" />
               <span>+91 93027 70758</span>
             </a>
           </div>
