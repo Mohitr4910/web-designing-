@@ -13,6 +13,7 @@ import {
   Globe 
 } from 'lucide-react';
 import SeoMeta from '../components/SeoMeta';
+import ParticleWarp3DMotion from '../components/ParticleWarp3DMotion';
 
 export default function AboutPage() {
   const values = [
@@ -138,17 +139,21 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="py-16 bg-blue-600 text-white text-center">
-        <div className="max-w-4xl mx-auto px-4 space-y-5">
-          <h2 className="text-3xl font-extrabold text-white">Ready to Elevate Your Digital Presence?</h2>
-          <p className="text-blue-100 text-base max-w-xl mx-auto">
+      {/* CTA Section with 3D Warp Motion */}
+      <section className="py-20 bg-[#07132c] text-white text-center relative overflow-hidden border-t border-blue-900/40">
+        <ParticleWarp3DMotion />
+        <div className="max-w-4xl mx-auto px-4 space-y-6 relative z-10">
+          <span className="text-xs font-bold uppercase tracking-widest text-cyan-300 bg-blue-950/80 px-4 py-1.5 rounded-full inline-block border border-cyan-500/30 backdrop-blur-md shadow-md">
+            Start Your Journey
+          </span>
+          <h2 className="text-3xl sm:text-4xl font-extrabold text-white">Ready to Elevate Your Digital Presence?</h2>
+          <p className="text-slate-300 text-base max-w-xl mx-auto leading-relaxed">
             Contact our engineering team today to review your project scope and receive an itemized proposal.
           </p>
           <div className="pt-2">
             <Link 
               to="/contact-us/"
-              className="inline-flex items-center gap-2 px-8 py-3.5 rounded-xl bg-amber-400 hover:bg-amber-500 text-[#081c4e] font-extrabold text-sm shadow-md transition"
+              className="inline-flex items-center gap-2 px-8 py-4 rounded-xl bg-gradient-to-r from-blue-600 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-extrabold text-base shadow-lg shadow-cyan-500/25 transition hover:-translate-y-0.5"
             >
               <span>Schedule a Consultation</span>
               <ArrowRight className="w-4 h-4" />

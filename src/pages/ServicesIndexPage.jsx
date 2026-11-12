@@ -4,6 +4,7 @@ import { api } from '../services/api';
 import ServiceCard from '../components/ServiceCard';
 import SeoMeta from '../components/SeoMeta';
 import ContactForm from '../components/ContactForm';
+import ParticleWarp3DMotion from '../components/ParticleWarp3DMotion';
 import { 
   Layout, 
   Code, 
@@ -184,9 +185,11 @@ export default function ServicesIndexPage() {
         </div>
       </section>
 
-      {/* Consultation Banner */}
-      <section className="py-16 bg-[#081c4e] text-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-8 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
+      {/* Consultation Banner with 3D Warp Motion */}
+      <section className="py-16 bg-[#07132c] text-white relative overflow-hidden border-t border-b border-blue-900/40">
+        <ParticleWarp3DMotion />
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
           <div className="space-y-2 max-w-xl">
             <h3 className="text-2xl font-bold text-white">Not Sure Which Service Matches Your Goal?</h3>
             <p className="text-sm text-slate-300">
@@ -196,16 +199,16 @@ export default function ServicesIndexPage() {
           <div className="flex flex-col sm:flex-row items-center gap-4">
             <Link 
               to="/contact-us/"
-              className="px-8 py-3.5 rounded-xl bg-amber-400 hover:bg-amber-500 text-[#081c4e] font-extrabold text-sm shadow-md transition flex items-center gap-2"
+              className="px-8 py-3.5 rounded-xl bg-amber-400 hover:bg-amber-500 text-[#081c4e] font-extrabold text-sm shadow-lg shadow-amber-500/20 transition flex items-center gap-2 hover:scale-105"
             >
               <span>Request Free Consultation</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
             <a 
               href="tel:+919302770758"
-              className="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-sm flex items-center gap-2 transition"
+              className="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-sm flex items-center gap-2 backdrop-blur-md transition hover:scale-105"
             >
-              <Phone className="w-4 h-4" />
+              <Phone className="w-4 h-4 text-cyan-300" />
               <span>+91 93027 70758</span>
             </a>
           </div>
