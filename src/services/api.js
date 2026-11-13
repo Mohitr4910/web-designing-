@@ -279,7 +279,7 @@ export const api = {
             { feature_text: '5 Free Professional Business Email IDs' },
             { feature_text: 'Technically SEO-Friendly Website Structure' },
             { feature_text: '100% Mobile & Tablet Responsive Layout' },
-           
+
             { feature_text: 'Social Media Links & Integration' },
             { feature_text: 'Click-to-Call Phone Integration' },
             { feature_text: 'Direct WhatsApp Chat Button' },
@@ -644,11 +644,11 @@ export const api = {
     } catch {
       return [
         {
-          id: 1, title: 'Apex Corporate Web Portal', slug: 'apex-corporate-portal', category: 'business',
-          short_description: 'A high-performance corporate website engineered for a manufacturing conglomerate, featuring custom lead acquisition funnels.',
-          featured_image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=800&auto=format&fit=crop&q=80',
-          technologies: ['React', 'PHP 8.2', 'MySQL', 'Tailwind CSS'],
-          demo_url: 'https://example.com/apex-demo', is_sample_badge: 1
+          id: 1, title: 'Mathura Mithai Wala — Cinematic Sweet Shop Website', slug: 'mathura-mithai-wala', category: 'business',
+          short_description: 'A premium scroll-driven cinematic website for an Indian mithai shop, with a frame-by-frame hero animation, a full sweets menu, a build-your-own gift box and WhatsApp ordering.',
+          featured_image: 'https://images.unsplash.com/photo-1601050690597-df0568f70950?w=800&auto=format&fit=crop&q=80',
+          technologies: ['React', 'Vite', 'GSAP', 'Lenis', 'CSS3'],
+          demo_url: 'https://mathura-mithai.vercel.app/', is_sample_badge: 1
         },
         {
           id: 2, title: 'LuxeCart Boutique E-commerce', slug: 'luxecart-ecommerce', category: 'ecommerce',
