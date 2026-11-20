@@ -10,19 +10,20 @@ import {
   Sparkles,
   CheckCircle2
 } from 'lucide-react';
+import { SITE_URL } from '../config/site';
 
 export default function ContactPage() {
   return (
     <div>
       <SeoMeta 
-        title="Contact Our Web Design & Development Team | Flown Developer"
+        title="Contact Our Web Design & Development Team | Mohit Web Designing"
         description="Get in touch with our web development team for custom website consultations, quotations, or maintenance support."
         canonicalUrl="/contact-us/"
         schemaJson={{
           "@context": "https://schema.org",
           "@type": "ContactPage",
-          "name": "Contact Flown Developer",
-          "url": "https://flowndeveloper.com/contact-us/",
+          "name": "Contact Mohit Web Designing",
+          "url": SITE_URL + "/contact-us/",
           "description": "Contact info, phone number, and consultation booking for web design and development."
         }}
       />

@@ -1,0 +1,10 @@
+# Hostinger/Apache: prerendered folders (/blog/xyz/index.html) seedha serve hote hain,
+# baaki unknown URLs index.html par jate hain (React Router sambhal leta hai).
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+  RewriteRule ^index\.html$ - [L]
+  RewriteCond %{REQUEST_FILENAME} !-f
+  RewriteCond %{REQUEST_FILENAME} !-d
+  RewriteRule . /index.html [L]
+</IfModule>

@@ -16,7 +16,7 @@ export default function LegalPage() {
     content = (
       <>
         <h2>1. Services & Engagement Scope</h2>
-        <p>Flown Developer provides professional Website Design, Web Development, E-commerce Store Development, Website Redesign, and ongoing Technical Website Maintenance services. All deliverables, timelines, and milestones are governed by agreed project scopes.</p>
+        <p>Mohit Web Designing provides professional Website Design, Web Development, E-commerce Store Development, Website Redesign, and ongoing Technical Website Maintenance services. All deliverables, timelines, and milestones are governed by agreed project scopes.</p>
         
         <h2>2. Intellectual Property Rights</h2>
         <p>Upon final settlement of project milestones, complete ownership of custom design tokens, frontend assets, and bespoke application code transfers to the client. Pre-existing frameworks, open-source libraries, and third-party tools retain their respective licenses.</p>
@@ -28,7 +28,7 @@ export default function LegalPage() {
         <p>Where domain name registration and cloud hosting are included in a plan, they are provided for an initial 12-month period. Annual renewals are subject to the agreed rate (e.g., ₹5,000/year for continued hosting, domain renewal, and security patching).</p>
 
         <h2>5. Limitation of Liability</h2>
-        <p>Flown Developer ensures all web software is tested for security and stability before release. We are not liable for business interruptions caused by unauthorized client code alterations, unapproved third-party plugin installations, or third-party payment gateway downtime.</p>
+        <p>Mohit Web Designing ensures all web software is tested for security and stability before release. We are not liable for business interruptions caused by unauthorized client code alterations, unapproved third-party plugin installations, or third-party payment gateway downtime.</p>
       </>
     );
   } else if (path.includes('refund')) {
@@ -74,8 +74,8 @@ export default function LegalPage() {
   return (
     <div>
       <SeoMeta 
-        title={`${title} | Flown Developer`}
-        description={`Read the official ${title} for Flown Developer. Clear legal terms and transparent policies.`}
+        title={`${title} | Mohit Web Designing`}
+        description={`Read the official ${title} for Mohit Web Designing. Clear legal terms and transparent policies.`}
         canonicalUrl={path}
       />
 

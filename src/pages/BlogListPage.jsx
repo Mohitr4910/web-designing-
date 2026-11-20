@@ -10,35 +10,17 @@ export default function BlogListPage() {
   const [searchParams, setSearchParams] = useSearchParams();
   const searchQuery = searchParams.get('search') || '';
 
-  const [posts, setPosts] = useState([]);
-  const [pagination, setPagination] = useState({});
-  const [taxonomies, setTaxonomies] = useState({ categories: [], tags: [] });
-  const [loading, setLoading] = useState(true);
   const [searchInput, setSearchInput] = useState(searchQuery);
 
-  useEffect(() => {
-    setLoading(true);
-    const params = {
-      category: categorySlug || '',
-      tag: tagSlug || '',
-      author: authorSlug || '',
-      search: searchQuery,
-      page: searchParams.get('page') || 1
-    };
-
-    Promise.all([
-      api.getPosts(params),
-      api.getBlogTaxonomies().catch(() => ({ categories: [], tags: [] }))
-    ]).then(([postRes, taxRes]) => {
-      setPosts(postRes.posts || []);
-      setPagination(postRes.pagination || {});
-      setTaxonomies(taxRes || { categories: [], tags: [] });
-      setLoading(false);
-    }).catch(err => {
-      console.error(err);
-      setLoading(false);
-    });
-  }, [categorySlug, tagSlug, authorSlug, searchQuery, searchParams]);
+  const { posts, pagination } = api.getPosts({
+    category: categorySlug || '',
+    tag: tagSlug || '',
+    author: authorSlug || '',
+    search: searchQuery,
+    page: searchParams.get('page') || 1
+  });
+  const taxonomies = api.getBlogTaxonomies();
+  const loading = false;
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
@@ -67,7 +49,7 @@ export default function BlogListPage() {
   return (
     <div>
       <SeoMeta 
-        title={`${activeTitle} | Flown Developer Blog`}
+        title={`${activeTitle} | Mohit Web Designing Blog`}
         description={activeDesc}
         canonicalUrl="/blog/"
       />

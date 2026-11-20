@@ -10,7 +10,7 @@ export default function PricingPage() {
   return (
     <div>
       <SeoMeta 
-        title="Transparent Website & E-commerce Pricing Plans | Flown Developer"
+        title="Transparent Website & E-commerce Pricing Plans | Mohit Web Designing"
         description="Affordable, clear website design and e-commerce development pricing packages with itemized features, 18% GST calculation, free SSL, and zero hidden fees."
         canonicalUrl="/pricing/"
         schemaJson={{

@@ -4,20 +4,8 @@ import { api } from '../services/api';
 import { ShoppingBag, ShieldCheck, HelpCircle } from 'lucide-react';
 
 export default function EcommercePricingSection({ initialPlans = null }) {
-  const [plans, setPlans] = useState(initialPlans);
-  const [loading, setLoading] = useState(!initialPlans);
-
-  useEffect(() => {
-    if (!initialPlans) {
-      api.getPricing('ecommerce').then(res => {
-        setPlans(res);
-        setLoading(false);
-      }).catch(err => {
-        console.error('Failed to load ecommerce pricing:', err);
-        setLoading(false);
-      });
-    }
-  }, [initialPlans]);
+  const plans = initialPlans || api.getPricing('ecommerce');
+  const loading = false;
 
   if (loading || !plans || plans.length === 0) {
     return (

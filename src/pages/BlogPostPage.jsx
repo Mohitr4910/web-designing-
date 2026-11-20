@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { api } from '../services/api';
 import SeoMeta from '../components/SeoMeta';
+import { SITE_NAME } from '../config/site';
 import { 
   Calendar, 
   Clock, 
@@ -11,27 +12,13 @@ import {
   CheckCircle2, 
   Bookmark 
 } from 'lucide-react';
+import { SITE_URL } from '../config/site';
 
 export default function BlogPostPage() {
   const { slug } = useParams();
-  const [post, setPost] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
-
-  useEffect(() => {
-    setLoading(true);
-    setError(false);
-    api.getPostBySlug(slug)
-      .then(res => {
-        setPost(res);
-        setLoading(false);
-      })
-      .catch(err => {
-        console.error(err);
-        setError(true);
-        setLoading(false);
-      });
-  }, [slug]);
+  const post = api.getPostBySlug(slug);
+  const loading = false;
+  const error = !post;
 
   if (loading) {
     return (
@@ -56,7 +43,7 @@ export default function BlogPostPage() {
 
   const {
     title,
-    content_html,
+    Component: PostBody,
     featured_image,
     reading_time_minutes = 5,
     published_at,
@@ -71,13 +58,13 @@ export default function BlogPostPage() {
   } = post;
 
   const formattedDate = published_at 
-    ? new Date(published_at).toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric' })
+    ? new Date(published_at).toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' })
     : 'Recent';
 
   return (
     <div>
       <SeoMeta 
-        title={`${post.meta_title || title} | Flown Developer`}
+        title={`${post.meta_title || title} | ${SITE_NAME}`}
         description={post.meta_description || post.excerpt}
         canonicalUrl={`/blog/${slug}/`}
         ogType="article"
@@ -91,14 +78,14 @@ export default function BlogPostPage() {
           "dateModified": post.updated_at || published_at,
           "author": [{
             "@type": "Person",
-            "name": author_name || "Flown Developer Team"
+            "name": author_name || "Mohit Web Designing Team"
           }],
           "publisher": {
             "@type": "Organization",
-            "name": "Flown Developer",
+            "name": "Mohit Web Designing",
             "logo": {
               "@type": "ImageObject",
-              "url": "https://flowndeveloper.com/logo.png"
+              "url": SITE_URL + "/logo.png"
             }
           },
           "description": post.excerpt
@@ -169,10 +156,9 @@ export default function BlogPostPage() {
           )}
 
           {/* Article HTML Body */}
-          <div 
-            className="prose prose-lg prose-blue max-w-none text-slate-700 leading-relaxed space-y-6"
-            dangerouslySetInnerHTML={{ __html: content_html }}
-          />
+          <div className="blog-content max-w-none text-slate-700 leading-relaxed">
+            <PostBody />
+          </div>
 
           {/* Tags */}
           {tags && tags.length > 0 && (

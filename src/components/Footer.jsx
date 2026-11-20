@@ -150,7 +150,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-400">
           <div>
-            © {currentYear} Flown Developer (Flown Web Solutions). All rights reserved.
+            © {currentYear} Mohit Web Designing. All rights reserved.
           </div>
           <div className="flex items-center gap-4">
             <span className="flex items-center gap-1 text-slate-400">

@@ -17,7 +17,7 @@ export default function BlogCard({ post }) {
   } = post;
 
   const formattedDate = published_at 
-    ? new Date(published_at).toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: 'numeric' })
+    ? new Date(published_at).toLocaleDateString('en-US', { day: 'numeric', month: 'short', year: 'numeric', timeZone: 'UTC' })
     : 'Recent';
 
   return (

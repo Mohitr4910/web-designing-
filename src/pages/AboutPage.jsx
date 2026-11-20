@@ -14,6 +14,7 @@ import {
 } from 'lucide-react';
 import SeoMeta from '../components/SeoMeta';
 import ParticleWarp3DMotion from '../components/ParticleWarp3DMotion';
+import { SITE_URL } from '../config/site';
 
 export default function AboutPage() {
   const values = [
@@ -38,14 +39,14 @@ export default function AboutPage() {
   return (
     <div>
       <SeoMeta 
-        title="About Us - Web Design & Development Specialists | Flown Developer"
+        title="About Us - Web Design & Development Specialists | Mohit Web Designing"
         description="Learn about our engineering philosophy, design methodology, and commitment to delivering responsive, high-performance websites for growing businesses."
         canonicalUrl="/about-us/"
         schemaJson={{
           "@context": "https://schema.org",
           "@type": "AboutPage",
-          "name": "About Flown Developer",
-          "url": "https://flowndeveloper.com/about-us/",
+          "name": "About Mohit Web Designing",
+          "url": SITE_URL + "/about-us/",
           "description": "Specialists in website design and full-stack web development."
         }}
       />

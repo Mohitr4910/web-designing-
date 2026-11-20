@@ -1,20 +1,35 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useContext, createContext } from 'react';
+import { SITE_URL } from '../config/site';
+
+/**
+ * Prerender (SSR) ke time entry-server.jsx is context me ek collector deta hai,
+ * jisme SeoMeta apna title/description/canonical likh deta hai, taaki wo
+ * static HTML ke <head> me jaye. Browser me ye useEffect se head update karta hai.
+ */
+export const HeadCollectorContext = createContext(null);
 
 export default function SeoMeta({
   title,
   description,
   canonicalUrl,
   ogType = 'website',
-  ogImage = 'https://flowndeveloper.com/og-image.jpg',
+  ogImage = `${SITE_URL}/og-image.jpg`,
   schemaJson = null
 }) {
-  useEffect(() => {
-    // 1. Title
-    if (title) {
-      document.title = title;
-    }
+  const collector = useContext(HeadCollectorContext);
 
-    // 2. Meta description
+  const canonical = canonicalUrl
+    ? (canonicalUrl.startsWith('http') ? canonicalUrl : `${SITE_URL}${canonicalUrl}`)
+    : null;
+
+  // Server-side render: head data collect karo
+  if (collector) {
+    collector.current = { title, description, canonical, ogType, ogImage, schemaJson };
+  }
+
+  useEffect(() => {
+    if (title) document.title = title;
+
     if (description) {
       let metaDesc = document.querySelector('meta[name="description"]');
       if (!metaDesc) {
@@ -25,18 +40,16 @@ export default function SeoMeta({
       metaDesc.content = description;
     }
 
-    // 3. Canonical Link
-    if (canonicalUrl) {
+    if (canonical) {
       let linkCan = document.querySelector('link[rel="canonical"]');
       if (!linkCan) {
         linkCan = document.createElement('link');
         linkCan.rel = 'canonical';
         document.head.appendChild(linkCan);
       }
-      linkCan.href = canonicalUrl.startsWith('http') ? canonicalUrl : `https://flowndeveloper.com${canonicalUrl}`;
+      linkCan.href = canonical;
     }
 
-    // 4. Open Graph Meta
     const setOgMeta = (prop, val) => {
       if (!val) return;
       let el = document.querySelector(`meta[property="${prop}"]`);
@@ -52,9 +65,8 @@ export default function SeoMeta({
     setOgMeta('og:description', description);
     setOgMeta('og:type', ogType);
     setOgMeta('og:image', ogImage);
-    setOgMeta('og:url', window.location.href);
+    setOgMeta('og:url', canonical || window.location.href);
 
-    // 5. Schema JSON-LD
     let scriptTag = document.getElementById('route-schema-json');
     if (schemaJson) {
       if (!scriptTag) {
@@ -67,7 +79,7 @@ export default function SeoMeta({
     } else if (scriptTag) {
       scriptTag.remove();
     }
-  }, [title, description, canonicalUrl, ogType, ogImage, schemaJson]);
+  }, [title, description, canonical, ogType, ogImage, schemaJson]);
 
   return null;
 }

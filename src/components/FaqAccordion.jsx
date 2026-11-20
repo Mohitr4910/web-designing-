@@ -3,21 +3,9 @@ import { api } from '../services/api';
 import { ChevronDown } from 'lucide-react';
 
 export default function FaqAccordion({ initialFaqs = null, category = null }) {
-  const [faqs, setFaqs] = useState(initialFaqs);
+  const faqs = initialFaqs || api.getFaqs(category);
   const [openIndex, setOpenIndex] = useState(0); // open first by default
-  const [loading, setLoading] = useState(!initialFaqs);
-
-  useEffect(() => {
-    if (!initialFaqs) {
-      api.getFaqs(category).then(res => {
-        setFaqs(res);
-        setLoading(false);
-      }).catch(err => {
-        console.error('Failed to load FAQs:', err);
-        setLoading(false);
-      });
-    }
-  }, [initialFaqs, category]);
+  const loading = false;
 
   if (loading || !faqs || faqs.length === 0) {
     return null;

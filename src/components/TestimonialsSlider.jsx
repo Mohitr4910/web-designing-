@@ -3,20 +3,8 @@ import { api } from '../services/api';
 import { Star, Quote, CheckCircle2 } from 'lucide-react';
 
 export default function TestimonialsSlider({ initialTestimonials = null }) {
-  const [reviews, setReviews] = useState(initialTestimonials);
-  const [loading, setLoading] = useState(!initialTestimonials);
-
-  useEffect(() => {
-    if (!initialTestimonials) {
-      api.getTestimonials().then(res => {
-        setReviews(res);
-        setLoading(false);
-      }).catch(err => {
-        console.error('Failed to load testimonials:', err);
-        setLoading(false);
-      });
-    }
-  }, [initialTestimonials]);
+  const reviews = initialTestimonials || api.getTestimonials();
+  const loading = false;
 
   if (loading || !reviews || reviews.length === 0) {
     return null;

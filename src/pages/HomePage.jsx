@@ -30,15 +30,11 @@ import BlogCard from '../components/BlogCard';
 import ContactForm from '../components/ContactForm';
 import SeoMeta from '../components/SeoMeta';
 import { api } from '../services/api';
+import { SITE_URL } from '../config/site';
 
 export default function HomePage() {
-  const [services, setServices] = useState([]);
-  const [recentPosts, setRecentPosts] = useState([]);
-
-  useEffect(() => {
-    api.getServices().then(res => setServices(res.slice(0, 8))).catch(() => {});
-    api.getPosts({ limit: 3 }).then(res => setRecentPosts(res.posts || [])).catch(() => {});
-  }, []);
+  const services = api.getServices().slice(0, 8);
+  const recentPosts = api.getPosts({ limit: 3 }).posts || [];
 
   const designProcessSteps = [
     { num: '01', title: 'Requirement Discussion', desc: 'Understanding your commercial objectives, audience personas, and desired features.' },
@@ -88,18 +84,18 @@ export default function HomePage() {
   return (
     <div>
       <SeoMeta 
-        title="Creative Website Design and Professional Web Development | Flown Developer"
+        title="Creative Website Design and Professional Web Development | Mohit Web Designing"
         description="We design engaging, responsive websites and develop reliable digital experiences that help businesses build a strong online presence. Transparent pricing, custom solutions."
         canonicalUrl="/"
         schemaJson={{
           "@context": "https://schema.org",
           "@type": "WebSite",
-          "name": "Flown Developer",
-          "url": "https://flowndeveloper.com",
+          "name": "Mohit Web Designing",
+          "url": SITE_URL,
           "description": "Creative Website Design and Professional Web Development Agency",
           "potentialAction": {
             "@type": "SearchAction",
-            "target": "https://flowndeveloper.com/blog/?search={search_term_string}",
+            "target": SITE_URL + "/blog/?search={search_term_string}",
             "query-input": "required name=search_term_string"
           }
         }}
@@ -265,7 +261,7 @@ export default function HomePage() {
               </h2>
 
               <p className="text-slate-600 leading-relaxed text-base">
-                At Flown Developer, we focus exclusively on delivering high-impact website design and full-stack web development. We believe your website is your most valuable digital asset—a 24/7 representative of your brand credibility, capabilities, and professionalism.
+                At Mohit Web Designing, we focus exclusively on delivering high-impact website design and full-stack web development. We believe your website is your most valuable digital asset—a 24/7 representative of your brand credibility, capabilities, and professionalism.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
@@ -514,7 +510,7 @@ export default function HomePage() {
               What Our Partners Say
             </h2>
             <p className="text-slate-600 text-base">
-              Genuine testimonials from business owners, directors, and managers who trust Flown for their web engineering.
+              Genuine testimonials from business owners, directors, and managers who trust Mohit Web Designing for their web engineering.
             </p>
           </div>
 

@@ -3,20 +3,8 @@ import { api } from '../services/api';
 import { ExternalLink, Tag } from 'lucide-react';
 
 export default function PortfolioGrid({ initialProjects = null }) {
-  const [projects, setProjects] = useState(initialProjects);
-  const [loading, setLoading] = useState(!initialProjects);
-
-  useEffect(() => {
-    if (!initialProjects) {
-      api.getPortfolio().then(res => {
-        setProjects(Array.isArray(res) ? res.slice(0, 3) : []);
-        setLoading(false);
-      }).catch(err => {
-        console.error('Failed to load portfolio:', err);
-        setLoading(false);
-      });
-    }
-  }, [initialProjects]);
+  const projects = initialProjects || api.getPortfolio();
+  const loading = false;
 
   const displayProjects = projects ? projects.slice(0, 3) : [];
 

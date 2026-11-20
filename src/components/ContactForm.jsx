@@ -238,7 +238,7 @@ export default function ContactForm() {
             className="w-4 h-4 text-blue-600 rounded border-slate-300 focus:ring-blue-500 mt-0.5"
           />
           <label htmlFor="consent" className="text-xs text-slate-500 leading-normal">
-            I consent to Flown Developer contacting me via phone, email or WhatsApp regarding this project quotation.
+            I consent to Mohit Web Designing contacting me via phone, email or WhatsApp regarding this project quotation.
           </label>
         </div>
 

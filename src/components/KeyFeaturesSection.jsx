@@ -3,20 +3,8 @@ import FeatureCard from './FeatureCard';
 import { api } from '../services/api';
 
 export default function KeyFeaturesSection({ initialData = null }) {
-  const [data, setData] = useState(initialData);
-  const [loading, setLoading] = useState(!initialData);
-
-  useEffect(() => {
-    if (!initialData) {
-      api.getKeyFeatures().then(res => {
-        setData(res);
-        setLoading(false);
-      }).catch(err => {
-        console.error('Failed to load key features:', err);
-        setLoading(false);
-      });
-    }
-  }, [initialData]);
+  const data = initialData || api.getKeyFeatures();
+  const loading = false;
 
   if (loading || !data) {
     return (

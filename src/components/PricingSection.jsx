@@ -4,20 +4,8 @@ import { api } from '../services/api';
 import { ShieldCheck, HelpCircle } from 'lucide-react';
 
 export default function PricingSection({ initialPlans = null }) {
-  const [plans, setPlans] = useState(initialPlans);
-  const [loading, setLoading] = useState(!initialPlans);
-
-  useEffect(() => {
-    if (!initialPlans) {
-      api.getPricing('website').then(res => {
-        setPlans(res);
-        setLoading(false);
-      }).catch(err => {
-        console.error('Failed to load website pricing:', err);
-        setLoading(false);
-      });
-    }
-  }, [initialPlans]);
+  const plans = initialPlans || api.getPricing('website');
+  const loading = false;
 
   if (loading || !plans || plans.length === 0) {
     return (

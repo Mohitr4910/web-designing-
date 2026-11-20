@@ -3,19 +3,20 @@ import PortfolioGrid from '../components/PortfolioGrid';
 import SeoMeta from '../components/SeoMeta';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Sparkles } from 'lucide-react';
+import { SITE_URL } from '../config/site';
 
 export default function PortfolioPage() {
   return (
     <div>
       <SeoMeta 
-        title="Our Portfolio - Website Design & Development Projects | Flown Developer"
+        title="Our Portfolio - Website Design & Development Projects | Mohit Web Designing"
         description="Browse our real-world and sample website design, business portals, and e-commerce store implementations. Built with modern PHP, React, and responsive CSS."
         canonicalUrl="/portfolio/"
         schemaJson={{
           "@context": "https://schema.org",
           "@type": "CollectionPage",
-          "name": "Flown Developer Portfolio Showcase",
-          "url": "https://flowndeveloper.com/portfolio/",
+          "name": "Mohit Web Designing Portfolio Showcase",
+          "url": SITE_URL + "/portfolio/",
           "description": "Showcase of website design and full-stack web development projects."
         }}
       />

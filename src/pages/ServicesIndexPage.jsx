@@ -15,27 +15,14 @@ import {
   Sparkles,
   Phone
 } from 'lucide-react';
+import { SITE_URL } from '../config/site';
 
 export default function ServicesIndexPage() {
-  const [designServices, setDesignServices] = useState([]);
-  const [devServices, setDevServices] = useState([]);
+  const designServices = api.getServices('website_design');
+  const devServices = api.getServices('web_development');
   const [activeTab, setActiveTab] = useState('all');
-  const [loading, setLoading] = useState(true);
+  const loading = false;
   const location = useLocation();
-
-  useEffect(() => {
-    Promise.all([
-      api.getServices('website_design'),
-      api.getServices('web_development')
-    ]).then(([d, dev]) => {
-      setDesignServices(d);
-      setDevServices(dev);
-      setLoading(false);
-    }).catch(err => {
-      console.error(err);
-      setLoading(false);
-    });
-  }, []);
 
   // Handle hash scrolling (#website-design or #web-development)
   useEffect(() => {
@@ -57,14 +44,14 @@ export default function ServicesIndexPage() {
   return (
     <div>
       <SeoMeta 
-        title="Full-Cycle Website Design & Web Development Services | Flown Developer"
+        title="Full-Cycle Website Design & Web Development Services | Mohit Web Designing"
         description="Explore our complete suite of specialized website design and web development services. From responsive business websites to complex e-commerce stores."
         canonicalUrl="/services/"
         schemaJson={{
           "@context": "https://schema.org",
           "@type": "CollectionPage",
           "name": "Website Design & Development Services",
-          "url": "https://flowndeveloper.com/services/",
+          "url": SITE_URL + "/services/",
           "description": "Full-cycle web design, web development, e-commerce, and maintenance services."
         }}
       />
