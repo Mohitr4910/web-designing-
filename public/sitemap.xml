@@ -1,63 +1,53 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
- 
   <url>
-    <loc>https://mohit-webdesigning.netlify.app/</loc>
-    <changefreq>weekly</changefreq>
+    <loc>https://weblaunchpro.in/</loc>
+    <lastmod>2026-11-20</lastmod>
     <priority>1.0</priority>
   </url>
- 
   <url>
-    <loc>https://mohit-webdesigning.netlify.app/about-us/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <loc>https://weblaunchpro.in/about-us/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <priority>0.8</priority>
   </url>
- 
   <url>
-    <loc>https://mohit-webdesigning.netlify.app/services/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <loc>https://weblaunchpro.in/services/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <priority>0.8</priority>
   </url>
- 
   <url>
-    <loc>https://mohit-webdesigning.netlify.app/pricing/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <loc>https://weblaunchpro.in/pricing/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <priority>0.8</priority>
   </url>
- 
   <url>
-    <loc>https://mohit-webdesigning.netlify.app/portfolio/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <loc>https://weblaunchpro.in/portfolio/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <priority>0.8</priority>
   </url>
- 
   <url>
-    <loc>https://mohit-webdesigning.netlify.app/blog/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <loc>https://weblaunchpro.in/blog/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <priority>0.7</priority>
   </url>
- 
   <url>
-    <loc>https://mohit-webdesigning.netlify.app/contact-us/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <loc>https://weblaunchpro.in/contact-us/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <priority>0.8</priority>
   </url>
- 
   <url>
-    <loc>https://mohit-webdesigning.netlify.app/blog/how-to-plan-a-successful-business-website/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <loc>https://weblaunchpro.in/blog/how-to-plan-a-successful-business-website/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <priority>0.6</priority>
   </url>
- 
   <url>
-    <loc>https://mohit-webdesigning.netlify.app/blog/responsive-web-design-principles-modern-screens/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <loc>https://weblaunchpro.in/blog/responsive-web-design-principles-modern-screens/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <priority>0.6</priority>
   </url>
- 
   <url>
-    <loc>https://mohit-webdesigning.netlify.app/blog/planning-ecommerce-website-architecture/</loc>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
+    <loc>https://weblaunchpro.in/blog/planning-ecommerce-website-architecture/</loc>
+    <lastmod>2026-11-20</lastmod>
+    <priority>0.6</priority>
   </url>
 </urlset>
