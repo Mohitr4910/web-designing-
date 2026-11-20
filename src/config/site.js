@@ -10,7 +10,7 @@
  * ye sirf aapke email par form bhejti hai.
  */
 export const WEB3FORMS_ACCESS_KEY =
-  import.meta.env?.VITE_WEB3FORMS_ACCESS_KEY || 'PASTE_YOUR_WEB3FORMS_ACCESS_KEY_HERE';
+  import.meta.env?.VITE_WEB3FORMS_ACCESS_KEY || '60fc5f51-0eed-449b-aa49-397d5142a26e';
 
 export const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
 
