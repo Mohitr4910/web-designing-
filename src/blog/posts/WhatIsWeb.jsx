@@ -1,5 +1,5 @@
 export const meta = {
-  slug: 'what-is-web-development-complete-beginners-guide-how-websites-work',
+  slug: 'what-is-web-development',
   title: 'What Is Web Development? A Complete Beginner\'s Guide to How Websites Work',
   excerpt:
     'What is web development? A complete beginner\'s guide to frontend, backend, domains, hosting, servers, databases, DNS, SSL and the full process of launching a website.',
