@@ -25,5 +25,5 @@ export const DEFAULT_AUTHOR = {
   name: 'Mohit Rahangdale',
   role: 'Lead Web Designer & Developer',
   bio: 'Web engineering specialist with extensive experience designing modern, responsive websites and high-performance digital platforms.',
-  avatar: '/author-mohit.jpg'
+  avatar: '/Tech Portrait with Coding Icons.webp',
 };
