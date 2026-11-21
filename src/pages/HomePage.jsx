@@ -83,23 +83,36 @@ export default function HomePage() {
 
   return (
     <div>
-      <SeoMeta 
-        title="Creative Website Design and Professional Web Development | Mohit Web Designing"
-        description="We design engaging, responsive websites and develop reliable digital experiences that help businesses build a strong online presence. Transparent pricing, custom solutions."
-        canonicalUrl="/"
-        schemaJson={{
-          "@context": "https://schema.org",
-          "@type": "WebSite",
-          "name": "Mohit Web Designing",
-          "url": SITE_URL,
-          "description": "Creative Website Design and Professional Web Development Agency",
-          "potentialAction": {
-            "@type": "SearchAction",
-            "target": SITE_URL + "/blog/?search={search_term_string}",
-            "query-input": "required name=search_term_string"
-          }
-        }}
-      />
+      
+<SeoMeta
+  title="Website Development Agency | WebLaunchPro"
+  description="Looking for a reliable website development agency? WebLaunchPro provides professional website design and development services, creating modern, responsive and user-friendly websites for businesses."
+  canonicalUrl="/"
+  schemaJson={{
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": SITE_URL + "/#website",
+        "url": SITE_URL,
+        "name": "WebLaunchPro",
+        "description": "Professional website design and development services for businesses.",
+        "inLanguage": "en-IN",
+        "publisher": {
+          "@id": SITE_URL + "/#organization"
+        }
+      },
+      {
+        "@type": "Organization",
+        "@id": SITE_URL + "/#organization",
+        "name": "WebLaunchPro",
+        "url": SITE_URL,
+        "description": "WebLaunchPro provides professional website design and development solutions for businesses."
+      }
+    ]
+  }}
+/>
+
 
       {/* B. Hero Section with 3D Developer Motion Background */}
       <section className="relative overflow-hidden bg-[#060f24] text-white pt-14 pb-20 md:pt-24 md:pb-32 border-b border-blue-900/40">
