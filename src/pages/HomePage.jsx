@@ -73,7 +73,7 @@ export default function HomePage() {
     { title: 'Dedicated Post-Launch Support', desc: 'Technical support, backups and updates after launch so your website keeps running smoothly.' }
   ];
 
-  const pageTitle = 'Website Development Agency | WebLaunchPro';
+  const pageTitle = 'Website Development Agency in India | WebLaunchPro';
   const pageDescription =
     'WebLaunchPro is a website development agency in India offering custom website design, React & PHP development, WordPress and e-commerce websites. Get a free quote today.';
 
@@ -334,7 +334,7 @@ export default function HomePage() {
               Our Services
             </span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-[#081c4e] tracking-tight mb-4">
-              Website Development Services in India
+              Services from a Full-Service Website Development Agency
             </h2>
             <p className="text-slate-600 text-base md:text-lg">
               As a full-service website development agency in India, we offer custom website design, business and corporate websites, e-commerce stores, WordPress development and website maintenance under one roof.
@@ -441,7 +441,7 @@ export default function HomePage() {
               Modern Tech Stack
             </span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-[#081c4e] tracking-tight mb-3">
-              Technologies We Use for Website Development
+              Technologies Our Website Development Agency Uses
             </h2>
             <p className="text-slate-600 text-sm md:text-base">
               We use proven, modern technologies for fast, secure and easy-to-maintain websites, from React and PHP to WordPress and payment gateway integrations.
@@ -509,7 +509,7 @@ export default function HomePage() {
               Our Work
             </span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-[#081c4e] tracking-tight mb-4">
-              Website Development Projects We Have Delivered
+              Projects Delivered by Our Website Development Agency
             </h2>
             <p className="text-slate-600 text-base">
               A selection of responsive business websites, custom portals and e-commerce stores built by our website development team.
@@ -579,7 +579,7 @@ export default function HomePage() {
               FAQs
             </span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-[#081c4e] tracking-tight mb-4">
-              Website Development FAQs
+              Website Development Agency FAQs
             </h2>
             <p className="text-slate-600 text-base">
               Answers to common questions about website design and development cost, timelines, payment terms and support.
