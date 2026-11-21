@@ -73,7 +73,7 @@ export default function HomePage() {
     { title: 'Dedicated Post-Launch Support', desc: 'Technical support, backups and updates after launch so your website keeps running smoothly.' }
   ];
 
-  const pageTitle = 'Website Development Agency in India | WebLaunchPro';
+  const pageTitle = 'Website Development Agency | WebLaunchPro';
   const pageDescription =
     'WebLaunchPro is a website development agency in India offering custom website design, React & PHP development, WordPress and e-commerce websites. Get a free quote today.';
 
