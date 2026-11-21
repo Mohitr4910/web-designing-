@@ -319,6 +319,9 @@ const takeaways = [
   'Developers who combine strong fundamentals, problem-solving and smart AI use will be most valuable.',
 ];
 
+const imgName = meta.image.split('/').pop();
+const imgSel = [imgName, encodeURI(imgName)].map((n) => `img[src$="${n}"]`);
+
 const css = `
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,400;0,9..40,500;0,9..40,600;1,9..40,400&family=Sora:wght@600;700;800&family=JetBrains+Mono:wght@400;500&display=swap');
 
@@ -427,9 +430,9 @@ const css = `
 .wl-code code{display:block; font-family:'JetBrains Mono',ui-monospace,SFMono-Regular,Menlo,Consolas,monospace; font-size:.86rem; line-height:1.7; color:#e2e8f0; white-space:pre}
 .wl-post p.wl-src{margin:0 0 20px !important; padding:12px 16px; border-radius:12px; background:var(--card); border:1px solid var(--line); font-size:.92rem !important; line-height:1.6 !important; word-break:break-word}
 
-/* FEATURED IMAGE FIX: image crop na ho, poori dikhe. Agar image ka naam badlo to neeche "is-ai-replacing-web-developers" bhi badal dena */
-img[src*="is-ai-replacing-web-developers"]{width:100% !important; height:auto !important; max-height:none !important; aspect-ratio:auto !important; object-fit:contain !important}
-*:has(> img[src*="is-ai-replacing-web-developers"]){height:auto !important; max-height:none !important; aspect-ratio:auto !important}
+/* FEATURED IMAGE FIX: image crop na ho, poori dikhe. Ye apne aap meta.image ke naam se kaam karta hai, naam badlo to yaha kuch badalna nahi hai */
+${imgSel.join(',')}{width:100% !important; height:auto !important; max-height:none !important; aspect-ratio:auto !important; object-fit:contain !important}
+${imgSel.map((q) => `*:has(> ${q})`).join(',')}{height:auto !important; max-height:none !important; aspect-ratio:auto !important}
 `;
 
 function Item({ it }) {
