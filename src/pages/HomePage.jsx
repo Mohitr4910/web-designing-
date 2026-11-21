@@ -1,24 +1,16 @@
-import React, { useState, useEffect } from 'react';
+import React from 'react';
 import { Link } from 'react-router-dom';
-import { 
-  ArrowRight, 
-  Sparkles, 
-  CheckCircle2, 
-  ShieldCheck, 
-  Zap, 
-  Phone, 
-  Layers, 
-  Laptop, 
-  Code2, 
-  Database, 
-  Globe2,
-  Cpu,
-  BarChart3,
-  Users
+import {
+  ArrowRight,
+  Sparkles,
+  CheckCircle2,
+  ShieldCheck,
+  Zap,
+  Phone
 } from 'lucide-react';
 import KeyFeaturesSection from '../components/KeyFeaturesSection';
 import PricingSection from '../components/PricingSection';
-import EcommercePricingSection from '../components/EcommercePricingSection';
+// import EcommercePricingSection from '../components/EcommercePricingSection';
 import ServiceCard from '../components/ServiceCard';
 import PortfolioGrid from '../components/PortfolioGrid';
 import TestimonialsSlider from '../components/TestimonialsSlider';
@@ -30,38 +22,38 @@ import BlogCard from '../components/BlogCard';
 import ContactForm from '../components/ContactForm';
 import SeoMeta from '../components/SeoMeta';
 import { api } from '../services/api';
-import { SITE_URL } from '../config/site';
+import { SITE_URL } from '../config/site'; // should be https://weblaunchpro.in (no trailing slash)
 
 export default function HomePage() {
   const services = api.getServices().slice(0, 8);
   const recentPosts = api.getPosts({ limit: 3 }).posts || [];
 
   const designProcessSteps = [
-    { num: '01', title: 'Requirement Discussion', desc: 'Understanding your commercial objectives, audience personas, and desired features.' },
-    { num: '02', title: 'Website Planning', desc: 'Structuring sitemaps, user flows, and conversion funnels for intuitive navigation.' },
-    { num: '03', title: 'Wireframing', desc: 'Crafting low-fidelity skeletal layouts to establish visual content hierarchy.' },
-    { num: '04', title: 'UI/UX Design', desc: 'Designing brand typography, color palettes, micro-interactions, and visual identity.' },
-    { num: '05', title: 'Responsive Layout Design', desc: 'Calibrating fluid grid systems across smartphone, tablet, and 4K desktop screens.' },
-    { num: '06', title: 'Review & Feedback', desc: 'Collaborative client design walkthroughs and iterative polish before development.' },
-    { num: '07', title: 'Final Design Approval', desc: 'Finalizing pixel-perfect design tokens, vector assets, and component states.' }
+    { num: '01', title: 'Requirement Discussion', desc: 'We understand your business goals, target audience and the features your website needs to bring in enquiries.' },
+    { num: '02', title: 'Website Planning', desc: 'Sitemap, user flows and conversion paths are planned so visitors reach the right page quickly.' },
+    { num: '03', title: 'Wireframing', desc: 'Low-fidelity layouts set the content hierarchy before any visual design begins.' },
+    { num: '04', title: 'UI/UX Design', desc: 'Typography, colour palette and micro-interactions are designed around your brand identity.' },
+    { num: '05', title: 'Responsive Layout Design', desc: 'Layouts are tuned for mobile, tablet and desktop so the website works on every screen.' },
+    { num: '06', title: 'Review & Feedback', desc: 'You review the design with us and we refine it before development starts.' },
+    { num: '07', title: 'Final Design Approval', desc: 'Final design files, assets and component states are signed off and handed to development.' }
   ];
 
   const devProcessSteps = [
-    { num: '01', title: 'Requirement Analysis', desc: 'Translating visual design approvals into technical architecture specifications.' },
-    { num: '02', title: 'Technical Planning', desc: 'Choosing performant frameworks, API contracts, and database entity relationships.' },
-    { num: '03', title: 'Frontend Development', desc: 'Building semantic HTML5, reactive React components, and fluid animations.' },
-    { num: '04', title: 'Backend Development', desc: 'Programming secure PHP controllers, REST endpoints, and session authentication.' },
-    { num: '05', title: 'Database Integration', desc: 'Configuring MySQL schemas, relational foreign keys, indexing, and PDO connectivity.' },
-    { num: '06', title: 'Functional & Responsive Testing', desc: 'Testing cross-browser rendering, forms, payment gateways, and Core Web Vitals.' },
-    { num: '07', title: 'Deployment', desc: 'Configuring cloud hosting, SSL certificates, Apache directives, and DNS propagation.' },
-    { num: '08', title: 'Maintenance', desc: 'Proactive security patching, daily backups, uptime monitoring, and SLA support.' }
+    { num: '01', title: 'Requirement Analysis', desc: 'Approved designs are translated into clear technical specifications.' },
+    { num: '02', title: 'Technical Planning', desc: 'We choose the right framework, API structure and database design for your project.' },
+    { num: '03', title: 'Frontend Development', desc: 'Semantic HTML5, reusable React components and smooth animations.' },
+    { num: '04', title: 'Backend Development', desc: 'Secure PHP controllers, REST endpoints and session-based authentication.' },
+    { num: '05', title: 'Database Integration', desc: 'MySQL schemas, relations, indexing and secure PDO connectivity.' },
+    { num: '06', title: 'Functional & Responsive Testing', desc: 'Cross-browser, form, payment gateway and Core Web Vitals testing before launch.' },
+    { num: '07', title: 'Deployment', desc: 'Cloud hosting setup, SSL certificate, server configuration and DNS.' },
+    { num: '08', title: 'Maintenance', desc: 'Security updates, regular backups, uptime monitoring and ongoing support.' }
   ];
 
   const technologies = [
     { name: 'HTML5 & CSS3', cat: 'Markup & Styling', icon: '🌐' },
     { name: 'JavaScript (ES6+)', cat: 'Client Logic', icon: '⚡' },
-    { name: 'React.js', cat: 'Frontend Architecture', icon: '⚛️' },
-    { name: 'PHP 8.2+', cat: 'Backend Engine', icon: '🐘' },
+    { name: 'React.js', cat: 'Frontend Development', icon: '⚛️' },
+    { name: 'PHP 8.2+', cat: 'Backend Development', icon: '🐘' },
     { name: 'MySQL / MariaDB', cat: 'Relational Database', icon: '🗄️' },
     { name: 'WordPress', cat: 'Custom Themes & CMS', icon: '📝' },
     { name: 'Node.js & Vite', cat: 'Modern Tooling', icon: '🚀' },
@@ -70,89 +62,110 @@ export default function HomePage() {
   ];
 
   const whyChooseUsPoints = [
-    { title: '100% Responsive Design', desc: 'Fluid grid breakpoints engineered to guarantee flawless usability on every phone, tablet, and monitor.' },
-    { title: 'User-Friendly Navigation', desc: 'Intuitive menus, structured hierarchies, and fast search that guide visitors straight to conversion.' },
-    { title: 'Custom Functionality', desc: 'Tailored business logic and bespoke interactive tools built specifically around your operating workflow.' },
-    { title: 'Maintainable Code', desc: 'Clean, semantic, modular code conforming strictly to modern web standards and version control.' },
-    { title: 'Cross-Browser Compatibility', desc: 'Thoroughly tested and verified across Chrome, Safari, Edge, Firefox, and mobile WebKit browsers.' },
-    { title: 'Performance-Conscious', desc: 'Sub-second load times achieved through asset minification, caching, and optimized Core Web Vitals.' },
-    { title: 'Secure Development', desc: 'PDO prepared statements, CSRF protection, secure HTTP headers, and SSL data encryption by default.' },
-    { title: 'Clear Communication', desc: 'Transparent project milestones, direct WhatsApp/phone access, and honest weekly progress updates.' },
-    { title: 'Dedicated Post-Launch Support', desc: 'Comprehensive 1-year technical support, cloud backups, and proactive updates included with every plan.' }
+    { title: '100% Responsive Design', desc: 'Every website we build works smoothly on phones, tablets and desktops, so you never lose a visitor to a broken layout.' },
+    { title: 'User-Friendly Navigation', desc: 'Clear menus and a logical page structure guide visitors straight to your services and contact form.' },
+    { title: 'Custom Functionality', desc: 'Booking forms, calculators, dashboards, admin panels and other features built around how your business works.' },
+    { title: 'Maintainable Code', desc: 'Clean, modular code that any developer can understand and extend as your business grows.' },
+    { title: 'Cross-Browser Compatibility', desc: 'Tested on Chrome, Safari, Edge, Firefox and mobile browsers before every launch.' },
+    { title: 'Performance-Conscious', desc: 'Optimised images, minified assets and caching for fast loading and better Core Web Vitals.' },
+    { title: 'Secure Development', desc: 'Prepared statements, CSRF protection, secure headers and SSL encryption as standard.' },
+    { title: 'Clear Communication', desc: 'Defined milestones, direct phone and WhatsApp access, and regular progress updates.' },
+    { title: 'Dedicated Post-Launch Support', desc: 'Technical support, backups and updates after launch so your website keeps running smoothly.' }
   ];
+
+  const pageTitle = 'Website Development Agency in India | WebLaunchPro';
+  const pageDescription =
+    'WebLaunchPro is a website development agency in India offering custom website design, React & PHP development, WordPress and e-commerce websites. Get a free quote today.';
 
   return (
     <div>
-      
-<SeoMeta
-  title="Website Development Agency | WebLaunchPro"
-  description="Looking for a reliable website development agency? WebLaunchPro provides professional website design and development services, creating modern, responsive and user-friendly websites for businesses."
-  canonicalUrl="/"
-  schemaJson={{
-    "@context": "https://schema.org",
-    "@graph": [
-      {
-        "@type": "WebSite",
-        "@id": SITE_URL + "/#website",
-        "url": SITE_URL,
-        "name": "WebLaunchPro",
-        "description": "Professional website design and development services for businesses.",
-        "inLanguage": "en-IN",
-        "publisher": {
-          "@id": SITE_URL + "/#organization"
-        }
-      },
-      {
-        "@type": "Organization",
-        "@id": SITE_URL + "/#organization",
-        "name": "WebLaunchPro",
-        "url": SITE_URL,
-        "description": "WebLaunchPro provides professional website design and development solutions for businesses."
-      }
-    ]
-  }}
-/>
+      <SeoMeta
+        title={pageTitle}
+        description={pageDescription}
+        canonicalUrl="/"
+        schemaJson={{
+          '@context': 'https://schema.org',
+          '@graph': [
+            {
+              '@type': 'WebSite',
+              '@id': SITE_URL + '/#website',
+              url: SITE_URL,
+              name: 'WebLaunchPro',
+              description: 'Website development agency in India offering website design, development, e-commerce and maintenance services.',
+              inLanguage: 'en-IN',
+              publisher: { '@id': SITE_URL + '/#organization' }
+            },
+            {
+              '@type': ['Organization', 'ProfessionalService'],
+              '@id': SITE_URL + '/#organization',
+              name: 'WebLaunchPro',
+              url: SITE_URL,
+              telephone: '+919302770758',
+              description: 'WebLaunchPro is a website development agency in India providing custom website design, full-stack development, WordPress, e-commerce websites and website maintenance for businesses.',
+              areaServed: { '@type': 'Country', name: 'India' },
+              serviceType: [
+                'Website Development',
+                'Website Design',
+                'E-commerce Website Development',
+                'WordPress Development',
+                'Website Maintenance'
+              ]
+            },
+            {
+              '@type': 'WebPage',
+              '@id': SITE_URL + '/#webpage',
+              url: SITE_URL + '/',
+              name: pageTitle,
+              description: pageDescription,
+              isPartOf: { '@id': SITE_URL + '/#website' },
+              about: { '@id': SITE_URL + '/#organization' },
+              inLanguage: 'en-IN'
+            }
+          ]
+        }}
+      />
 
-
-      {/* B. Hero Section with 3D Developer Motion Background */}
+      {/* B. Hero Section */}
       <section className="relative overflow-hidden bg-[#060f24] text-white pt-14 pb-20 md:pt-24 md:pb-32 border-b border-blue-900/40">
-        
-        {/* 3D Motion Video/Canvas Engine */}
         <Developer3DMotionBackground />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-8 items-center">
-            
+
             {/* Left Content */}
             <div className="lg:col-span-7 space-y-6 text-center lg:text-left">
               <div className="inline-flex items-center gap-2 px-4 py-1.5 rounded-full bg-blue-950/80 border border-cyan-400/30 text-cyan-300 text-xs font-semibold backdrop-blur-md shadow-lg shadow-cyan-500/10">
                 <Sparkles className="w-3.5 h-3.5 text-cyan-400 animate-pulse" />
-                <span>Premier Web Design & Full-Stack Development</span>
+                <span>Website Design & Full-Stack Development Company</span>
               </div>
 
+              {/* Only ONE H1 on the page */}
               <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white tracking-tight leading-[1.12]">
-               Website Development Agency in India - <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-300"> WebLaunchPro</span>
+                Website Development Agency in India –{' '}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r from-cyan-400 via-blue-400 to-indigo-300">
+                  WebLaunchPro
+                </span>
               </h1>
 
               <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                We design engaging, responsive websites and develop reliable digital experiences that help businesses build a commanding online presence. Clean code, sub-second speed, and robust CMS control.
+                WebLaunchPro is a <strong className="text-white">website development agency in India</strong> that designs and builds fast, responsive and secure websites for startups, small businesses and growing brands. From business websites and e-commerce stores to custom web applications, we deliver clean code and an easy-to-manage CMS.
               </p>
 
               {/* CTAs */}
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
-                <Link 
+                <Link
                   to="/contact-us/"
                   className="w-full sm:w-auto px-8 py-4 rounded-xl bg-gradient-to-r from-blue-600 via-blue-500 to-cyan-500 hover:from-blue-500 hover:to-cyan-400 text-white font-extrabold text-base shadow-lg shadow-blue-500/30 flex items-center justify-center gap-2 transition hover:-translate-y-0.5 hover:shadow-cyan-500/30"
                 >
-                  <span>Start Your Project</span>
+                  <span>Get a Free Quote</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
 
-                <Link 
+                <Link
                   to="/portfolio/"
                   className="w-full sm:w-auto px-8 py-4 rounded-xl bg-white/10 hover:bg-white/20 text-white font-bold text-base border border-white/20 backdrop-blur-md shadow-sm flex items-center justify-center gap-2 transition hover:-translate-y-0.5"
                 >
-                  <span>View Our Work</span>
+                  <span>View Our Website Projects</span>
                 </Link>
               </div>
 
@@ -173,11 +186,10 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right Graphic Mockup with Glassmorphism */}
+            {/* Right Graphic Mockup */}
             <div className="lg:col-span-5 relative">
               <div className="relative mx-auto max-w-md lg:max-w-none">
-                
-                {/* Floating Decorative Glass Window */}
+
                 <div className="relative bg-slate-900/85 backdrop-blur-xl rounded-2xl p-6 shadow-2xl border border-cyan-500/30 z-10 shadow-cyan-950/50">
                   <div className="flex items-center justify-between pb-4 border-b border-slate-800 mb-4">
                     <div className="flex items-center gap-2">
@@ -186,24 +198,23 @@ export default function HomePage() {
                       <div className="w-3 h-3 rounded-full bg-emerald-400/90 shadow-sm shadow-emerald-500/50"></div>
                     </div>
                     <span className="text-[11px] font-mono text-cyan-300/80 bg-blue-950/60 px-2.5 py-0.5 rounded border border-blue-800/60">
-                      mohit-webdesigning.com
+                      weblaunchpro.in
                     </span>
                   </div>
 
-                  {/* Mockup Preview Area */}
                   <div className="space-y-4">
                     <div className="h-32 rounded-xl bg-gradient-to-tr from-blue-700 via-blue-600 to-cyan-500 p-4 text-white flex flex-col justify-between shadow-lg">
                       <span className="text-xs uppercase tracking-wider font-semibold opacity-90">Custom Web Solutions</span>
                       <div>
-                        <div className="text-lg font-bold">Sub-Second Load Time</div>
-                        <div className="text-xs text-blue-100">Optimized Core Web Vitals & Fluid Mobile Breakpoints</div>
+                        <div className="text-lg font-bold">Fast-Loading Websites</div>
+                        <div className="text-xs text-blue-100">Optimised for Core Web Vitals & mobile screens</div>
                       </div>
                     </div>
 
                     <div className="grid grid-cols-2 gap-3">
                       <div className="p-3.5 rounded-xl bg-slate-800/80 border border-slate-700/80">
-                        <div className="text-xs text-slate-400">Security Score</div>
-                        <div className="text-base font-bold text-emerald-400">A+ Grade (SSL)</div>
+                        <div className="text-xs text-slate-400">Security</div>
+                        <div className="text-base font-bold text-emerald-400">SSL Secured</div>
                       </div>
                       <div className="p-3.5 rounded-xl bg-slate-800/80 border border-slate-700/80">
                         <div className="text-xs text-slate-400">Responsive Ready</div>
@@ -213,7 +224,6 @@ export default function HomePage() {
                   </div>
                 </div>
 
-                {/* Overlaid Floating Badges */}
                 <div className="absolute -bottom-6 -left-6 bg-slate-900/95 backdrop-blur-xl rounded-xl p-4 shadow-xl border border-emerald-500/30 flex items-center gap-3 z-20">
                   <div className="w-10 h-10 rounded-lg bg-emerald-500/20 text-emerald-400 flex items-center justify-center font-bold border border-emerald-500/30">
                     <Zap className="w-5 h-5" />
@@ -241,67 +251,71 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* C. Company Introduction */}
+      {/* C. Company Introduction (keyword-rich intro) */}
       <section className="py-20 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
-            
-            {/* Visual Graphic */}
+
             <div className="lg:col-span-5 order-2 lg:order-1">
               <div className="relative rounded-2xl overflow-hidden shadow-xl border border-slate-100">
-                <img 
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&auto=format&fit=crop&q=80" 
-                  alt="Web Design and Development Team Collaboration"
+                <img
+                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&auto=format&fit=crop&q=80"
+                  alt="WebLaunchPro website development team in India planning a client website project"
+                  width="800"
+                  height="400"
+                  loading="lazy"
                   className="w-full h-[400px] object-cover"
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-[#081c4e]/80 via-transparent to-transparent flex items-end p-6">
                   <div className="text-white">
                     <span className="text-xs uppercase tracking-wider font-semibold text-cyan-300">Engineering Excellence</span>
-                    <h3 className="text-xl font-bold">Built for Real-World Reliability</h3>
+                    <p className="text-xl font-bold">Built for Real-World Reliability</p>
                   </div>
                 </div>
               </div>
             </div>
 
-            {/* Content */}
             <div className="lg:col-span-7 order-1 lg:order-2 space-y-5">
               <span className="text-xs font-bold uppercase tracking-widest text-blue-600 bg-blue-50 px-3.5 py-1 rounded-full inline-block">
-                Who We Are
+                About WebLaunchPro
               </span>
-              
+
               <h2 className="text-3xl md:text-4xl font-extrabold text-[#081c4e] tracking-tight">
-                Your Partner for Website Design and Development
+                Your Trusted Website Development Agency in India
               </h2>
 
               <p className="text-slate-600 leading-relaxed text-base">
-                At Mohit Web Designing, we focus exclusively on delivering high-impact website design and full-stack web development. We believe your website is your most valuable digital asset—a 24/7 representative of your brand credibility, capabilities, and professionalism.
+                WebLaunchPro is a website development agency in India focused on one thing: building websites that help businesses get found, build trust and generate enquiries. Your website is your 24/7 sales representative, and we design and develop it that way, with a clear structure, strong visuals and fast performance.
+              </p>
+              <p className="text-slate-600 leading-relaxed text-base">
+                Our team handles the complete journey, from planning and UI/UX design to frontend and backend development, SEO-friendly setup, deployment and ongoing maintenance. Whether you need a simple business website, a WordPress site, an online store or a custom web application, you work with one team from idea to launch.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
                 <div className="p-4 rounded-xl bg-slate-50 border border-slate-100">
-                  <h4 className="font-bold text-[#081c4e] text-sm mb-1">Human-Centered UI/UX</h4>
-                  <p className="text-xs text-slate-600">Thoughtful visual hierarchy and wireframes designed to captivate visitors and guide engagement.</p>
+                  <h3 className="font-bold text-[#081c4e] text-sm mb-1">Human-Centered UI/UX</h3>
+                  <p className="text-xs text-slate-600">Clear visual hierarchy and layouts designed to keep visitors engaged and guide them to take action.</p>
                 </div>
                 <div className="p-4 rounded-xl bg-slate-50 border border-slate-100">
-                  <h4 className="font-bold text-[#081c4e] text-sm mb-1">Modern Code Architecture</h4>
-                  <p className="text-xs text-slate-600">Clean PHP backends, PDO database security, and modular React components without bloat.</p>
+                  <h3 className="font-bold text-[#081c4e] text-sm mb-1">Modern Code Architecture</h3>
+                  <p className="text-xs text-slate-600">Clean PHP backends, secure database access and modular React components without unnecessary bloat.</p>
                 </div>
                 <div className="p-4 rounded-xl bg-slate-50 border border-slate-100">
-                  <h4 className="font-bold text-[#081c4e] text-sm mb-1">Performance Conscious</h4>
-                  <p className="text-xs text-slate-600">Sub-second page loading speeds engineered to maximize Core Web Vitals and user retention.</p>
+                  <h3 className="font-bold text-[#081c4e] text-sm mb-1">Performance Conscious</h3>
+                  <p className="text-xs text-slate-600">Fast page loading and optimised Core Web Vitals for better user experience and search visibility.</p>
                 </div>
                 <div className="p-4 rounded-xl bg-slate-50 border border-slate-100">
-                  <h4 className="font-bold text-[#081c4e] text-sm mb-1">Proactive Maintenance</h4>
-                  <p className="text-xs text-slate-600">Continuous security updates, scheduled backups, and direct phone/chat support for peace of mind.</p>
+                  <h3 className="font-bold text-[#081c4e] text-sm mb-1">Proactive Maintenance</h3>
+                  <p className="text-xs text-slate-600">Security updates, scheduled backups and direct phone or chat support after launch.</p>
                 </div>
               </div>
 
               <div className="pt-2">
-                <Link 
+                <Link
                   to="/about-us/"
                   className="inline-flex items-center gap-2 text-blue-600 font-bold text-sm hover:text-blue-700"
                 >
-                  <span>Learn more about our development ethos</span>
+                  <span>Learn more about WebLaunchPro</span>
                   <ArrowRight className="w-4 h-4" />
                 </Link>
               </div>
@@ -314,16 +328,16 @@ export default function HomePage() {
       {/* D. Core Website Services */}
       <section className="py-20 md:py-24 bg-[#f8fafc] border-t border-b border-slate-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-xs font-bold uppercase tracking-widest text-blue-600 bg-blue-50 px-3.5 py-1 rounded-full inline-block mb-3 border border-blue-100">
-              Specialized Solutions
+              Our Services
             </span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-[#081c4e] tracking-tight mb-4">
-              Website Services Engineered for Growth
+              Website Development Services in India
             </h2>
             <p className="text-slate-600 text-base md:text-lg">
-              Explore our focused capabilities across custom website design, corporate portals, e-commerce stores, and ongoing technical maintenance.
+              As a full-service website development agency in India, we offer custom website design, business and corporate websites, e-commerce stores, WordPress development and website maintenance under one roof.
             </p>
           </div>
 
@@ -334,11 +348,11 @@ export default function HomePage() {
           </div>
 
           <div className="text-center mt-12">
-            <Link 
+            <Link
               to="/services/"
               className="inline-flex items-center gap-2 px-6 py-3 rounded-xl bg-white border border-slate-300 text-slate-800 font-bold text-sm hover:bg-slate-50 shadow-sm transition"
             >
-              <span>View All 15 Specialized Services</span>
+              <span>Explore All Website Development Services</span>
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>
@@ -349,28 +363,26 @@ export default function HomePage() {
       {/* E. Website Design Process */}
       <section className="py-20 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-xs font-bold uppercase tracking-widest text-purple-600 bg-purple-50 px-3.5 py-1 rounded-full inline-block mb-3 border border-purple-100">
-              From Concept to Pixel
+              From Concept to Design
             </span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-[#081c4e] tracking-tight mb-4">
               Our 7-Step Website Design Process
             </h2>
             <p className="text-slate-600 text-base">
-              A structured, collaborative methodology ensuring every interface is intuitive, visually compelling, and aligned with your business identity.
+              A simple, collaborative design process that keeps you involved at every stage, so the final website looks professional and matches your brand.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {designProcessSteps.map((step, idx) => (
-              <div 
-                key={idx}
+            {designProcessSteps.map((step) => (
+              <div
+                key={step.num}
                 className="bg-slate-50/70 rounded-2xl p-6 border border-slate-200/80 hover:bg-white hover:shadow-lg transition-all"
               >
-                <div className="text-3xl font-extrabold text-purple-600 mb-3 font-mono">
-                  {step.num}
-                </div>
+                <div className="text-3xl font-extrabold text-purple-600 mb-3 font-mono">{step.num}</div>
                 <h3 className="text-base font-bold text-[#081c4e] mb-2">{step.title}</h3>
                 <p className="text-xs text-slate-600 leading-relaxed">{step.desc}</p>
               </div>
@@ -383,7 +395,7 @@ export default function HomePage() {
       {/* F. Website Development Process */}
       <section className="py-20 md:py-24 bg-[#f8fafc] border-t border-b border-slate-200/80">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          
+
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-xs font-bold uppercase tracking-widest text-blue-600 bg-blue-50 px-3.5 py-1 rounded-full inline-block mb-3 border border-blue-100">
               Technical Execution
@@ -392,19 +404,17 @@ export default function HomePage() {
               Our 8-Step Website Development Process
             </h2>
             <p className="text-slate-600 text-base">
-              Engineering rigorous, maintainable web software with modern frameworks, relational databases, and multi-tier quality assurance.
+              Once the design is approved, our developers build, test and launch your website using modern frameworks, secure databases and a structured quality check.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {devProcessSteps.map((step, idx) => (
-              <div 
-                key={idx}
+            {devProcessSteps.map((step) => (
+              <div
+                key={step.num}
                 className="bg-white rounded-2xl p-6 border border-slate-200 shadow-sm hover:shadow-lg transition-all"
               >
-                <div className="text-3xl font-extrabold text-blue-600 mb-3 font-mono">
-                  {step.num}
-                </div>
+                <div className="text-3xl font-extrabold text-blue-600 mb-3 font-mono">{step.num}</div>
                 <h3 className="text-base font-bold text-[#081c4e] mb-2">{step.title}</h3>
                 <p className="text-xs text-slate-600 leading-relaxed">{step.desc}</p>
               </div>
@@ -414,16 +424,16 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* G. EXACT KEY FEATURES SECTION (6 Cards from reference screenshot 1) */}
+      {/* G. Key Features */}
       <KeyFeaturesSection />
 
-      {/* H. EXACT WEBSITE PRICING SECTION (Standard, Premium, Custom tall cards from reference screenshot 3) */}
+      {/* H. Website Pricing */}
       <PricingSection />
 
-      {/* I. EXACT E-COMMERCE PRICING SECTION (Commented out as requested - un-comment to display) */}
+      {/* I. E-commerce Pricing (commented out - un-comment import and tag to display) */}
       {/* <EcommercePricingSection /> */}
 
-      {/* J. Supported Technologies Matrix */}
+      {/* J. Technologies */}
       <section className="py-20 bg-white border-t border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-14">
@@ -431,22 +441,22 @@ export default function HomePage() {
               Modern Tech Stack
             </span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-[#081c4e] tracking-tight mb-3">
-              Proven Web Technologies
+              Technologies We Use for Website Development
             </h2>
             <p className="text-slate-600 text-sm md:text-base">
-              We leverage modern, battle-tested technologies engineered for performance, maintainability, and enterprise-grade uptime.
+              We use proven, modern technologies for fast, secure and easy-to-maintain websites, from React and PHP to WordPress and payment gateway integrations.
             </p>
           </div>
 
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-            {technologies.map((t, idx) => (
-              <div 
-                key={idx}
+            {technologies.map((t) => (
+              <div
+                key={t.name}
                 className="p-5 rounded-xl border border-slate-200 bg-slate-50/50 hover:bg-white hover:border-blue-300 hover:shadow-md transition-all flex items-center gap-3.5"
               >
-                <span className="text-2xl">{t.icon}</span>
+                <span className="text-2xl" aria-hidden="true">{t.icon}</span>
                 <div>
-                  <h4 className="text-sm font-bold text-[#081c4e]">{t.name}</h4>
+                  <h3 className="text-sm font-bold text-[#081c4e]">{t.name}</h3>
                   <p className="text-[11px] text-slate-500">{t.cat}</p>
                 </div>
               </div>
@@ -455,30 +465,28 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* K. Why Choose Us with 3D Cyber Matrix Background */}
+      {/* K. Why Choose Us */}
       <section className="py-20 md:py-24 bg-[#07132c] text-white relative overflow-hidden border-t border-b border-blue-900/40">
-        
-        {/* 3D Cyber Matrix Engine */}
         <CyberMatrix3DMotion />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          
+
           <div className="text-center max-w-3xl mx-auto mb-16">
             <span className="text-xs font-bold uppercase tracking-widest text-cyan-300 bg-blue-950/80 px-4 py-1.5 rounded-full inline-block mb-3 border border-cyan-500/30 backdrop-blur-md shadow-md">
-              Why Partner With mohit-webdesigning
+              Why Choose WebLaunchPro
             </span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-white tracking-tight mb-4">
-              Engineering Value in Every Line of Code
+              Why Choose WebLaunchPro as Your Website Development Agency in India
             </h2>
             <p className="text-slate-300 text-base">
-              We eliminate technical debt and opaque pricing, delivering reliable web solutions built to serve your business for years.
+              Honest pricing, clean code and reliable support, so your website keeps working for your business long after launch.
             </p>
           </div>
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {whyChooseUsPoints.map((pt, idx) => (
-              <div 
-                key={idx}
+            {whyChooseUsPoints.map((pt) => (
+              <div
+                key={pt.title}
                 className="bg-slate-900/70 backdrop-blur-md border border-blue-500/30 rounded-2xl p-7 hover:border-cyan-400 hover:bg-slate-900/90 hover:-translate-y-1 transition-all shadow-xl shadow-blue-950/40 group"
               >
                 <div className="w-10 h-10 rounded-xl bg-blue-600/30 border border-blue-400/40 flex items-center justify-center text-cyan-300 mb-4 group-hover:scale-110 group-hover:bg-cyan-500/20 transition-all">
@@ -493,18 +501,18 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* L. Portfolio Showcase */}
+      {/* L. Portfolio */}
       <section className="py-20 md:py-28 bg-white" id="portfolio">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-14">
             <span className="text-xs font-bold uppercase tracking-widest text-blue-600 bg-blue-50 px-3.5 py-1 rounded-full inline-block mb-3 border border-blue-100">
-              Real-World Work
+              Our Work
             </span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-[#081c4e] tracking-tight mb-4">
-              Featured Website Projects
+              Website Development Projects We Have Delivered
             </h2>
             <p className="text-slate-600 text-base">
-              A curated selection of our responsive business websites, custom portals, and e-commerce store deployments.
+              A selection of responsive business websites, custom portals and e-commerce stores built by our website development team.
             </p>
           </div>
 
@@ -512,7 +520,7 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* M. Client Testimonials */}
+      {/* M. Testimonials */}
       <section className="py-20 md:py-24 bg-[#f8fafc] border-t border-b border-slate-200">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-14">
@@ -520,10 +528,10 @@ export default function HomePage() {
               Client Feedback
             </span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-[#081c4e] tracking-tight mb-4">
-              What Our Partners Say
+              What Our Clients Say About WebLaunchPro
             </h2>
             <p className="text-slate-600 text-base">
-              Genuine testimonials from business owners, directors, and managers who trust Mohit Web Designing for their web engineering.
+              Feedback from business owners and managers who trusted WebLaunchPro with their website design and development.
             </p>
           </div>
 
@@ -531,30 +539,28 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* N. Contact CTA Banner with 3D Warp Motion */}
+      {/* N. Contact CTA Banner */}
       <section className="py-16 bg-gradient-to-r from-blue-900 via-indigo-900 to-[#081c4e] text-white relative overflow-hidden border-t border-b border-blue-800/40">
-        
-        {/* 3D Particle Warp Engine */}
         <ParticleWarp3DMotion />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-8 relative z-10 flex flex-col md:flex-row items-center justify-between gap-8 text-center md:text-left">
           <div className="space-y-2 max-w-2xl">
             <h2 className="text-2xl sm:text-3xl font-extrabold text-white">
-              Have a Website Project in Mind?
+              Looking for a Website Development Agency in India?
             </h2>
             <p className="text-blue-100 text-sm sm:text-base leading-relaxed">
-              Tell us about your business and the website you want to build. We will help you plan the right architecture, timeline, and budget.
+              Tell us about your business and the website you want. We will suggest the right structure, timeline and budget, with no obligation.
             </p>
           </div>
 
           <div className="flex flex-col sm:flex-row items-center gap-4 flex-shrink-0">
-            <Link 
+            <Link
               to="/contact-us/"
               className="px-7 py-3.5 rounded-xl bg-amber-400 hover:bg-amber-500 text-[#081c4e] font-extrabold text-sm shadow-lg shadow-amber-500/20 transition hover:scale-105"
             >
               Discuss Your Project
             </Link>
-            <a 
+            <a
               href="tel:+919302770758"
               className="px-6 py-3.5 rounded-xl bg-white/10 hover:bg-white/20 border border-white/20 text-white font-bold text-sm flex items-center gap-2 backdrop-blur-md transition hover:scale-105"
             >
@@ -570,13 +576,13 @@ export default function HomePage() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center max-w-3xl mx-auto mb-14">
             <span className="text-xs font-bold uppercase tracking-widest text-blue-600 bg-blue-50 px-3.5 py-1 rounded-full inline-block mb-3 border border-blue-100">
-              Clear Answers
+              FAQs
             </span>
             <h2 className="text-3xl md:text-4xl font-extrabold text-[#081c4e] tracking-tight mb-4">
-              Frequently Asked Questions
+              Website Development FAQs
             </h2>
             <p className="text-slate-600 text-base">
-              Everything you need to know about our web design and development scopes, timelines, payment terms, and technical support.
+              Answers to common questions about website design and development cost, timelines, payment terms and support.
             </p>
           </div>
 
@@ -591,23 +597,23 @@ export default function HomePage() {
             <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-4 mb-14">
               <div>
                 <span className="text-xs font-bold uppercase tracking-widest text-blue-600 bg-blue-50 px-3.5 py-1 rounded-full inline-block mb-3 border border-blue-100">
-                  Engineering Insights
+                  Blog
                 </span>
                 <h2 className="text-3xl md:text-4xl font-extrabold text-[#081c4e] tracking-tight">
-                  Latest Technical Articles
+                  Latest Website Development Articles
                 </h2>
               </div>
-              <Link 
+              <Link
                 to="/blog/"
                 className="text-sm font-bold text-blue-600 hover:text-blue-700 flex items-center gap-1.5"
               >
-                <span>Browse All Articles</span>
+                <span>Read All Articles</span>
                 <ArrowRight className="w-4 h-4" />
               </Link>
             </div>
 
             <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {recentPosts.map(post => (
+              {recentPosts.map((post) => (
                 <BlogCard key={post.id} post={post} />
               ))}
             </div>
@@ -615,23 +621,22 @@ export default function HomePage() {
         </section>
       )}
 
-      {/* Q. Interactive Project Contact Form Section */}
+      {/* Q. Contact Form */}
       <section className="py-20 md:py-28 bg-white" id="contact">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-start">
-            
-            {/* Left Info */}
+
             <div className="lg:col-span-5 space-y-6">
               <span className="text-xs font-bold uppercase tracking-widest text-blue-600 bg-blue-50 px-3.5 py-1 rounded-full inline-block border border-blue-100">
-                Let's Collaborate
+                Contact Us
               </span>
 
               <h2 className="text-3xl sm:text-4xl font-extrabold text-[#081c4e] tracking-tight leading-tight">
-                Get a Transparent Quote for Your Next Website
+                Get a Free Quote for Your Website Development Project
               </h2>
 
               <p className="text-slate-600 leading-relaxed text-sm sm:text-base">
-                Whether you need a fresh 5-page standard business website or a complex multi-vendor e-commerce marketplace, our engineering team is here to assist. Fill out the form, and we will get back to you with itemized estimates.
+                Whether you need a 5-page business website or a full e-commerce store, WebLaunchPro can help. Fill in the form and we will reply with a clear, itemised estimate.
               </p>
 
               <div className="space-y-4 pt-4 border-t border-slate-100">
@@ -640,7 +645,7 @@ export default function HomePage() {
                     <Phone className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-xs text-slate-500 font-semibold uppercase">Direct Call Hotline</div>
+                    <div className="text-xs text-slate-500 font-semibold uppercase">Call Us</div>
                     <a href="tel:+919302770758" className="text-base font-bold text-[#081c4e] hover:text-blue-600 transition">
                       +91 93027 70758
                     </a>
@@ -652,7 +657,7 @@ export default function HomePage() {
                     <Zap className="w-5 h-5" />
                   </div>
                   <div>
-                    <div className="text-xs text-slate-500 font-semibold uppercase">Instant WhatsApp Chat</div>
+                    <div className="text-xs text-slate-500 font-semibold uppercase">WhatsApp</div>
                     <a href="https://wa.me/919302770758" target="_blank" rel="noopener noreferrer" className="text-base font-bold text-[#081c4e] hover:text-emerald-600 transition">
                       +91 93027 70758
                     </a>
@@ -661,7 +666,6 @@ export default function HomePage() {
               </div>
             </div>
 
-            {/* Right Form Card */}
             <div className="lg:col-span-7">
               <ContactForm />
             </div>
