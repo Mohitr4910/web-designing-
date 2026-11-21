@@ -16,173 +16,97 @@ export const meta = {
 
 const reasons = [
   {
-    icon: '✨',
+    id: 'first-impression',
     title: 'Build a Strong and Professional First Impression',
-    c1: '#a78bfa',
-    c2: '#f0abfc',
-    body: (
-      <>
-        <p>
-          Your website is often one of the first places potential customers encounter your business. A clean design,
-          clear information, useful content, and simple navigation help visitors understand who you are and what you
-          do.
-        </p>
-        <p>
-          A professional website can also communicate reliability and attention to detail. Make sure your contact
-          information, services, location (if relevant), and business details are easy to find.
-        </p>
-      </>
-    ),
+    short: 'First Impression',
+    body: [
+      'Your website is often one of the first places potential customers encounter your business. A clean design, clear information, useful content, and simple navigation help visitors understand who you are and what you do.',
+      'A professional website can also communicate reliability and attention to detail. Make sure your contact information, services, location (if relevant), and business details are easy to find.',
+    ],
+    tip: 'Keep your contact details, services and location one click away from every page.',
   },
   {
-    icon: '🕒',
+    id: 'available-24-7',
     title: 'Make Your Business Available 24/7',
-    c1: '#22d3ee',
-    c2: '#60a5fa',
-    body: (
-      <>
-        <p>
-          Unlike a physical office or shop, your website can provide information at any time. Customers can browse your
-          services, read frequently asked questions, view product details, or submit an enquiry outside normal business
-          hours.
-        </p>
-        <p>
-          This does not mean every enquiry will turn into a sale, but it gives interested people a convenient way to
-          learn about your business whenever they are ready.
-        </p>
-      </>
-    ),
+    short: 'Available 24/7',
+    body: [
+      'Unlike a physical office or shop, your website can provide information at any time. Customers can browse your services, read frequently asked questions, view product details, or submit an enquiry outside normal business hours.',
+      'This does not mean every enquiry will turn into a sale, but it gives interested people a convenient way to learn about your business whenever they are ready.',
+    ],
   },
   {
-    icon: '🌍',
+    id: 'reach-customers',
     title: 'Reach More Potential Customers',
-    c1: '#34d399',
-    c2: '#a3e635',
-    body: (
-      <>
-        <p>
-          A website helps your business become discoverable beyond your immediate network. With useful content and
-          search engine optimisation (SEO), your pages can appear when people search for relevant products, services, or
-          solutions.
-        </p>
-        <p>
-          Local businesses can also include accurate location details and service areas to help nearby customers find
-          them. Visibility takes time and consistent work, but a website gives your business a foundation to build on.
-        </p>
-      </>
-    ),
+    short: 'Reach More Customers',
+    body: [
+      'A website helps your business become discoverable beyond your immediate network. With useful content and search engine optimisation (SEO), your pages can appear when people search for relevant products, services, or solutions.',
+      'Local businesses can also include accurate location details and service areas to help nearby customers find them. Visibility takes time and consistent work, but a website gives your business a foundation to build on.',
+    ],
+    tip: 'Visibility takes time. Publish useful pages consistently and keep location details accurate.',
   },
   {
-    icon: '🤝',
+    id: 'build-trust',
     title: 'Build Trust Through Useful Information',
-    c1: '#fbbf24',
-    c2: '#fb923c',
-    body: (
-      <>
-        <p>
-          Customers are more confident when they can verify basic details before making contact. Use your website to
-          explain your experience, introduce your team, describe your process, show genuine project examples, and answer
-          common questions.
-        </p>
-        <p>
-          Testimonials and reviews can help when they are authentic and shared with permission. Keep information
-          accurate and update it whenever your services, prices, or contact details change.
-        </p>
-      </>
-    ),
+    short: 'Build Trust',
+    body: [
+      'Customers are more confident when they can verify basic details before making contact. Use your website to explain your experience, introduce your team, describe your process, show genuine project examples, and answer common questions.',
+      'Testimonials and reviews can help when they are authentic and shared with permission. Keep information accurate and update it whenever your services, prices, or contact details change.',
+    ],
   },
   {
-    icon: '🎯',
+    id: 'generate-leads',
     title: 'Generate Leads and Increase Sales Opportunities',
-    c1: '#f472b6',
-    c2: '#fb7185',
-    body: (
-      <>
-        <p>
-          A well-planned website guides visitors toward a clear action. Depending on your business, that action might be
-          requesting a quote, booking a consultation, calling your team, purchasing a product, or subscribing to
-          updates.
-        </p>
-        <p>
-          Add visible calls to action, short enquiry forms, and clear service or product pages. Make forms easy to
-          complete and explain what happens after someone submits their details.
-        </p>
-      </>
-    ),
+    short: 'Generate Leads',
+    body: [
+      'A well-planned website guides visitors toward a clear action. Depending on your business, that action might be requesting a quote, booking a consultation, calling your team, purchasing a product, or subscribing to updates.',
+      'Add visible calls to action, short enquiry forms, and clear service or product pages. Make forms easy to complete and explain what happens after someone submits their details.',
+    ],
+    tip: 'Pick one clear action per page and make the button impossible to miss.',
   },
   {
-    icon: '📣',
+    id: 'digital-marketing',
     title: 'Support Your Digital Marketing',
-    c1: '#c084fc',
-    c2: '#818cf8',
-    body: (
-      <>
-        <p>
-          Your website acts as a central destination for your marketing efforts. You can link to it from social media
-          profiles, email campaigns, online advertisements, business directories, and printed materials.
-        </p>
-        <p>
-          You can also publish helpful articles that answer customer questions. This creates a consistent place to send
-          people who want more detail than a short social media post can provide.
-        </p>
-      </>
-    ),
+    short: 'Support Marketing',
+    body: [
+      'Your website acts as a central destination for your marketing efforts. You can link to it from social media profiles, email campaigns, online advertisements, business directories, and printed materials.',
+      'You can also publish helpful articles that answer customer questions. This creates a consistent place to send people who want more detail than a short social media post can provide.',
+    ],
   },
   {
-    icon: '📊',
+    id: 'understand-visitors',
     title: 'Understand What Your Visitors Need',
-    c1: '#2dd4bf',
-    c2: '#38bdf8',
-    body: (
-      <>
-        <p>
-          Website analytics can show which pages people visit, what channels bring them to your site, and where they may
-          leave. These insights can help you improve content, navigation, and enquiry journeys.
-        </p>
-        <p>
-          Use analytics responsibly, respect privacy requirements, and focus on meaningful measures such as qualified
-          enquiries, completed purchases, and useful engagement, not just visitor numbers.
-        </p>
-      </>
-    ),
+    short: 'Understand Visitors',
+    body: [
+      'Website analytics can show which pages people visit, what channels bring them to your site, and where they may leave. These insights can help you improve content, navigation, and enquiry journeys.',
+      'Use analytics responsibly, respect privacy requirements, and focus on meaningful measures such as qualified enquiries, completed purchases, and useful engagement, not just visitor numbers.',
+    ],
   },
   {
-    icon: '🚀',
+    id: 'stay-competitive',
     title: 'Stay Competitive in a Digital-First Market',
-    c1: '#fb923c',
-    c2: '#f87171',
-    body: (
-      <>
-        <p>
-          Customers increasingly expect businesses to provide clear information online. A website helps you present your
-          strengths, explain what makes your offering different, and make it easier for people to compare options.
-        </p>
-        <p>
-          Your website does not need complicated features from day one. It should first do the essentials well: load
-          reliably, work on mobile devices, communicate clearly, and make contacting you simple.
-        </p>
-      </>
-    ),
+    short: 'Stay Competitive',
+    body: [
+      'Customers increasingly expect businesses to provide clear information online. A website helps you present your strengths, explain what makes your offering different, and make it easier for people to compare options.',
+      'Your website does not need complicated features from day one. It should first do the essentials well: load reliably, work on mobile devices, communicate clearly, and make contacting you simple.',
+    ],
+    tip: 'Start simple: fast, mobile-friendly and clear beats feature-heavy.',
   },
   {
-    icon: '🏠',
+    id: 'digital-asset',
     title: 'Create a Digital Asset You Control',
-    c1: '#a3e635',
-    c2: '#22d3ee',
-    body: (
-      <>
-        <p>
-          Social media platforms are useful, but their layouts, rules, and reach can change. Your website gives you a
-          digital space where you have greater control over your brand presentation, content structure, and customer
-          journey.
-        </p>
-        <p>
-          You can connect your domain to the services you use and build your online presence over time. Keep domain
-          ownership, hosting access, backups, and website credentials properly documented.
-        </p>
-      </>
-    ),
+    short: 'Digital Asset You Control',
+    body: [
+      'Social media platforms are useful, but their layouts, rules, and reach can change. Your website gives you a digital space where you have greater control over your brand presentation, content structure, and customer journey.',
+      'You can connect your domain to the services you use and build your online presence over time. Keep domain ownership, hosting access, backups, and website credentials properly documented.',
+    ],
   },
+];
+
+const takeaways = [
+  'A website builds credibility and a professional first impression.',
+  'It makes your business discoverable and available around the clock.',
+  'Clear calls to action turn visitors into enquiries and sales.',
+  'Start simple, keep it fast and mobile-friendly, and keep improving it.',
 ];
 
 const includes = [
@@ -225,243 +149,168 @@ const faqs = [
 ];
 
 const css = `
-.wl-scene{
-  --wl-bg1:#0b0720; --wl-bg2:#1a0f45; --wl-bg3:#2a1066;
-  position:relative; isolation:isolate; overflow:hidden;
-  margin:8px 0 28px; padding:clamp(22px,4vw,48px) clamp(14px,3vw,36px) clamp(26px,4vw,44px);
-  border-radius:24px; color:#e8e6f5; line-height:1.75; font-size:1.02rem;
-  background:
-    radial-gradient(1000px 500px at 12% -10%, rgba(147,51,234,.55), transparent 60%),
-    radial-gradient(800px 500px at 100% 20%, rgba(34,211,238,.25), transparent 60%),
-    radial-gradient(900px 600px at 50% 110%, rgba(244,114,182,.28), transparent 60%),
-    linear-gradient(160deg,var(--wl-bg1),var(--wl-bg2) 55%,var(--wl-bg3));
-  box-shadow:0 30px 80px -20px rgba(88,28,135,.55), inset 0 0 0 1px rgba(255,255,255,.07);
-}
-.wl-scene *{box-sizing:border-box}
+.wl-post{--ac:#9333ea; --ac-soft:#f5f0ff; --ink:#0f172a; --muted:#475569; --line:#e2e8f0; --card:#f8fafc;
+  color:var(--ink); background:#fff}
+.wl-post *{box-sizing:border-box}
+.wl-post p{color:#334155 !important; line-height:1.85 !important; margin:0 0 16px !important}
+.wl-post strong{color:var(--ink) !important}
+.wl-post a{color:var(--ac) !important; text-decoration:underline; text-underline-offset:3px}
 
-/* ---------- 3D background ---------- */
-.wl-bg{position:absolute; inset:0; z-index:-1; pointer-events:none; perspective:900px; overflow:hidden}
-.wl-floor{
-  position:absolute; left:-30%; right:-30%; bottom:-8%; height:60%;
-  transform-origin:50% 100%; transform:rotateX(68deg);
-  background-image:
-    linear-gradient(rgba(167,139,250,.35) 1px, transparent 1px),
-    linear-gradient(90deg, rgba(167,139,250,.35) 1px, transparent 1px);
-  background-size:56px 56px;
-  -webkit-mask-image:linear-gradient(to top, #000 10%, transparent 85%);
-          mask-image:linear-gradient(to top, #000 10%, transparent 85%);
-  animation:wl-floor 6s linear infinite;
-}
-@keyframes wl-floor{to{background-position:0 56px}}
+/* In this article + key takeaways */
+.wl-top{display:grid; gap:18px; align-items:start; margin:0 0 36px; grid-template-columns:minmax(0,1fr)}
+@media (min-width:760px){.wl-top{grid-template-columns:minmax(0,1fr) minmax(0,1fr)}}
+.wl-box{border:1px solid var(--line); border-radius:16px; padding:20px 22px; background:var(--card)}
+.wl-box.key{background:var(--ac-soft); border-color:#e9d5ff}
+.wl-post .wl-box h3{margin:0 0 12px !important; font-size:1.05rem !important; font-weight:800 !important; color:var(--ink) !important; border:0 !important; padding:0 !important}
+.wl-post .wl-box ul,.wl-post .wl-box ol{margin:0 !important; padding:0 !important; list-style:none !important}
+.wl-post .wl-box li{margin:0 !important; padding:6px 0 6px 28px !important; position:relative; color:#334155 !important; font-size:.97rem !important; line-height:1.5 !important; list-style:none !important}
+.wl-box.key li::before{content:"✓" !important; position:absolute; left:0; top:6px; width:19px; height:19px; border-radius:50%; background:var(--ac); color:#fff; font-size:.7rem; font-weight:800; display:grid; place-items:center}
+.wl-toc{counter-reset:toc}
+.wl-toc li::before{counter-increment:toc; content:counter(toc) !important; position:absolute; left:0; top:6px; width:19px; height:19px; border-radius:6px; background:#0f172a; color:#fff; font-size:.68rem; font-weight:800; display:grid; place-items:center}
+.wl-post .wl-toc a{color:var(--ink) !important; text-decoration:none; font-weight:600}
+.wl-post .wl-toc a:hover{color:var(--ac) !important}
 
-.wl-orb{position:absolute; border-radius:50%; filter:blur(2px);
-  background:radial-gradient(circle at 30% 30%, #fff8, var(--o1) 35%, var(--o2) 75%);
-  box-shadow:0 20px 60px var(--o2); opacity:.85; animation:wl-float 9s ease-in-out infinite}
-.wl-orb.a{--o1:#c084fc;--o2:#6d28d9; width:120px;height:120px; top:5%; right:6%}
-.wl-orb.b{--o1:#67e8f9;--o2:#0891b2; width:70px;height:70px; top:38%; left:3%; animation-delay:-3s}
-.wl-orb.c{--o1:#f9a8d4;--o2:#be185d; width:90px;height:90px; top:70%; right:4%; animation-delay:-6s}
-@keyframes wl-float{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-26px) scale(1.06)}}
+/* numbered headings */
+.wl-post h2.wl-h{display:flex; align-items:center; gap:14px; margin:44px 0 16px !important; padding:0 0 12px !important;
+  font-size:clamp(1.3rem,2.6vw,1.7rem) !important; line-height:1.3 !important; font-weight:800 !important; color:var(--ink) !important;
+  border:0 !important; border-bottom:2px solid var(--line) !important; scroll-margin-top:110px; position:relative}
+.wl-post h2.wl-h::before,.wl-post h2.wl-h::after{content:none !important}
+.wl-post h2.wl-h > span.n{flex:none; width:42px; height:42px; display:grid; place-items:center; border-radius:12px; background:var(--ac); color:#fff !important; font-size:1.05rem; font-weight:800;
+  box-shadow:0 6px 14px -4px rgba(147,51,234,.5)}
+.wl-post h2.wl-h > span.t{flex:1}
+.wl-post h2.wl-h.plain{padding-left:16px !important; border-bottom:0 !important}
+.wl-post h2.wl-h.plain::before{content:"" !important; position:absolute; left:0; top:2px; bottom:14px; width:5px; border-radius:5px; background:var(--ac)}
 
-.wl-cube{position:absolute; width:56px; height:56px; transform-style:preserve-3d; animation:wl-spin 16s linear infinite}
-.wl-cube i{position:absolute; inset:0; border:1.5px solid rgba(255,255,255,.45);
-  background:linear-gradient(135deg, rgba(167,139,250,.28), rgba(34,211,238,.18))}
-.wl-cube i:nth-child(1){transform:translateZ(28px)}
-.wl-cube i:nth-child(2){transform:rotateY(180deg) translateZ(28px)}
-.wl-cube i:nth-child(3){transform:rotateY(90deg) translateZ(28px)}
-.wl-cube i:nth-child(4){transform:rotateY(-90deg) translateZ(28px)}
-.wl-cube i:nth-child(5){transform:rotateX(90deg) translateZ(28px)}
-.wl-cube i:nth-child(6){transform:rotateX(-90deg) translateZ(28px)}
-.wl-cube.c1{top:14%; left:6%}
-.wl-cube.c2{top:52%; right:8%; width:40px;height:40px; animation-duration:22s; animation-direction:reverse}
-.wl-cube.c2 i{transform-origin:center}
-.wl-cube.c3{top:84%; left:12%; width:34px;height:34px; animation-duration:19s}
-@keyframes wl-spin{from{transform:rotateX(20deg) rotateY(0)}to{transform:rotateX(380deg) rotateY(360deg)}}
+/* tip callout */
+.wl-tip{display:flex; gap:12px; align-items:flex-start; margin:6px 0 10px; padding:14px 16px; border-radius:12px; background:var(--ac-soft); border:1px solid #e9d5ff}
+.wl-tip i{font-style:normal; flex:none; font-size:1.1rem; line-height:1.5}
+.wl-post .wl-tip p{margin:0 !important; font-size:.97rem !important; color:#3b0764 !important; line-height:1.6 !important}
 
-/* ---------- hero ---------- */
-.wl-hero{text-align:center; padding:6px 0 30px; perspective:1000px}
-.wl-kicker{display:inline-block; padding:6px 16px; border-radius:999px; font-size:.78rem; font-weight:700;
-  letter-spacing:.14em; text-transform:uppercase; color:#e9d5ff;
-  background:rgba(147,51,234,.25); border:1px solid rgba(216,180,254,.4); backdrop-filter:blur(6px)}
-.wl-hero h2.wl-title{
-  margin:16px 0 10px; font-size:clamp(1.7rem,4.6vw,2.9rem); line-height:1.15; font-weight:800;
-  background:linear-gradient(90deg,#fde68a,#f9a8d4 35%,#c4b5fd 65%,#67e8f9);
-  -webkit-background-clip:text; background-clip:text; color:transparent;
-  transform:rotateX(8deg); text-shadow:0 18px 40px rgba(147,51,234,.5);
-}
-.wl-sub{max-width:680px; margin:0 auto; color:#c9c3ea; font-size:1.08rem; font-style:italic}
+/* what to include */
+.wl-grid{display:grid; gap:14px; grid-template-columns:minmax(0,1fr); margin:8px 0 8px}
+@media (min-width:700px){.wl-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+.wl-item{display:flex; gap:12px; padding:16px; border:1px solid var(--line); border-radius:14px; background:#fff; transition:box-shadow .2s, transform .2s}
+.wl-item:hover{box-shadow:0 10px 24px -14px rgba(15,23,42,.35); transform:translateY(-2px)}
+.wl-item .ck{flex:none; width:26px; height:26px; border-radius:8px; background:var(--ac); color:#fff; display:grid; place-items:center; font-size:.8rem; font-weight:800}
+.wl-post .wl-item b{display:block; color:var(--ink) !important; font-size:1rem; margin-bottom:2px}
+.wl-post .wl-item span{display:block; color:var(--muted) !important; font-size:.94rem; line-height:1.55}
 
-/* ---------- cards ---------- */
-.wl-card{
-  position:relative; margin:22px 0; padding:22px 24px 20px 24px; border-radius:20px;
-  background:linear-gradient(145deg, rgba(255,255,255,.10), rgba(255,255,255,.03));
-  border:1px solid rgba(255,255,255,.14); backdrop-filter:blur(10px); -webkit-backdrop-filter:blur(10px);
-  box-shadow:0 22px 40px -18px rgba(0,0,0,.7), 0 0 0 1px rgba(255,255,255,.02) inset;
-  transition:transform .35s ease, box-shadow .35s ease; transform:perspective(1000px) rotateX(0) translateZ(0);
-}
-.wl-card::before{content:""; position:absolute; left:0; top:18px; bottom:18px; width:4px; border-radius:4px;
-  background:linear-gradient(var(--c1),var(--c2)); box-shadow:0 0 18px var(--c1)}
-.wl-card:hover{transform:perspective(1000px) rotateX(2.5deg) translateY(-6px) translateZ(14px);
-  box-shadow:0 34px 60px -20px rgba(0,0,0,.8), 0 0 40px -10px var(--c1)}
-.wl-head{display:flex; align-items:center; gap:14px; margin:0 0 12px}
-.wl-card h3{
-  margin:0; font-size:clamp(1.15rem,2.4vw,1.45rem); line-height:1.3; font-weight:800;
-  background:linear-gradient(90deg,var(--c1),var(--c2)); -webkit-background-clip:text; background-clip:text; color:transparent;
-}
-.wl-num{flex:none; width:44px; height:44px; display:grid; place-items:center; border-radius:14px; font-size:1.1rem; font-weight:800;
-  color:#120a2e; background:linear-gradient(135deg,var(--c1),var(--c2));
-  box-shadow:0 8px 0 -2px rgba(0,0,0,.35), 0 10px 24px -6px var(--c1); transform:rotate(-6deg)}
-.wl-card p{margin:0 0 10px; color:#dcd8f2}
-.wl-card p:last-child{margin-bottom:0}
-.wl-ico{margin-left:auto; font-size:1.5rem; filter:drop-shadow(0 4px 10px rgba(0,0,0,.5))}
+/* mistakes */
+.wl-post ul.wl-bad{list-style:none !important; margin:8px 0 0 !important; padding:0 !important; display:grid; gap:10px}
+.wl-post ul.wl-bad li{position:relative; list-style:none !important; margin:0 !important; padding:14px 16px 14px 52px !important; border-radius:12px; background:#fff5f5; border:1px solid #fecaca; color:#7f1d1d !important; line-height:1.55 !important}
+.wl-post ul.wl-bad li::marker{content:"" !important}
+.wl-post ul.wl-bad li::before{content:"✕" !important; position:absolute; left:14px; top:13px; width:26px; height:26px; border-radius:50%; background:#dc2626; color:#fff; display:grid; place-items:center; font-size:.78rem; font-weight:800}
 
-/* ---------- section headings ---------- */
-.wl-h{margin:44px 0 14px; font-size:clamp(1.4rem,3.2vw,2rem); font-weight:800; line-height:1.25;
-  background:linear-gradient(90deg,var(--h1),var(--h2)); -webkit-background-clip:text; background-clip:text; color:transparent}
-.wl-h.inc{--h1:#67e8f9;--h2:#a78bfa}
-.wl-h.mis{--h1:#fda4af;--h2:#fdba74}
-.wl-h.con{--h1:#fde68a;--h2:#f9a8d4}
-.wl-h.faq{--h1:#86efac;--h2:#67e8f9}
-.wl-intro p{color:#d6d1f0}
-.wl-intro strong,.wl-card strong{color:#fff}
+/* conclusion */
+.wl-concl{border-radius:18px; padding:24px 26px; background:var(--card); border:1px solid var(--line); border-left:5px solid var(--ac)}
+.wl-concl p:last-child{margin-bottom:0 !important}
 
-/* ---------- include grid ---------- */
-.wl-grid3{display:grid; grid-template-columns:repeat(auto-fit,minmax(240px,1fr)); gap:16px; perspective:1000px}
-.wl-tile{padding:18px; border-radius:16px; background:linear-gradient(160deg,rgba(103,232,249,.14),rgba(167,139,250,.10));
-  border:1px solid rgba(255,255,255,.14); transition:transform .3s ease, box-shadow .3s ease; transform-style:preserve-3d}
-.wl-tile:hover{transform:rotateX(6deg) rotateY(-6deg) translateY(-4px); box-shadow:0 22px 36px -16px rgba(34,211,238,.45)}
-.wl-tile b{display:block; margin-bottom:4px; color:#a5f3fc; font-size:1.02rem}
-.wl-tile span{color:#d3cfee; font-size:.95rem}
-
-/* ---------- mistakes ---------- */
-.wl-mlist{list-style:none; margin:0; padding:0; display:grid; gap:12px}
-.wl-mlist li{position:relative; padding:14px 16px 14px 52px; border-radius:14px; color:#f7e4e8;
-  background:linear-gradient(90deg,rgba(244,63,94,.18),rgba(251,146,60,.08)); border:1px solid rgba(253,164,175,.25);
-  transition:transform .25s ease}
-.wl-mlist li:hover{transform:translateX(6px)}
-.wl-mlist li::before{content:"✕"; position:absolute; left:14px; top:50%; transform:translateY(-50%); width:26px; height:26px; display:grid; place-items:center;
-  border-radius:50%; font-size:.8rem; font-weight:800; color:#2b0a12; background:linear-gradient(135deg,#fda4af,#fdba74)}
-
-/* ---------- conclusion ---------- */
-.wl-concl{padding:26px; border-radius:22px; border:1px solid rgba(253,230,138,.35);
-  background:linear-gradient(135deg,rgba(253,230,138,.12),rgba(249,168,212,.10)); box-shadow:0 24px 50px -22px rgba(249,168,212,.5)}
-.wl-concl p{margin:0 0 12px; color:#ece8fb}
-.wl-concl p:last-child{margin:0}
-
-/* ---------- FAQ ---------- */
-.wl-faq{margin:12px 0; border-radius:16px; border:1px solid rgba(134,239,172,.28); background:rgba(255,255,255,.05); overflow:hidden}
-.wl-faq summary{cursor:pointer; list-style:none; padding:16px 52px 16px 18px; position:relative; font-weight:700; color:#bbf7d0}
+/* FAQ */
+.wl-faq{border:1px solid var(--line); border-radius:14px; background:#fff; margin:0 0 12px; overflow:hidden}
+.wl-faq summary{cursor:pointer; list-style:none; position:relative; padding:16px 54px 16px 18px; font-weight:700; color:var(--ink) !important; line-height:1.4}
 .wl-faq summary::-webkit-details-marker{display:none}
-.wl-faq summary::after{content:"+"; position:absolute; right:18px; top:50%; transform:translateY(-50%); width:28px; height:28px; display:grid; place-items:center;
-  border-radius:50%; font-size:1.2rem; color:#052e16; background:linear-gradient(135deg,#86efac,#67e8f9); transition:transform .25s}
-.wl-faq[open] summary::after{content:"–"; transform:translateY(-50%) rotate(180deg)}
-.wl-faq p{margin:0; padding:0 18px 18px; color:#d6f5e3}
+.wl-faq summary::after{content:"+" !important; position:absolute; right:16px; top:50%; transform:translateY(-50%); width:28px; height:28px; border-radius:50%; background:var(--ac-soft); color:var(--ac); display:grid; place-items:center; font-size:1.2rem; font-weight:700}
+.wl-faq[open]{border-color:#e9d5ff}
+.wl-faq[open] summary::after{content:"–" !important; background:var(--ac); color:#fff}
+.wl-post .wl-faq p{padding:0 18px 4px; margin:0 0 14px !important}
 
-/* ---------- CTA ---------- */
-.wl-cta{margin-top:40px; text-align:center; padding:32px 22px; border-radius:24px;
-  background:linear-gradient(135deg,#9333ea,#6d28d9 50%,#2563eb); box-shadow:0 30px 60px -20px rgba(147,51,234,.8), inset 0 1px 0 rgba(255,255,255,.3)}
-.wl-cta h3{margin:0 0 8px; font-size:clamp(1.3rem,3vw,1.8rem); color:#fff}
-.wl-cta p{margin:0 auto 18px; max-width:560px; color:#ede9fe}
+/* CTA */
+.wl-cta{margin:44px 0 8px; padding:32px 26px; border-radius:20px; background:#0f172a; text-align:center}
+.wl-post .wl-cta h3{margin:0 0 8px !important; color:#fff !important; font-size:clamp(1.25rem,3vw,1.6rem) !important; font-weight:800 !important; border:0 !important; padding:0 !important}
+.wl-post .wl-cta p{color:#cbd5e1 !important; max-width:560px; margin:0 auto 20px !important}
 .wl-btns{display:flex; flex-wrap:wrap; gap:12px; justify-content:center}
-.wl-btn{display:inline-block; padding:13px 26px; border-radius:14px; font-weight:800; text-decoration:none !important;
-  transition:transform .2s ease, box-shadow .2s ease; box-shadow:0 6px 0 rgba(0,0,0,.28)}
-.wl-btn:hover{transform:translateY(-3px); box-shadow:0 10px 0 rgba(0,0,0,.28)}
-.wl-btn:active{transform:translateY(3px); box-shadow:0 2px 0 rgba(0,0,0,.28)}
-.wl-btn.p{background:#fff; color:#6d28d9 !important}
-.wl-btn.s{background:rgba(255,255,255,.16); color:#fff !important; border:1px solid rgba(255,255,255,.5)}
+.wl-post a.wl-btn{display:inline-block; padding:12px 24px; border-radius:12px; font-weight:800; text-decoration:none !important; transition:transform .2s, box-shadow .2s}
+.wl-post a.wl-btn:hover{transform:translateY(-2px)}
+.wl-post a.wl-btn.p{background:var(--ac); color:#fff !important; box-shadow:0 8px 18px -8px rgba(147,51,234,.9)}
+.wl-post a.wl-btn.s{background:transparent; color:#fff !important; border:1px solid #475569}
 
-@media (max-width:640px){
-  .wl-card{padding:18px 16px 16px 20px}
-  .wl-num{width:38px;height:38px}
-  .wl-ico{display:none}
-  .wl-orb.a{width:80px;height:80px}
-  .wl-cube.c2{display:none}
-}
-@media (prefers-reduced-motion:reduce){
-  .wl-floor,.wl-orb,.wl-cube{animation:none}
-  .wl-card,.wl-tile,.wl-btn,.wl-mlist li{transition:none}
-}
+@media (prefers-reduced-motion:reduce){.wl-item,.wl-btn{transition:none}}
 `;
 
 export default function Post() {
   return (
-    <div className="wl-scene">
+    <div className="wl-post">
       <style dangerouslySetInnerHTML={{ __html: css }} />
 
-      {/* 3D background */}
-      <div className="wl-bg" aria-hidden="true">
-        <div className="wl-floor" />
-        <div className="wl-orb a" />
-        <div className="wl-orb b" />
-        <div className="wl-orb c" />
-        {['c1', 'c2', 'c3'].map((c) => (
-          <div key={c} className={`wl-cube ${c}`}>
-            <i /><i /><i /><i /><i /><i />
-          </div>
-        ))}
+      <p>
+        Today, customers often search online before choosing a product, service, or company. They want to understand
+        what a business offers, whether it is trustworthy, and how they can get in touch. If your business cannot be
+        found online, or has no professional website, you may lose potential customers to competitors who are easier to
+        discover.
+      </p>
+      <p>
+        A website is more than a digital brochure. It is an online home for your brand: a place where people can learn
+        about your services, explore your work, ask questions, and take the next step. Whether you run a small local
+        business, a growing startup, or an established company, launching a website can support visibility, credibility,
+        and long-term growth.
+      </p>
+
+      <div className="wl-top">
+        <div className="wl-box key">
+          <h3>Key Takeaways</h3>
+          <ul>
+            {takeaways.map((t) => (
+              <li key={t}>{t}</li>
+            ))}
+          </ul>
+        </div>
+        <nav className="wl-box" aria-label="In this article">
+          <h3>In This Article</h3>
+          <ol className="wl-toc">
+            {reasons.map((r) => (
+              <li key={r.id}>
+                <a href={`#${r.id}`}>{r.short}</a>
+              </li>
+            ))}
+          </ol>
+        </nav>
       </div>
 
-      {/* Hero */}
-      <header className="wl-hero">
-        <span className="wl-kicker">Business &amp; Digital Growth</span>
-        <h2 className="wl-title">Why Launching a Website Is Crucial for Your Business</h2>
-        <p className="wl-sub">
-          Build credibility, reach more customers, and create opportunities for sustainable growth.
-        </p>
-      </header>
-
-      {/* Introduction */}
-      <div className="wl-card wl-intro" style={{ '--c1': '#c4b5fd', '--c2': '#67e8f9' }}>
-        <p>
-          Today, customers often search online before choosing a product, service, or company. They want to understand
-          what a business offers, whether it is trustworthy, and how they can get in touch. If your business cannot be
-          found online, or has no professional website, you may lose potential customers to competitors who are easier
-          to discover.
-        </p>
-        <p>
-          A website is more than a digital brochure. It is an online home for your brand: a place where people can learn
-          about your services, explore your work, ask questions, and take the next step. Whether you run a small local
-          business, a growing startup, or an established company, launching a website can support visibility,
-          credibility, and long-term growth.
-        </p>
-      </div>
-
-      {/* 9 reasons */}
       {reasons.map((r, i) => (
-        <section key={r.title} className="wl-card" style={{ '--c1': r.c1, '--c2': r.c2 }}>
-          <div className="wl-head">
-            <span className="wl-num">{i + 1}</span>
-            <h3>{r.title}</h3>
-            <span className="wl-ico" aria-hidden="true">{r.icon}</span>
-          </div>
-          {r.body}
+        <section key={r.id}>
+          <h2 id={r.id} className="wl-h">
+            <span className="n">{i + 1}</span>
+            <span className="t">{r.title}</span>
+          </h2>
+          {r.body.map((t) => (
+            <p key={t}>{t}</p>
+          ))}
+          {r.tip && (
+            <div className="wl-tip">
+              <i aria-hidden="true">💡</i>
+              <p>
+                <strong>Quick tip:</strong> {r.tip}
+              </p>
+            </div>
+          )}
         </section>
       ))}
 
-      {/* What should a website include */}
-      <h2 className="wl-h inc">What Should a Business Website Include?</h2>
-      <p className="wl-intro" style={{ color: '#d6d1f0' }}>
+      <h2 className="wl-h plain">What Should a Business Website Include?</h2>
+      <p>
         A successful website does not have to be complicated. Start with the pages and features that help visitors make
         an informed decision:
       </p>
-      <div className="wl-grid3">
+      <div className="wl-grid">
         {includes.map(([t, d]) => (
-          <div key={t} className="wl-tile">
-            <b>{t}</b>
-            <span>{d}</span>
+          <div key={t} className="wl-item">
+            <div className="ck" aria-hidden="true">✓</div>
+            <div>
+              <b>{t}</b>
+              <span>{d}</span>
+            </div>
           </div>
         ))}
       </div>
 
-      {/* Mistakes */}
-      <h2 className="wl-h mis">Common Mistakes to Avoid</h2>
-      <ul className="wl-mlist">
+      <h2 className="wl-h plain">Common Mistakes to Avoid</h2>
+      <ul className="wl-bad">
         {mistakes.map((m) => (
           <li key={m}>{m}</li>
         ))}
       </ul>
 
-      {/* Conclusion */}
-      <h2 className="wl-h con">Conclusion: Make Your Website Work for Your Business</h2>
+      <h2 className="wl-h plain">Conclusion: Make Your Website Work for Your Business</h2>
       <div className="wl-concl">
         <p>
           Launching a website is an important step toward building a stronger digital presence. It can help customers
@@ -480,8 +329,7 @@ export default function Post() {
         </p>
       </div>
 
-      {/* FAQ */}
-      <h2 className="wl-h faq">Frequently Asked Questions (FAQs)</h2>
+      <h2 className="wl-h plain">Frequently Asked Questions (FAQs)</h2>
       {faqs.map(([q, a], i) => (
         <details key={q} className="wl-faq" open={i === 0}>
           <summary>{q}</summary>
@@ -489,7 +337,6 @@ export default function Post() {
         </details>
       ))}
 
-      {/* CTA */}
       <div className="wl-cta">
         <h3>Ready to launch your business website?</h3>
         <p>Tell us about your business and we will help you plan a fast, mobile-friendly, SEO-ready website.</p>
