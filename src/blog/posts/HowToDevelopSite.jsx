@@ -14,7 +14,7 @@ export const meta = {
   ],
   // FEATURED IMAGE: yaha apni featured image ka path lagao
   // (public folder me image rakho, naam me space ya special character mat rakho)
-  image: '/how-to-develop-a-website.webp',
+  image: '/Web Development_ Idea to Launch.webp',
   readingTime: 6,
   metaTitle: 'How to Develop a Website: A Step-by-Step Guide for Businesses',
   metaDescription:
