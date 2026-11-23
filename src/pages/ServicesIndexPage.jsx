@@ -44,7 +44,7 @@ export default function ServicesIndexPage() {
   return (
     <div>
       <SeoMeta 
-        title="Full-Cycle Website Design & Web Development Services | Mohit Web Designing"
+        title="Full-Cycle Website Design & Web Development Services | WebLaunchPro"
         description="Explore our complete suite of specialized website design and web development services. From responsive business websites to complex e-commerce stores."
         canonicalUrl="/services/"
         schemaJson={{

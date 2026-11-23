@@ -9,7 +9,7 @@ export default function PortfolioPage() {
   return (
     <div>
       <SeoMeta 
-        title="Our Portfolio - Website Design & Development Projects | Mohit Web Designing"
+        title="Our Portfolio - Website Design & Development Projects | WebLaunchPro"
         description="Browse our real-world and sample website design, business portals, and e-commerce store implementations. Built with modern PHP, React, and responsive CSS."
         canonicalUrl="/portfolio/"
         schemaJson={{

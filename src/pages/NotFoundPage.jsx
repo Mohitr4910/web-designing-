@@ -7,8 +7,8 @@ export default function NotFoundPage() {
   return (
     <div className="py-24 md:py-32 bg-white text-center">
       <SeoMeta 
-        title="Page Not Found (404) | Mohit Web Designing"
-        description="The requested page could not be located on Mohit Web Designing."
+        title="Page Not Found (404) | WebLaunchPro"
+        description="The requested page could not be located on WebLaunchPro."
       />
       
       <div className="max-w-md mx-auto px-4 space-y-6">

@@ -16,7 +16,7 @@ export default function ContactPage() {
   return (
     <div>
       <SeoMeta 
-        title="Contact Our Web Design & Development Team | Mohit Web Designing"
+        title="Contact Our Web Design & Development Team | WebLaunchPro"
         description="Get in touch with our web development team for custom website consultations, quotations, or maintenance support."
         canonicalUrl="/contact-us/"
         schemaJson={{

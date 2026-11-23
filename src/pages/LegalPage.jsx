@@ -74,8 +74,8 @@ export default function LegalPage() {
   return (
     <div>
       <SeoMeta 
-        title={`${title} | Mohit Web Designing`}
-        description={`Read the official ${title} for Mohit Web Designing. Clear legal terms and transparent policies.`}
+        title={`${title} | WebLaunchPro`}
+        description={`Read the official ${title} for WebLaunchPro. Clear legal terms and transparent policies.`}
         canonicalUrl={path}
       />
 

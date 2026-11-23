@@ -49,7 +49,7 @@ export default function BlogListPage() {
   return (
     <div>
       <SeoMeta 
-        title={`${activeTitle} | Mohit Web Designing Blog`}
+        title={`${activeTitle} | WebLaunchPro Blog`}
         description={activeDesc}
         canonicalUrl="/blog/"
       />

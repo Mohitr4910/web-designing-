@@ -14,7 +14,7 @@ export const WEB3FORMS_ACCESS_KEY =
 
 export const WEB3FORMS_ENDPOINT = 'https://api.web3forms.com/submit';
 
-export const SITE_NAME = 'Mohit Web Designing';
+export const SITE_NAME = 'WebLaunchPro';
 
 // APKA LIVE DOMAIN (bina last slash ke). Canonical URLs, sitemap.xml aur Open Graph me yahi use hota hai.
 // .env me VITE_SITE_URL=https://yourdomain.com likho, ya neeche seedha badal do.

@@ -39,7 +39,7 @@ export default function AboutPage() {
   return (
     <div>
       <SeoMeta 
-        title="About Us - Web Design & Development Specialists | Mohit Web Designing"
+        title="About Us - Web Design & Development Specialists | WebLaunchPro"
         description="Learn about our engineering philosophy, design methodology, and commitment to delivering responsive, high-performance websites for growing businesses."
         canonicalUrl="/about-us/"
         schemaJson={{
