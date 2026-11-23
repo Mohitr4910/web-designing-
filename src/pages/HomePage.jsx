@@ -24,6 +24,14 @@ import SeoMeta from '../components/SeoMeta';
 import { api } from '../services/api';
 import { SITE_URL } from '../config/site'; // should be https://weblaunchpro.in (no trailing slash)
 
+// Poppins font (HomePage ke liye). Agar index.html me <link> already laga diya hai,
+// to is @import ko hata sakte ho.
+const POPPINS_CSS = `
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap');
+.home-poppins, .home-poppins * { font-family: 'Poppins', ui-sans-serif, system-ui, sans-serif; }
+.home-poppins .font-mono { font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace; }
+`;
+
 export default function HomePage() {
   const services = api.getServices().slice(0, 8);
   const recentPosts = api.getPosts({ limit: 12 }).posts || [];
@@ -73,12 +81,21 @@ export default function HomePage() {
     { title: 'Dedicated Post-Launch Support', desc: 'Technical support, backups and updates after launch so your website keeps running smoothly.' }
   ];
 
+  const aboutHighlights = [
+    { t: 'Human-Centered UI/UX', d: 'Clear visual hierarchy and layouts designed to keep visitors engaged and guide them to take action.' },
+    { t: 'Modern Code Architecture', d: 'Clean PHP backends, secure database access and modular React components without unnecessary bloat.' },
+    { t: 'Performance Conscious', d: 'Fast page loading and optimised Core Web Vitals for better user experience and search visibility.' },
+    { t: 'Proactive Maintenance', d: 'Security updates, scheduled backups and direct phone or chat support after launch.' }
+  ];
+
   const pageTitle = 'Website Development Agency in India | WebLaunchPro';
   const pageDescription =
     'WebLaunchPro is a website development agency in India offering custom website design, React & PHP development, WordPress and e-commerce websites. Get a free quote today.';
 
   return (
-    <div>
+    <div className="home-poppins">
+      <style>{POPPINS_CSS}</style>
+
       <SeoMeta
         title={pageTitle}
         description={pageDescription}
@@ -251,72 +268,69 @@ export default function HomePage() {
         </div>
       </section>
 
-      {/* C. Company Introduction (keyword-rich intro) */}
-      <section className="py-20 md:py-24 bg-white">
+      {/* C. Company Introduction (FIXED: image no longer cropped) */}
+      <section className="py-16 md:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-14 items-center">
 
+            {/* Image + caption */}
             <div className="lg:col-span-5 order-2 lg:order-1">
-              <div className="relative rounded-2xl overflow-hidden shadow-xl border border-slate-100">
+              <div className="rounded-2xl overflow-hidden shadow-xl border border-slate-100 bg-[#081c4e]">
                 <img
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&auto=format&fit=crop&q=80"
+                  src="/Cyberpunk India Holographic Network.webp"
                   alt="WebLaunchPro website development team in India planning a client website project"
                   width="800"
                   height="400"
                   loading="lazy"
-                  className="w-full h-[400px] object-cover"
+                  className="w-full h-auto block"
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-[#081c4e]/80 via-transparent to-transparent flex items-end p-6">
-                  <div className="text-white">
-                    <span className="text-xs uppercase tracking-wider font-semibold text-cyan-300">Engineering Excellence</span>
-                    <p className="text-xl font-bold">Built for Real-World Reliability</p>
-                  </div>
+                <div className="px-5 py-4 bg-gradient-to-r from-[#081c4e] to-blue-900">
+                  <span className="text-[11px] uppercase tracking-wider font-semibold text-cyan-300">
+                    Engineering Excellence
+                  </span>
+                  <p className="text-base sm:text-lg font-semibold text-white leading-snug">
+                    Built for Real-World Reliability
+                  </p>
                 </div>
               </div>
             </div>
 
+            {/* Content */}
             <div className="lg:col-span-7 order-1 lg:order-2 space-y-5">
-              <span className="text-xs font-bold uppercase tracking-widest text-blue-600 bg-blue-50 px-3.5 py-1 rounded-full inline-block">
+              <span className="text-xs font-semibold uppercase tracking-widest text-blue-600 bg-blue-50 px-3.5 py-1 rounded-full inline-block">
                 About WebLaunchPro
               </span>
 
-              <h2 className="text-3xl md:text-4xl font-extrabold text-[#081c4e] tracking-tight">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-[#081c4e] tracking-tight leading-tight">
                 Your Trusted Website Development Agency in India
               </h2>
 
-              <p className="text-slate-600 leading-relaxed text-base">
+              <p className="text-slate-600 leading-7 text-[15px] sm:text-base">
                 WebLaunchPro is a website development agency in India focused on one thing: building websites that help businesses get found, build trust and generate enquiries. Your website is your 24/7 sales representative, and we design and develop it that way, with a clear structure, strong visuals and fast performance.
               </p>
-              <p className="text-slate-600 leading-relaxed text-base">
+              <p className="text-slate-600 leading-7 text-[15px] sm:text-base">
                 Our team handles the complete journey, from planning and UI/UX design to frontend and backend development, SEO-friendly setup, deployment and ongoing maintenance. Whether you need a simple business website, a WordPress site, an online store or a custom web application, you work with one team from idea to launch.
               </p>
 
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 pt-2">
-                <div className="p-4 rounded-xl bg-slate-50 border border-slate-100">
-                  <h3 className="font-bold text-[#081c4e] text-sm mb-1">Human-Centered UI/UX</h3>
-                  <p className="text-xs text-slate-600">Clear visual hierarchy and layouts designed to keep visitors engaged and guide them to take action.</p>
-                </div>
-                <div className="p-4 rounded-xl bg-slate-50 border border-slate-100">
-                  <h3 className="font-bold text-[#081c4e] text-sm mb-1">Modern Code Architecture</h3>
-                  <p className="text-xs text-slate-600">Clean PHP backends, secure database access and modular React components without unnecessary bloat.</p>
-                </div>
-                <div className="p-4 rounded-xl bg-slate-50 border border-slate-100">
-                  <h3 className="font-bold text-[#081c4e] text-sm mb-1">Performance Conscious</h3>
-                  <p className="text-xs text-slate-600">Fast page loading and optimised Core Web Vitals for better user experience and search visibility.</p>
-                </div>
-                <div className="p-4 rounded-xl bg-slate-50 border border-slate-100">
-                  <h3 className="font-bold text-[#081c4e] text-sm mb-1">Proactive Maintenance</h3>
-                  <p className="text-xs text-slate-600">Security updates, scheduled backups and direct phone or chat support after launch.</p>
-                </div>
+                {aboutHighlights.map((item) => (
+                  <div
+                    key={item.t}
+                    className="p-4 rounded-xl bg-slate-50 border border-slate-100 hover:bg-white hover:border-blue-200 hover:shadow-md transition-all"
+                  >
+                    <h3 className="font-semibold text-[#081c4e] text-sm mb-1.5">{item.t}</h3>
+                    <p className="text-[13px] text-slate-600 leading-relaxed">{item.d}</p>
+                  </div>
+                ))}
               </div>
 
               <div className="pt-2">
                 <Link
                   to="/about-us/"
-                  className="inline-flex items-center gap-2 text-blue-600 font-bold text-sm hover:text-blue-700"
+                  className="inline-flex items-center gap-2 text-blue-600 font-semibold text-sm hover:text-blue-700 group"
                 >
                   <span>Learn more about WebLaunchPro</span>
-                  <ArrowRight className="w-4 h-4" />
+                  <ArrowRight className="w-4 h-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </div>
             </div>
