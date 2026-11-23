@@ -55,15 +55,15 @@ export default function BlogListPage() {
       />
 
       {/* Hero Banner with Search */}
-      <section className="bg-gradient-to-b from-[#f8faff] to-white py-14 md:py-20 border-b border-slate-100">
+      <section className="bg-gradient-to-b from-[#f8faff] to-white py-8 md:py-10 border-b border-slate-100">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center max-w-3xl">
-          <span className="text-xs font-bold uppercase tracking-widest text-blue-600 bg-blue-50 px-3.5 py-1 rounded-full inline-block mb-4 border border-blue-100">
+          <span className="text-xs font-bold uppercase tracking-widest text-blue-600 bg-blue-50 px-3.5 py-1 rounded-full inline-block mb-3 border border-blue-100">
             Engineering Publications
           </span>
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#081c4e] tracking-tight mb-4">
+          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#081c4e] tracking-tight mb-3">
             {activeTitle}
           </h1>
-          <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-8">
+          <p className="text-slate-600 text-sm sm:text-base leading-relaxed mb-5">
             {activeDesc}
           </p>
 
@@ -87,14 +87,14 @@ export default function BlogListPage() {
       </section>
 
       {/* Main Articles Listing */}
-      <section className="py-16 md:py-20 bg-white">
+      <section className="py-8 md:py-10 bg-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-12">
+          <div>
             
-            {/* Articles Grid */}
-            <div className="lg:col-span-8">
+            {/* Articles Grid (full width, ek line me 3 cards) */}
+            <div>
               {loading ? (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {[1, 2, 3, 4].map(n => (
                     <div key={n} className="h-96 bg-slate-100 rounded-2xl animate-pulse"></div>
                   ))}
@@ -108,7 +108,7 @@ export default function BlogListPage() {
                   </Link>
                 </div>
               ) : (
-                <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
                   {posts.map(p => (
                     <BlogCard key={p.id} post={p} />
                   ))}
@@ -143,8 +143,8 @@ export default function BlogListPage() {
               )}
             </div>
 
-            {/* Sidebar Taxonomies */}
-            <div className="lg:col-span-4 space-y-8">
+            {/* Taxonomies (articles ke neeche, side-by-side) */}
+            <div className="mt-10 pt-8 border-t border-slate-200 grid grid-cols-1 md:grid-cols-2 gap-8">
               
               {/* Categories */}
               <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-4">
