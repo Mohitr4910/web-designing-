@@ -10,7 +10,9 @@ import {
   ArrowLeft, 
   Share2, 
   CheckCircle2, 
-  Bookmark 
+  Bookmark,
+  Folder,
+  Tag
 } from 'lucide-react';
 import { SITE_URL } from '../config/site';
 
@@ -54,8 +56,12 @@ export default function BlogPostPage() {
     author_bio,
     author_avatar,
     tags = [],
-    related_posts = []
+    related_posts = [],
+    related_is_manual = false
   } = post;
+
+  // Is post ki category me total kitne articles hain (sidebar ke liye)
+  const categoryInfo = (api.getBlogTaxonomies().categories || []).find(c => c.slug === category_slug);
 
   const formattedDate = published_at 
     ? new Date(published_at).toLocaleDateString('en-US', { day: 'numeric', month: 'long', year: 'numeric', timeZone: 'UTC' })
@@ -94,7 +100,7 @@ export default function BlogPostPage() {
 
       {/* Header & Breadcrumb */}
       <section className="bg-gradient-to-b from-[#f8faff] to-white pt-10 pb-8 border-b border-slate-100">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <nav className="flex items-center gap-2 text-xs text-slate-400 mb-6">
             <Link to="/" className="hover:text-blue-600 transition">Home</Link>
             <ChevronRight className="w-3.5 h-3.5 text-slate-300" />
@@ -107,7 +113,7 @@ export default function BlogPostPage() {
             {category_name}
           </span>
 
-          <h1 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#081c4e] tracking-tight leading-tight mb-6">
+          <h1 className="max-w-4xl text-3xl sm:text-4xl lg:text-5xl font-extrabold text-[#081c4e] tracking-tight leading-tight mb-6">
             {title}
           </h1>
 
@@ -142,7 +148,11 @@ export default function BlogPostPage() {
 
       {/* Main Content Article */}
       <article className="py-12 bg-white">
-        <div className="max-w-4xl mx-auto px-4 sm:px-6">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12">
+
+          {/* ===== Left: Article ===== */}
+          <div className="lg:col-span-8 min-w-0">
           
           {/* Featured Hero Image */}
           {featured_image && (
@@ -162,7 +172,7 @@ export default function BlogPostPage() {
 
           {/* Tags */}
           {tags && tags.length > 0 && (
-            <div className="mt-12 pt-6 border-t border-slate-200 flex flex-wrap items-center gap-2">
+            <div className="mt-12 pt-6 border-t border-slate-200 flex flex-wrap items-center gap-2 lg:hidden">
               <span className="text-xs font-bold text-slate-500 uppercase tracking-wider mr-2">Tags:</span>
               {tags.map(t => (
                 <Link 
@@ -198,7 +208,7 @@ export default function BlogPostPage() {
           {related_posts && related_posts.length > 0 && (
             <div className="mt-16 pt-10 border-t border-slate-200">
               <h3 className="text-xl font-bold text-[#081c4e] mb-6">
-                Related Articles in This Category
+                {related_is_manual ? 'Related Articles' : 'Related Articles in This Category'}
               </h3>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 {related_posts.map((rp, i) => (
@@ -232,7 +242,53 @@ export default function BlogPostPage() {
               <span>Back to all engineering articles</span>
             </Link>
           </div>
+          {/* ===== /Left ===== */}
+          </div>
 
+          {/* ===== Right: Sidebar (is post ki category + tags) ===== */}
+          <aside className="lg:col-span-4">
+            <div className="lg:sticky lg:top-24 space-y-6">
+
+              <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-4">
+                <h3 className="font-bold text-[#081c4e] text-base flex items-center gap-2">
+                  <Folder className="w-4 h-4 text-blue-600" />
+                  <span>Topic Category</span>
+                </h3>
+                <Link
+                  to={`/blog/category/${category_slug}/`}
+                  className="flex items-center justify-between p-2.5 rounded-lg bg-white font-semibold text-blue-600 text-xs sm:text-sm shadow-2xs hover:text-blue-700 transition"
+                >
+                  <span>{category_name}</span>
+                  {categoryInfo && (
+                    <span className="text-[11px] bg-slate-200 text-slate-700 px-2 py-0.5 rounded-full">{categoryInfo.post_count}</span>
+                  )}
+                </Link>
+              </div>
+
+              {tags.length > 0 && (
+                <div className="p-6 rounded-2xl bg-slate-50 border border-slate-200 space-y-4">
+                  <h3 className="font-bold text-[#081c4e] text-base flex items-center gap-2">
+                    <Tag className="w-4 h-4 text-blue-600" />
+                    <span>Tags in This Post</span>
+                  </h3>
+                  <div className="flex flex-wrap gap-2">
+                    {tags.map(t => (
+                      <Link
+                        key={t.slug}
+                        to={`/blog/tag/${t.slug}/`}
+                        className="text-xs px-3 py-1.5 rounded-full border bg-white text-slate-600 border-slate-200 hover:border-blue-300 hover:text-blue-600 transition"
+                      >
+                        #{t.name}
+                      </Link>
+                    ))}
+                  </div>
+                </div>
+              )}
+
+            </div>
+          </aside>
+
+          </div>
         </div>
       </article>
     </div>

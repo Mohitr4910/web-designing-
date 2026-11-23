@@ -18,6 +18,7 @@ export const meta = {
   tags: ['React & Vite', 'SEO'],     // kitne bhi tags
   image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?w=1000&auto=format&fit=crop&q=80',
   readingTime: 5,                    // minutes
+  // related: ['slug-of-post-1', 'slug-of-post-2'], // optional. "Related Articles" me jo posts dikhane hain unke slug (file ka naam ya meta.slug). Na do to same category ke latest 3 dikhenge.
   // metaTitle: 'Custom SEO title',          // optional
   // metaDescription: 'Custom SEO description', // optional
   // author: { name: 'Mohit Rahangdale', role: 'Web Developer' }, // optional, default author config/site.js me hai

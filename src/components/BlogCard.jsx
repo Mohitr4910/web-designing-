@@ -10,7 +10,6 @@ export default function BlogCard({ post }) {
     featured_image,
     reading_time_minutes = 5,
     published_at,
-    category_name,
     category_slug,
     author_name,
     author_avatar
@@ -31,11 +30,7 @@ export default function BlogCard({ post }) {
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
           loading="lazy"
         />
-        {category_name && (
-          <span className="absolute top-3 left-3 bg-blue-600 text-white text-[11px] font-bold px-2.5 py-1 rounded-md shadow">
-            {category_name}
-          </span>
-        )}
+        
       </Link>
 
       {/* Body Content */}

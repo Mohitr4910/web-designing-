@@ -72,12 +72,16 @@ export default function Header() {
           
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2.5 group">
-            <div className="w-10 h-10 rounded-xl bg-gradient-to-tr from-blue-700 via-blue-600 to-cyan-400 flex items-center justify-center text-white shadow-md shadow-blue-500/20 group-hover:scale-105 transition-transform">
-              <Globe className="w-6 h-6" />
-            </div>
+            <img
+              src="/Glossy W Rocket Orbit Emblem (1).webp"
+              alt="WebLaunchPro logo"
+              width="57"
+              height="44"
+              className="h-11 w-auto object-contain group-hover:scale-105 transition-transform"
+            />
             <div>
               <span className="text-xl font-extrabold tracking-tight text-[#081c4e] block leading-none">
-                mohit-<span className="text-blue-600">webdesigning</span>
+                Weblaunch-<span className="text-blue-600">Pro</span>
               </span>
               <span className="text-[10px] uppercase tracking-wider text-slate-500 font-semibold block mt-0.5">
                 Web Design & Development

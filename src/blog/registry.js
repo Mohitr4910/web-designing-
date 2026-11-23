@@ -5,7 +5,8 @@
  * Koi list/array/database update karne ki zarurat nahi.
  *
  * Har post file me:
- *   export const meta = { title, excerpt, date, category, tags, image, readingTime, slug? ... }
+ *   export const meta = { title, excerpt, date, category, tags, image, readingTime, slug?, related? ... }
+ *   related: ['slug-1', 'slug-2']  -> is post ke neeche "Related Articles" me yahi posts dikhenge (apni choice)
  *   export default function Post() { return (<>...article JSX...</>) }
  */
 import { DEFAULT_AUTHOR } from '../config/site';
@@ -57,6 +58,7 @@ const posts = Object.entries(modules)
       category_name: category,
       category_slug: slugify(category),
       tags,
+      related_slugs: Array.isArray(meta.related) ? meta.related : [],
       draft: !!meta.draft,
       Component: mod.default
     };
@@ -97,11 +99,20 @@ export function listPosts({ category, tag, author, search, page = 1, limit, perP
 export function getPost(slug) {
   const post = posts.find(p => p.slug === slug);
   if (!post) return null;
-  const related = posts
-    .filter(p => p.slug !== slug)
-    .sort((a, b) => Number(b.category_slug === post.category_slug) - Number(a.category_slug === post.category_slug))
-    .slice(0, 3);
-  return { ...post, related_posts: related };
+
+  // 1) Agar post ke meta me `related: [...]` diya hai to wahi posts (usi order me) dikhte hain
+  const seen = new Set();
+  const manual = post.related_slugs
+    .map(s => posts.find(p => p.slug === s))
+    .filter(p => p && p.slug !== slug && !seen.has(p.slug) && seen.add(p.slug))
+    .slice(0, 6);
+
+  // 2) Nahi diya to automatic: sirf same category ke latest 3 posts
+  const related = manual.length
+    ? manual
+    : posts.filter(p => p.slug !== slug && p.category_slug === post.category_slug).slice(0, 3);
+
+  return { ...post, related_posts: related, related_is_manual: manual.length > 0 };
 }
 
 export function getTaxonomies() {

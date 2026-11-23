@@ -138,3 +138,42 @@ html {
 .blog-content table { width: 100%; border-collapse: collapse; font-size: .95rem; }
 .blog-content th, .blog-content td { border: 1px solid #e2e8f0; padding: .6rem .8rem; text-align: left; }
 .blog-content th { background: #f1f5f9; }
+
+/* ===== Homepage blog slider (continuous) ===== */
+.blog-marquee {
+  overflow: hidden;
+  padding: 0.5rem 0 1.5rem;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 4%, #000 96%, transparent);
+}
+.blog-marquee-track {
+  display: flex;
+  width: max-content;
+  animation: blog-marquee var(--marquee-duration, 40s) linear infinite;
+}
+.blog-marquee:hover .blog-marquee-track,
+.blog-marquee:focus-within .blog-marquee-track {
+  animation-play-state: paused;
+}
+.blog-marquee-group {
+  display: flex;
+  gap: 1.5rem;
+  padding-right: 1.5rem; /* gap ke barabar, taaki loop beech me jhatke nahi */
+}
+.blog-marquee-item {
+  width: 300px;
+  flex-shrink: 0;
+  display: flex;
+}
+.blog-marquee-item > article { width: 100%; }
+@media (min-width: 640px) { .blog-marquee-item { width: 360px; } }
+
+@keyframes blog-marquee {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .blog-marquee { overflow-x: auto; -webkit-mask-image: none; mask-image: none; }
+  .blog-marquee-track { animation: none; }
+}

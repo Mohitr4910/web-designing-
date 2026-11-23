@@ -18,7 +18,7 @@ import FaqAccordion from '../components/FaqAccordion';
 import Developer3DMotionBackground from '../components/Developer3DMotionBackground';
 import CyberMatrix3DMotion from '../components/CyberMatrix3DMotion';
 import ParticleWarp3DMotion from '../components/ParticleWarp3DMotion';
-import BlogCard from '../components/BlogCard';
+import BlogSlider from '../components/BlogSlider';
 import ContactForm from '../components/ContactForm';
 import SeoMeta from '../components/SeoMeta';
 import { api } from '../services/api';
@@ -26,7 +26,7 @@ import { SITE_URL } from '../config/site'; // should be https://weblaunchpro.in 
 
 export default function HomePage() {
   const services = api.getServices().slice(0, 8);
-  const recentPosts = api.getPosts({ limit: 3 }).posts || [];
+  const recentPosts = api.getPosts({ limit: 12 }).posts || [];
 
   const designProcessSteps = [
     { num: '01', title: 'Requirement Discussion', desc: 'We understand your business goals, target audience and the features your website needs to bring in enquiries.' },
@@ -612,11 +612,7 @@ export default function HomePage() {
               </Link>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-              {recentPosts.map((post) => (
-                <BlogCard key={post.id} post={post} />
-              ))}
-            </div>
+            <BlogSlider posts={recentPosts} />
           </div>
         </section>
       )}
