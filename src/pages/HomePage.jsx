@@ -90,7 +90,7 @@ export default function HomePage() {
 
   const pageTitle = 'Website Development Agency in India | WebLaunchPro';
   const pageDescription =
-    'WebLaunchPro is a website development agency in India offering custom website design, React & PHP development, WordPress and e-commerce websites. Get a free quote today.';
+  'WebLaunchPro builds custom, responsive and SEO-friendly websites in India. Get professional website design, React, PHP, WordPress and e-commerce development. Get a free quote!';
 
   return (
     <div className="home-poppins">
@@ -164,9 +164,26 @@ export default function HomePage() {
                 </span>
               </h1>
 
-              <p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
-                WebLaunchPro is a <strong className="text-white">website development agency in India</strong> that designs and builds fast, responsive and secure websites for startups, small businesses and growing brands. From business websites and e-commerce stores to custom web applications, we deliver clean code and an easy-to-manage CMS.
-              </p>
+
+<p className="text-base sm:text-lg text-slate-300 leading-relaxed max-w-2xl mx-auto lg:mx-0">
+  WebLaunchPro is a{" "}
+  <strong className="text-white">
+    website development agency in India
+  </strong>{" "}
+  providing professional{" "}
+  <strong className="text-white">
+    custom website development, business website design,
+    e-commerce development, WordPress development
+  </strong>{" "}
+  and{" "}
+  <strong className="text-white">
+    web application development
+  </strong>
+  . We build fast, responsive and secure websites tailored
+  to your business goals, helping startups, small businesses
+  and growing brands establish a strong online presence.
+</p>
+
 
               {/* CTAs */}
               <div className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-2">
@@ -278,7 +295,7 @@ export default function HomePage() {
               <div className="rounded-2xl overflow-hidden shadow-xl border border-slate-100 bg-[#081c4e]">
                 <img
                   src="/Cyberpunk India Holographic Network.webp"
-                  alt="WebLaunchPro website development team in India planning a client website project"
+                 alt="Digital technology and connected web development network"
                   width="800"
                   height="400"
                   loading="lazy"
