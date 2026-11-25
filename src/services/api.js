@@ -9,6 +9,7 @@
  * Saare get* functions SYNCHRONOUS hain (promise nahi) taaki server-side rendering / prerender me
  * data render ke time hi mil jaye. Sirf submitInquiry async hai (network call).
  */
+import { listServices, getService } from './registry';
 import { listPosts, getPost, getTaxonomies } from '../blog/registry';
 import { WEB3FORMS_ACCESS_KEY, WEB3FORMS_ENDPOINT, SITE_NAME } from '../config/site';
 
@@ -353,127 +354,12 @@ export const api = {
     return category ? allPlans.filter(p => p.category === category) : allPlans;
   },
 
-  getServices: (category) => {
-    const allServices = [
-      {
-        id: 1, category: 'website_design', slug: 'website-design', title: 'Custom Website Design',
-        short_description: 'Bespoke, visual-first website designs tailored to showcase your brand identity and maximize user engagement.',
-        full_description: 'Our custom website design services turn your corporate vision into a stunning visual reality. We design intuitive interfaces, high-converting layouts, and cohesive brand systems that resonate with your prospective buyers.',
-        icon_svg: 'layout', deliverables: ['Figma & XD Wireframes', 'Custom Color Palette & Typography', 'Interactive UI Prototypes', 'Cross-Browser Visual Testing'],
-        technologies: ['Figma', 'Adobe XD', 'HTML5', 'CSS3']
-      },
-      {
-        id: 2, category: 'website_design', slug: 'responsive-website-design', title: 'Responsive Website Design',
-        short_description: 'Fluid, mobile-first layouts designed to deliver an impeccable browsing experience on every screen size.',
-        full_description: 'With over 65% of web traffic coming from mobile devices, responsive design is essential. We create fluid grid layouts that automatically adapt seamlessly across mobile phones, tablets, laptops, and ultra-wide desktops.',
-        icon_svg: 'smartphone', deliverables: ['Fluid Grid System Architecture', 'Mobile Touch Target Optimization', 'Device Breakpoint Calibration'],
-        technologies: ['CSS Grid', 'Flexbox', 'Media Queries']
-      },
-      {
-        id: 3, category: 'website_design', slug: 'business-website-design', title: 'Business Website Design',
-        short_description: 'Credibility-building website designs structured to convert corporate visitors into qualified sales leads.',
-        full_description: 'We craft professional business website designs that articulate your value proposition clearly, establish market authority, and streamline lead acquisition through intuitive navigation and strategic calls-to-action.',
-        icon_svg: 'globe', deliverables: ['Corporate Branding Alignment', 'Lead Generation Architecture', 'Service Presentation Layouts'],
-        technologies: ['UI/UX Design', 'Figma', 'HTML5']
-      },
-      {
-        id: 4, category: 'website_design', slug: 'corporate-website-design', title: 'Corporate Website Design',
-        short_description: 'Polished, enterprise-grade web design for established organizations with complex stakeholder needs.',
-        full_description: 'Designed for corporations requiring sophisticated brand expression, compliance with accessibility standards, multi-department sections, and clean, commanding visual authority.',
-        icon_svg: 'shield', deliverables: ['Enterprise Brand System Integration', 'Multi-Department Architecture', 'Accessibility (WCAG) Compliance'],
-        technologies: ['Enterprise Design Systems', 'Figma', 'Design Tokens']
-      },
-      {
-        id: 5, category: 'website_design', slug: 'landing-page-design', title: 'Landing Page Design',
-        short_description: 'High-velocity, single-goal landing pages optimized for maximum conversion rates and paid campaign ROI.',
-        full_description: 'A great landing page eliminates distractions and drives a singular conversion action. We build persuasive, fast-loading landing pages designed specifically for product launches, lead capture, and ad campaign traffic.',
-        icon_svg: 'code', deliverables: ['High-Impact Hero Visuals', 'Benefit-Oriented Feature Grids', 'Social Proof Integration'],
-        technologies: ['Figma', 'HTML5', 'A/B Testing Ready']
-      },
-      {
-        id: 6, category: 'website_design', slug: 'custom-website-design', title: 'Bespoke UI/UX Design',
-        short_description: 'Tailored user experience and interface design crafted from scratch with user testing and custom design tokens.',
-        full_description: 'We conduct in-depth user journey mapping, wireframing, and interactive prototyping to build digital experiences that are intuitive, memorable, and friction-free.',
-        icon_svg: 'layout', deliverables: ['User Journey Mapping', 'Interactive Clickable Prototypes', 'Full Design System Hand-off'],
-        technologies: ['Figma', 'Prototype Testing', 'UI Kit']
-      },
-      {
-        id: 7, category: 'web_development', slug: 'web-development', title: 'Full-Stack Web Development',
-        short_description: 'Reliable, secure web application and website development using modern frontend frameworks and robust backend architectures.',
-        full_description: 'Our full-stack development services transform creative designs into lightning-fast, high-availability web applications. We utilize modern PHP, MySQL databases, and reactive components to build software that scales effortlessly.',
-        icon_svg: 'code', deliverables: ['Clean Semantic Frontend Markup', 'RESTful API Development', 'Relational Database Schema Design'],
-        technologies: ['PHP 8.2+', 'MySQL', 'React', 'JavaScript']
-      },
-      {
-        id: 8, category: 'web_development', slug: 'custom-website-development', title: 'Custom Web Development',
-        short_description: 'Bespoke web development engineered to solve unique business logic, workflows, and integrations.',
-        full_description: 'When off-the-shelf templates fall short, our custom web development delivers tailored portals, customer dashboards, and custom backend systems built specifically around your operating requirements.',
-        icon_svg: 'cpu', deliverables: ['Tailored Business Logic Implementation', 'Custom CMS & Admin Dashboards', 'Third-Party REST API Integration'],
-        technologies: ['PHP', 'MySQL', 'React', 'REST API']
-      },
-      {
-        id: 9, category: 'web_development', slug: 'business-website-development', title: 'Business Web Development',
-        short_description: 'Fast, dependable website development engineered to help businesses capture leads and scale operations.',
-        full_description: 'We build clean, dependable business websites that load in under two seconds, feature intuitive content management, and connect seamlessly with your CRM and email notification workflows.',
-        icon_svg: 'globe', deliverables: ['Fast-Loading Page Speeds', 'Lead Capture System', 'Custom Administrative Controls'],
-        technologies: ['PHP', 'MySQL', 'React', 'Vite', 'Tailwind CSS']
-      },
-      {
-        id: 10, category: 'web_development', slug: 'corporate-website-development', title: 'Corporate Web Development',
-        short_description: 'Enterprise-ready web development built with high security standards, audit logging, and scalable infrastructure.',
-        full_description: 'We develop corporate web portals with stringent data security, multi-role administrative permissions, automated database backups, and rock-solid uptime guarantees.',
-        icon_svg: 'shield', deliverables: ['Multi-Role Authentication Systems', 'Audit Logging & Security Controls', 'Database Indexing & Query Tuning'],
-        technologies: ['PHP 8.2+', 'MySQL 8.0', 'Security Headers']
-      },
-      {
-        id: 11, category: 'web_development', slug: 'ecommerce-website-development', title: 'E-commerce Website Development',
-        short_description: 'End-to-end e-commerce platforms engineered for seamless product discovery, checkout conversion, and order tracking.',
-        full_description: 'From custom shopping carts to multi-vendor marketplaces, our e-commerce development provides comprehensive catalog management, variation attributes, instant payment gateway processing, automated PDF invoices, and order status alerts.',
-        icon_svg: 'shopping-bag', deliverables: ['Product Catalog & Filter System', 'Secure Cart & Checkout Workflow', 'Payment Gateway Integration'],
-        technologies: ['PHP', 'MySQL', 'React', 'Razorpay', 'Stripe']
-      },
-      {
-        id: 12, category: 'web_development', slug: 'wordpress-website-development', title: 'WordPress Website Development',
-        short_description: 'Custom WordPress themes and headless configurations optimized for lightning speed, clean code, and intuitive editing.',
-        full_description: 'We bypass bloated, sluggish multi-purpose themes in favor of lightweight, custom-coded WordPress themes and Gutenberg blocks that give your team effortless editing capabilities without sacrificing Core Web Vitals.',
-        icon_svg: 'code', deliverables: ['Custom WordPress Theme Engineering', 'Tailored Gutenberg Content Blocks', 'Headless WordPress & REST API'],
-        technologies: ['WordPress', 'PHP', 'MySQL', 'Gutenberg']
-      },
-      {
-        id: 13, category: 'web_development', slug: 'shopify-website-development', title: 'Shopify Store Development',
-        short_description: 'Tailored Shopify and Liquid storefront engineering designed to boost average order value and checkout speed.',
-        full_description: 'We develop high-performing Shopify storefronts with custom Liquid templates, app integrations, and conversion-focused product display pages that empower your brand to sell online effectively.',
-        icon_svg: 'shopping-bag', deliverables: ['Liquid Template Development', 'Custom Section & Block Building', 'Shopify App Integration'],
-        technologies: ['Shopify', 'Liquid', 'JavaScript']
-      },
-      {
-        id: 14, category: 'web_development', slug: 'website-redesign', title: 'Website Redesign Services',
-        short_description: 'Revitalize outdated websites with modern design, cleaner code, responsive layouts, and preserved SEO equity.',
-        full_description: 'An outdated website damages credibility and costs leads. Our redesign process conducts full technical audits, redesigns the visual interface, updates backend frameworks, and carefully preserves existing search engine rankings through 301 URL mapping.',
-        icon_svg: 'refresh-cw', deliverables: ['Legacy Code Audit', '301 Redirect Mapping & SEO Preservation', 'Complete UI/UX Modernization'],
-        technologies: ['PHP 8+', 'React', 'MySQL', 'Redirect Mapping']
-      },
-      {
-        id: 15, category: 'web_development', slug: 'website-maintenance', title: 'Website Maintenance & Support',
-        short_description: 'Proactive maintenance, security patching, uptime monitoring, and technical support to keep your site running smoothly.',
-        full_description: 'Websites need ongoing attention to stay secure and fast. Our website maintenance services include regular core updates, database optimization, daily cloud backups, uptime monitoring, and priority technical assistance.',
-        icon_svg: 'tool', deliverables: ['Scheduled Daily Cloud Backups', 'Core & Framework Security Patches', 'Uptime & Broken Link Monitoring'],
-        technologies: ['Server Admin', 'MySQL Maintenance', 'Security Audits']
-      }
-    ];
-
-    return category ? allServices.filter(s => s.category === category) : allServices;
-  },
+  // Services ab src/services/items/*.jsx se auto aati hain (src/services/registry.js dekho)
+  getServices: (category) => listServices(category),
 
   getServiceBySlug: (slug) => {
-    const services = api.getServices();
-    const s = services.find(x => x.slug === slug);
-    if (s) {
-      return {
-        ...s,
-        related: services.filter(x => x.category === s.category && x.slug !== slug).slice(0, 3)
-      };
-    }
+    const s = getService(slug);
+    if (s) return s;
     throw new Error('Service not found');
   },
 

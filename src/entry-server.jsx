@@ -8,6 +8,8 @@ import * as RouterDom from 'react-router-dom';
 import App from './App';
 import { HeadCollectorContext } from './components/SeoMeta';
 import posts, { getTaxonomies } from './blog/registry';
+import services from './services/registry';
+import { getLocationPages } from './locations/registry';
 import { SITE_URL } from './config/site';
 
 // react-router v6 me StaticRouter 'react-router-dom/server' me hai, v7 me main package me.
@@ -53,8 +55,12 @@ export function getRoutes() {
 
   return [
     ...pages,
+    // Har service ka alag page (src/services/items/*.jsx se auto)
+    ...services.map(s => ({ url: `/services/${s.slug}/`, lastmod: s.updated_at })),
     ...posts.map(p => ({ url: `/blog/${p.slug}/`, lastmod: p.updated_at || p.published_at || null })),
     ...categories.map(c => ({ url: `/blog/category/${c.slug}/`, lastmod: null })),
-    ...tags.map(t => ({ url: `/blog/tag/${t.slug}/`, lastmod: null }))
+    ...tags.map(t => ({ url: `/blog/tag/${t.slug}/`, lastmod: null })),
+    // City-wise service pages (src/config/locations.js se auto)
+    ...getLocationPages().map(p => ({ url: p.url, lastmod: p.lastmod }))
   ];
 }

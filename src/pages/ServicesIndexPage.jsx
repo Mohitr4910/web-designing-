@@ -79,7 +79,7 @@ export default function ServicesIndexPage() {
                   : 'bg-white text-slate-600 border border-slate-200 hover:bg-slate-50'
               }`}
             >
-              All 15 Services
+              All {allServices.length} Services
             </button>
             <button
               onClick={() => setActiveTab('design')}

@@ -10,6 +10,9 @@ import ContactPage from './pages/ContactPage';
 import BlogListPage from './pages/BlogListPage';
 import BlogPostPage from './pages/BlogPostPage';
 import LegalPage from './pages/LegalPage';
+import ServiceDetailPage from './pages/ServiceDetailPage';
+import services from './services/registry';
+import LocationServicePage from './pages/LocationServicePage';
 import NotFoundPage from './pages/NotFoundPage';
 
 // Scroll to top on route change
@@ -35,6 +38,8 @@ export default function App() {
           <Route path="about-us/" element={<AboutPage />} />
           <Route path="services" element={<ServicesIndexPage />} />
           <Route path="services/" element={<ServicesIndexPage />} />
+          <Route path="services/:serviceSlug" element={<ServiceDetailPage />} />
+          <Route path="services/:serviceSlug/" element={<ServiceDetailPage />} />
           <Route path="pricing" element={<PricingPage />} />
           <Route path="pricing/" element={<PricingPage />} />
           <Route path="portfolio" element={<PortfolioPage />} />
@@ -45,37 +50,11 @@ export default function App() {
           {/* Graceful Redirects for Legacy / Unneeded Subpages */}
           <Route path="contact-success" element={<Navigate to="/contact-us" replace />} />
           <Route path="contact-success/" element={<Navigate to="/contact-us" replace />} />
-          <Route path="website-design" element={<Navigate to="/services#website-design" replace />} />
-          <Route path="website-design/" element={<Navigate to="/services#website-design" replace />} />
-          <Route path="responsive-website-design" element={<Navigate to="/services#website-design" replace />} />
-          <Route path="responsive-website-design/" element={<Navigate to="/services#website-design" replace />} />
-          <Route path="business-website-design" element={<Navigate to="/services#website-design" replace />} />
-          <Route path="business-website-design/" element={<Navigate to="/services#website-design" replace />} />
-          <Route path="corporate-website-design" element={<Navigate to="/services#website-design" replace />} />
-          <Route path="corporate-website-design/" element={<Navigate to="/services#website-design" replace />} />
-          <Route path="landing-page-design" element={<Navigate to="/services#website-design" replace />} />
-          <Route path="landing-page-design/" element={<Navigate to="/services#website-design" replace />} />
-          <Route path="custom-website-design" element={<Navigate to="/services#website-design" replace />} />
-          <Route path="custom-website-design/" element={<Navigate to="/services#website-design" replace />} />
-
-          <Route path="web-development" element={<Navigate to="/services#web-development" replace />} />
-          <Route path="web-development/" element={<Navigate to="/services#web-development" replace />} />
-          <Route path="custom-website-development" element={<Navigate to="/services#web-development" replace />} />
-          <Route path="custom-website-development/" element={<Navigate to="/services#web-development" replace />} />
-          <Route path="business-website-development" element={<Navigate to="/services#web-development" replace />} />
-          <Route path="business-website-development/" element={<Navigate to="/services#web-development" replace />} />
-          <Route path="corporate-website-development" element={<Navigate to="/services#web-development" replace />} />
-          <Route path="corporate-website-development/" element={<Navigate to="/services#web-development" replace />} />
-          <Route path="ecommerce-website-development" element={<Navigate to="/services#web-development" replace />} />
-          <Route path="ecommerce-website-development/" element={<Navigate to="/services#web-development" replace />} />
-          <Route path="wordpress-website-development" element={<Navigate to="/services#web-development" replace />} />
-          <Route path="wordpress-website-development/" element={<Navigate to="/services#web-development" replace />} />
-          <Route path="shopify-website-development" element={<Navigate to="/services#web-development" replace />} />
-          <Route path="shopify-website-development/" element={<Navigate to="/services#web-development" replace />} />
-          <Route path="website-redesign" element={<Navigate to="/services#web-development" replace />} />
-          <Route path="website-redesign/" element={<Navigate to="/services#web-development" replace />} />
-          <Route path="website-maintenance" element={<Navigate to="/services#web-development" replace />} />
-          <Route path="website-maintenance/" element={<Navigate to="/services#web-development" replace />} />
+          {/* Purane root URLs (/website-design etc.) -> naye /services/<slug>/ page (services items se auto) */}
+          {services.flatMap(sv => [
+            <Route key={sv.slug} path={sv.slug} element={<Navigate to={`/services/${sv.slug}/`} replace />} />,
+            <Route key={sv.slug + '/'} path={sv.slug + '/'} element={<Navigate to={`/services/${sv.slug}/`} replace />} />
+          ])}
 
           {/* Blog Routes */}
           <Route path="blog" element={<BlogListPage />} />
@@ -96,6 +75,11 @@ export default function App() {
           <Route path="terms-and-conditions/" element={<LegalPage />} />
           <Route path="refund-cancellation-policy" element={<LegalPage />} />
           <Route path="refund-cancellation-policy/" element={<LegalPage />} />
+
+          {/* City-wise service pages: /website-design-in-bhopal/ (config: src/config/locations.js).
+              Static routes upar hain to unhe priority milti hai; unknown slug par page khud 404 dikhata hai. */}
+          <Route path=":locationSlug" element={<LocationServicePage />} />
+          <Route path=":locationSlug/" element={<LocationServicePage />} />
 
           {/* 404 Wildcard */}
           <Route path="*" element={<NotFoundPage />} />

@@ -47,7 +47,7 @@ export default function ServiceCard({ service }) {
 
         {/* Title */}
         <h3 className="text-xl font-bold text-[#081c4e] mb-2.5 group-hover:text-blue-600 transition-colors">
-          {title}
+          <Link to={`/services/${slug}/`}>{title}</Link>
         </h3>
 
         {/* Short Description */}
@@ -78,10 +78,10 @@ export default function ServiceCard({ service }) {
           <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
         </Link>
         <Link 
-          to="/pricing/"
+          to={`/services/${slug}/`}
           className="text-[11px] font-semibold text-slate-400 hover:text-slate-600 transition"
         >
-          View Plans
+          Details →
         </Link>
       </div>
     </div>

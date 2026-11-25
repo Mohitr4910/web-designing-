@@ -1,5 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import { listServices, servicePath } from '../services/registry';
+import { getCities, getLocationServices, locationPath } from '../locations/registry';
 import { 
   Phone, 
   Mail, 
@@ -51,36 +53,13 @@ export default function Footer() {
               Website Design
             </h4>
             <ul className="space-y-2 text-[13.5px]">
-              <li>
-                <Link to="/services#website-design" className="hover:text-blue-400 transition flex items-center gap-1">
-                  Custom Website Design
-                </Link>
-              </li>
-              <li>
-                <Link to="/services#website-design" className="hover:text-blue-400 transition flex items-center gap-1">
-                  Responsive Web Design
-                </Link>
-              </li>
-              <li>
-                <Link to="/services#website-design" className="hover:text-blue-400 transition flex items-center gap-1">
-                  Business Website Design
-                </Link>
-              </li>
-              <li>
-                <Link to="/services#website-design" className="hover:text-blue-400 transition flex items-center gap-1">
-                  Corporate Website Design
-                </Link>
-              </li>
-              <li>
-                <Link to="/services#website-design" className="hover:text-blue-400 transition flex items-center gap-1">
-                  Landing Page Design
-                </Link>
-              </li>
-              <li>
-                <Link to="/services#website-design" className="hover:text-blue-400 transition flex items-center gap-1">
-                  Bespoke UI/UX Design
-                </Link>
-              </li>
+              {listServices('website_design').map(sv => (
+                <li key={sv.slug}>
+                  <Link to={servicePath(sv.slug)} className="hover:text-blue-400 transition flex items-center gap-1">
+                    {sv.title}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -90,41 +69,13 @@ export default function Footer() {
               Web Development
             </h4>
             <ul className="space-y-2 text-[13.5px]">
-              <li>
-                <Link to="/services#web-development" className="hover:text-blue-400 transition flex items-center gap-1">
-                  Full-Stack Development
-                </Link>
-              </li>
-              <li>
-                <Link to="/services#web-development" className="hover:text-blue-400 transition flex items-center gap-1">
-                  Custom Web Development
-                </Link>
-              </li>
-              <li>
-                <Link to="/services#web-development" className="hover:text-blue-400 transition flex items-center gap-1">
-                  Business Web Development
-                </Link>
-              </li>
-              <li>
-                <Link to="/services#web-development" className="hover:text-blue-400 transition flex items-center gap-1">
-                  E-commerce Development
-                </Link>
-              </li>
-              <li>
-                <Link to="/services#web-development" className="hover:text-blue-400 transition flex items-center gap-1">
-                  WordPress Development
-                </Link>
-              </li>
-              <li>
-                <Link to="/services#web-development" className="hover:text-blue-400 transition flex items-center gap-1">
-                  Shopify Development
-                </Link>
-              </li>
-              <li>
-                <Link to="/services#web-development" className="hover:text-blue-400 transition flex items-center gap-1">
-                  Website Maintenance & Redesign
-                </Link>
-              </li>
+              {listServices('web_development').map(sv => (
+                <li key={sv.slug}>
+                  <Link to={servicePath(sv.slug)} className="hover:text-blue-400 transition flex items-center gap-1">
+                    {sv.title}
+                  </Link>
+                </li>
+              ))}
             </ul>
           </div>
 
@@ -134,7 +85,7 @@ export default function Footer() {
               Quick Links
             </h4>
             <ul className="space-y-2 text-[13.5px]">
-              <li><Link to="/services/" className="hover:text-blue-400 transition">All 15 Services</Link></li>
+              <li><Link to="/services/" className="hover:text-blue-400 transition">All {listServices().length} Services</Link></li>
               <li><Link to="/pricing/" className="hover:text-blue-400 transition">Pricing Packages</Link></li>
               <li><Link to="/portfolio/" className="hover:text-blue-400 transition">Client Portfolio</Link></li>
               <li><Link to="/about-us/" className="hover:text-blue-400 transition">About Our Agency</Link></li>
@@ -146,6 +97,22 @@ export default function Footer() {
             </ul>
           </div>
         </div>
+
+        {/* Service Areas (auto from src/config/locations.js) */}
+        {getCities().length > 0 && getLocationServices().length > 0 && (
+          <div className="py-8 border-b border-slate-700/60">
+            <h4 className="text-white text-sm font-bold uppercase tracking-wider mb-3">Service Areas</h4>
+            <ul className="flex flex-wrap gap-x-5 gap-y-2 text-[13.5px]">
+              {getCities().map(c => (
+                <li key={c.slug}>
+                  <Link to={locationPath(getLocationServices()[0].slug, c.slug)} className="hover:text-blue-400 transition">
+                    {getLocationServices()[0].title} in {c.name}
+                  </Link>
+                </li>
+              ))}
+            </ul>
+          </div>
+        )}
 
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-400">
