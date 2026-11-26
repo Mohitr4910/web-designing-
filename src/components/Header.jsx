@@ -74,7 +74,7 @@ export default function Header() {
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2.5 group">
             <img
-              src="/Glossy W Rocket Orbit Emblem (1).webp"
+              src="/favicon.webp"
               alt="WebLaunchPro logo"
               width="57"
               height="44"
