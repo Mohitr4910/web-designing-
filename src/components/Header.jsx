@@ -13,6 +13,7 @@ import {
   Code,
   Layers
 } from 'lucide-react';
+import { listServices, servicePath } from '../services/registry';
 
 export default function Header() {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -115,30 +116,27 @@ export default function Header() {
               </Link>
 
               {servicesDropdown && (
-                <div className="absolute top-full left-0 w-64 bg-white rounded-xl shadow-xl border border-slate-100 py-3 px-2 transition-all animate-fadeIn">
-                  <div className="text-[11px] font-bold text-slate-400 px-3 pb-2 uppercase tracking-wider">
-                    Core Solutions
+                <div className="absolute top-full left-0 w-72 bg-white rounded-xl shadow-xl border border-slate-100 p-3 animate-fadeIn">
+                  {/* Services src/services/items/*.jsx se auto aati hain - sab ek hi list me */}
+                  <div className="max-h-[70vh] overflow-y-auto">
+                    {listServices().map(sv => (
+                      <Link
+                        key={sv.slug}
+                        to={servicePath(sv.slug)}
+                        className={`block px-3 py-2 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition text-[13.5px] ${
+                          location.pathname.replace(/\/+$/, '') === servicePath(sv.slug).replace(/\/+$/, '') ? 'text-blue-600 font-semibold' : ''
+                        }`}
+                      >
+                        {sv.title}
+                      </Link>
+                    ))}
                   </div>
-                  <Link 
-                    to="/services#website-design" 
-                    className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition text-[13.5px]"
-                  >
-                    <Layout className="w-4 h-4 text-purple-600" />
-                    <span>Website Design Services</span>
-                  </Link>
-                  <Link 
-                    to="/services#web-development" 
-                    className="flex items-center gap-2.5 px-3 py-2.5 rounded-lg hover:bg-blue-50 hover:text-blue-600 transition text-[13.5px]"
-                  >
-                    <Code className="w-4 h-4 text-blue-600" />
-                    <span>Web Development Services</span>
-                  </Link>
-                  <div className="pt-2 mt-1 border-t border-slate-100">
-                    <Link 
-                      to="/services/" 
+                  <div className={`${listServices().length ? 'pt-2 mt-2 border-t border-slate-100' : ''}`}>
+                    <Link
+                      to="/services/"
                       className="flex items-center justify-between px-3 py-2 rounded-lg bg-slate-50 hover:bg-blue-50 text-blue-600 font-semibold transition text-xs"
                     >
-                      <span>Browse All 15 Services</span>
+                      <span>View All Services</span>
                       <ArrowRight className="w-3.5 h-3.5" />
                     </Link>
                   </div>
@@ -193,10 +191,11 @@ export default function Header() {
               <span className="block text-xs font-bold text-slate-400 uppercase tracking-wider mb-2">
                 Services
               </span>
-              <div className="pl-3 space-y-2 text-sm text-slate-600">
-                <Link to="/services#website-design" className="block py-1">Website Design Services</Link>
-                <Link to="/services#web-development" className="block py-1">Web Development Services</Link>
-                <Link to="/services/" className="block py-1 text-blue-600 font-semibold">View All 15 Services →</Link>
+              <div className="pl-3 space-y-1 text-sm text-slate-600">
+                {listServices().map(sv => (
+                  <Link key={sv.slug} to={servicePath(sv.slug)} className="block py-1.5">{sv.title}</Link>
+                ))}
+                <Link to="/services/" className="block py-1 text-blue-600 font-semibold">View All Services →</Link>
               </div>
             </div>
 

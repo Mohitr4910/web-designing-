@@ -372,11 +372,13 @@ export default function HomePage() {
             </p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            {services.map((srv) => (
-              <ServiceCard key={srv.id} service={srv} />
-            ))}
-          </div>
+          {services.length > 0 && (
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              {services.map((srv) => (
+                <ServiceCard key={srv.id} service={srv} />
+              ))}
+            </div>
+          )}
 
           <div className="text-center mt-12">
             <Link

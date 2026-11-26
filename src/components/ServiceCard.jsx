@@ -17,7 +17,7 @@ import {
 } from 'lucide-react';
 
 export default function ServiceCard({ service }) {
-  const { slug, title, short_description, icon_svg, category, deliverables = [], technologies = [] } = service;
+  const { slug, title, short_description, icon_svg, deliverables = [], technologies = [] } = service;
 
   const renderIcon = () => {
     switch (icon_svg) {
@@ -40,9 +40,6 @@ export default function ServiceCard({ service }) {
           <div className="w-14 h-14 rounded-xl bg-blue-50/80 border border-blue-100/60 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
             {renderIcon()}
           </div>
-          <span className="text-[11px] font-semibold tracking-wider uppercase px-2.5 py-1 rounded-full bg-slate-100 text-slate-600">
-            {category === 'website_design' ? 'Website Design' : 'Web Development'}
-          </span>
         </div>
 
         {/* Title */}

@@ -8,7 +8,7 @@ export default function LegalPage() {
   const path = location.pathname;
 
   let title = 'Privacy Policy';
-  let lastUpdated = 'October 2026';
+  let lastUpdated = 'November 2026';
   let content = null;
 
   if (path.includes('terms')) {
@@ -53,20 +53,46 @@ export default function LegalPage() {
     title = 'Privacy Policy';
     content = (
       <>
-        <h2>1. Information We Collect</h2>
-        <p>We collect information directly from you when you submit a project inquiry, request a quotation, or communicate via phone or WhatsApp. This includes your name, corporate email address, telephone number, budget range, and project specifications.</p>
+        <p><strong>Short version:</strong> we collect only what you choose to send us, we use it only to reply to you and work on your project, and we never sell it, rent it or share it for advertising. Below is the full detail, in plain words.</p>
 
-        <h2>2. Purpose of Data Processing</h2>
-        <p>We process your data exclusively to evaluate your web design and development requirements, generate transparent proposals, manage project milestones, and provide technical customer support.</p>
+        <h2>1. What We Collect</h2>
+        <p>We collect information <strong>only when you give it to us</strong>: when you fill in the inquiry / quotation form on this website, or when you contact us by phone, WhatsApp or email. This can include your name, email address, phone number, budget range and the project details you write.</p>
+        <p>We do not ask for passwords, card numbers, bank details or any government ID through this website.</p>
 
-        <h2>3. Data Protection & Storage</h2>
-        <p>All inquiry data is stored in secure relational databases with restricted administrative access. We do not sell, rent, or trade your contact information to third-party marketing brokers.</p>
+        <h2>2. How We Use It</h2>
+        <p>Your details are used for one purpose only: to understand your requirement, reply to you, send a quotation and, if you go ahead, deliver and support your project. We do not use your data for advertising, profiling, or any unrelated purpose.</p>
 
-        <h2>4. Cookies & Analytics</h2>
-        <p>Our website may use standard session cookies to remember preferences, validate CSRF security tokens, and analyze aggregated visitor traffic to enhance user experience.</p>
+        <h2>3. We Do Not Sell or Share Your Data</h2>
+        <ul>
+          <li>We never sell, rent or trade your personal information.</li>
+          <li>We do not share your details with advertisers or marketing companies.</li>
+          <li>We do not send promotional spam or add you to mailing lists without your request.</li>
+        </ul>
 
-        <h2>5. Contact for Privacy Matters</h2>
-        <p>If you have questions regarding data privacy or wish to request data erasure, contact our data compliance officer at: <code>mohitrahangdale67890@gmail.com</code>.</p>
+        <h2>4. Who Handles Your Inquiry (Service Providers)</h2>
+        <p>To keep things transparent: when you submit the inquiry form, it is delivered to our email inbox through <strong>Web3Forms</strong>, a form-delivery service. They transmit your message to us; we do not use them for marketing. If you contact us on WhatsApp, the conversation is handled by WhatsApp under its own privacy policy. Our website is delivered through a web hosting provider, which may keep standard technical server logs (such as IP address and pages requested) for security and reliability.</p>
+        <p>Apart from these service providers, we do not pass your information to anyone, except if required by law.</p>
+
+        <h2>5. Cookies & Tracking</h2>
+        <p>This website does not use advertising or tracking cookies, and we do not run third-party analytics or ad pixels on it. If we ever add analytics in future, it will be limited to anonymous, aggregated visitor counts, and this policy will be updated before we do.</p>
+
+        <h2>6. How Long We Keep Your Data</h2>
+        <p>Inquiry details are kept only as long as needed to respond to you and to manage any project we do together, and for records we are legally required to keep (for example, invoices). After that, they are deleted.</p>
+
+        <h2>7. Security</h2>
+        <p>The website is served over HTTPS (SSL), and your inquiry reaches us in an encrypted connection. Access to the inbox where inquiries arrive is restricted to us. No method of transmission over the internet is 100% secure, but we take reasonable care to protect what you send.</p>
+
+        <h2>8. Your Rights</h2>
+        <p>You can at any time ask us to show you the information we hold about you, correct it, or delete it. Just write to us and we will act on your request promptly.</p>
+
+        <h2>9. Children</h2>
+        <p>Our services are meant for businesses and adults. We do not knowingly collect information from children.</p>
+
+        <h2>10. Changes to This Policy</h2>
+        <p>If we change this policy, the updated version will be posted on this page with a new "Last Updated" date.</p>
+
+        <h2>11. Contact Us About Privacy</h2>
+        <p>For any privacy question or to request correction or deletion of your data, contact us at <a href="mailto:mohitrahangdale67890@gmail.com"><code>mohitrahangdale67890@gmail.com</code></a> or call <a href="tel:+919302770758">+91 93027 70758</a>.</p>
       </>
     );
   }
@@ -97,7 +123,7 @@ export default function LegalPage() {
 
       <section className="py-16 bg-white">
         <div className="max-w-4xl mx-auto px-4 sm:px-6">
-          <div className="prose prose-slate prose-blue max-w-none text-slate-700 leading-relaxed space-y-6 text-sm sm:text-base">
+          <div className="blog-content max-w-none text-slate-700 leading-relaxed text-sm sm:text-base">
             {content}
           </div>
         </div>

@@ -12,7 +12,6 @@ import BlogPostPage from './pages/BlogPostPage';
 import LegalPage from './pages/LegalPage';
 import ServiceDetailPage from './pages/ServiceDetailPage';
 import services from './services/registry';
-import LocationServicePage from './pages/LocationServicePage';
 import NotFoundPage from './pages/NotFoundPage';
 
 // Scroll to top on route change
@@ -75,11 +74,6 @@ export default function App() {
           <Route path="terms-and-conditions/" element={<LegalPage />} />
           <Route path="refund-cancellation-policy" element={<LegalPage />} />
           <Route path="refund-cancellation-policy/" element={<LegalPage />} />
-
-          {/* City-wise service pages: /website-design-in-bhopal/ (config: src/config/locations.js).
-              Static routes upar hain to unhe priority milti hai; unknown slug par page khud 404 dikhata hai. */}
-          <Route path=":locationSlug" element={<LocationServicePage />} />
-          <Route path=":locationSlug/" element={<LocationServicePage />} />
 
           {/* 404 Wildcard */}
           <Route path="*" element={<NotFoundPage />} />

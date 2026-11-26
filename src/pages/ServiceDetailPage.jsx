@@ -5,7 +5,6 @@ import SeoMeta from '../components/SeoMeta';
 import NotFoundPage from './NotFoundPage';
 import { SITE_URL, SITE_NAME } from '../config/site';
 import { getService, servicePath } from '../services/registry';
-import { getCities, locationPath } from '../locations/registry';
 
 export default function ServiceDetailPage() {
   const { serviceSlug } = useParams();
@@ -15,7 +14,6 @@ export default function ServiceDetailPage() {
   const { title, full_description, short_description, deliverables, technologies, faqs, related, Component: Body } = service;
   const pageTitle = service.meta_title || `${title} | ${SITE_NAME}`;
   const description = service.meta_description || short_description;
-  const cities = service.location_pages ? getCities() : [];
 
   const schemaJson = [
     {
@@ -52,7 +50,7 @@ export default function ServiceDetailPage() {
       <section className="bg-gradient-to-b from-[#f8faff] via-white to-white py-16 md:py-24 border-b border-slate-100">
         <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
           <span className="text-xs font-bold uppercase tracking-widest text-blue-600 bg-blue-50 px-3.5 py-1 rounded-full inline-block mb-4 border border-blue-100">
-            {service.category === 'website_design' ? 'Website Design' : 'Web Development'}
+            Our Services
           </span>
           <h1 className="text-3xl sm:text-5xl font-extrabold text-[#081c4e] tracking-tight leading-tight mb-6">{title}</h1>
           <p className="text-base sm:text-lg text-slate-600 leading-relaxed mb-8">{short_description}</p>
@@ -126,21 +124,9 @@ export default function ServiceDetailPage() {
         </div>
       </section>
 
-      {(cities.length > 0 || related.length > 0) && (
+      {related.length > 0 && (
         <section className="py-14 bg-slate-50 border-t border-slate-100">
-          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 grid md:grid-cols-2 gap-10">
-            {cities.length > 0 && (
-              <div>
-                <h3 className="text-base font-bold text-[#081c4e] mb-3">{title} in your city</h3>
-                <ul className="space-y-2 text-sm">
-                  {cities.map(c => (
-                    <li key={c.slug}>
-                      <Link to={locationPath(service.slug, c.slug)} className="text-blue-600 hover:underline">{title} in {c.name}</Link>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            )}
+          <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 ">
             {related.length > 0 && (
               <div>
                 <h3 className="text-base font-bold text-[#081c4e] mb-3">Related services</h3>

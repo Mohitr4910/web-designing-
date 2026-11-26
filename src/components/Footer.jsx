@@ -1,7 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { listServices, servicePath } from '../services/registry';
-import { getCities, getLocationServices, locationPath } from '../locations/registry';
 import { 
   Phone, 
   Mail, 
@@ -47,37 +46,23 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Col 2: Website Design Links */}
-          <div className="space-y-3">
-            <h4 className="text-white text-sm font-bold uppercase tracking-wider">
-              Website Design
-            </h4>
-            <ul className="space-y-2 text-[13.5px]">
-              {listServices('website_design').map(sv => (
-                <li key={sv.slug}>
-                  <Link to={servicePath(sv.slug)} className="hover:text-blue-400 transition flex items-center gap-1">
-                    {sv.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-
-          {/* Col 3: Web Development Links */}
-          <div className="space-y-3">
-            <h4 className="text-white text-sm font-bold uppercase tracking-wider">
-              Web Development
-            </h4>
-            <ul className="space-y-2 text-[13.5px]">
-              {listServices('web_development').map(sv => (
-                <li key={sv.slug}>
-                  <Link to={servicePath(sv.slug)} className="hover:text-blue-400 transition flex items-center gap-1">
-                    {sv.title}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
+          {/* Col 2-3: Services (src/services/items/*.jsx se auto, ek hi list) */}
+          {listServices().length > 0 && (
+            <div className="space-y-3 lg:col-span-2">
+              <h4 className="text-white text-sm font-bold uppercase tracking-wider">
+                Our Services
+              </h4>
+              <ul className="space-y-2 text-[13.5px] sm:columns-2 sm:gap-8">
+                {listServices().map(sv => (
+                  <li key={sv.slug} className="break-inside-avoid">
+                    <Link to={servicePath(sv.slug)} className="hover:text-blue-400 transition">
+                      {sv.title}
+                    </Link>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          )}
 
           {/* Col 4: Quick Navigation & Legal */}
           <div className="space-y-3">
@@ -85,7 +70,7 @@ export default function Footer() {
               Quick Links
             </h4>
             <ul className="space-y-2 text-[13.5px]">
-              <li><Link to="/services/" className="hover:text-blue-400 transition">All {listServices().length} Services</Link></li>
+              <li><Link to="/services/" className="hover:text-blue-400 transition">All Services</Link></li>
               <li><Link to="/pricing/" className="hover:text-blue-400 transition">Pricing Packages</Link></li>
               <li><Link to="/portfolio/" className="hover:text-blue-400 transition">Client Portfolio</Link></li>
               <li><Link to="/about-us/" className="hover:text-blue-400 transition">About Our Agency</Link></li>
@@ -97,22 +82,6 @@ export default function Footer() {
             </ul>
           </div>
         </div>
-
-        {/* Service Areas (auto from src/config/locations.js) */}
-        {getCities().length > 0 && getLocationServices().length > 0 && (
-          <div className="py-8 border-b border-slate-700/60">
-            <h4 className="text-white text-sm font-bold uppercase tracking-wider mb-3">Service Areas</h4>
-            <ul className="flex flex-wrap gap-x-5 gap-y-2 text-[13.5px]">
-              {getCities().map(c => (
-                <li key={c.slug}>
-                  <Link to={locationPath(getLocationServices()[0].slug, c.slug)} className="hover:text-blue-400 transition">
-                    {getLocationServices()[0].title} in {c.name}
-                  </Link>
-                </li>
-              ))}
-            </ul>
-          </div>
-        )}
 
         {/* Bottom Bar */}
         <div className="pt-8 flex flex-col sm:flex-row justify-between items-center gap-4 text-xs text-slate-400">

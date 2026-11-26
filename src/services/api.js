@@ -355,7 +355,7 @@ export const api = {
   },
 
   // Services ab src/services/items/*.jsx se auto aati hain (src/services/registry.js dekho)
-  getServices: (category) => listServices(category),
+  getServices: () => listServices(),
 
   getServiceBySlug: (slug) => {
     const s = getService(slug);
